@@ -12,9 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,28 +21,36 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QPushButton *registerbtn;
+    QPushButton *registerbtn_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1355, 724);
+        MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/1.jpg);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(260, 190, 231, 91));
+        registerbtn = new QPushButton(centralwidget);
+        registerbtn->setObjectName("registerbtn");
+        registerbtn->setEnabled(true);
+        registerbtn->setGeometry(QRect(250, 590, 391, 81));
+        registerbtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"font: 36pt \"Segoe UI\";\n"
+"border: none;\n"
+"border-radius: 15%;\n"
+"color:black;"));
+        registerbtn_2 = new QPushButton(centralwidget);
+        registerbtn_2->setObjectName("registerbtn_2");
+        registerbtn_2->setEnabled(true);
+        registerbtn_2->setGeometry(QRect(800, 590, 391, 81));
+        registerbtn_2->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"font: 36pt \"Segoe UI\";\n"
+"border: none;\n"
+"border-radius: 15%;\n"
+"color:black;"));
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 26));
-        MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName("statusbar");
-        MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
 
@@ -54,7 +60,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        registerbtn->setText(QCoreApplication::translate("MainWindow", "Register", nullptr));
+        registerbtn_2->setText(QCoreApplication::translate("MainWindow", "Sign in", nullptr));
     } // retranslateUi
 
 };

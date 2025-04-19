@@ -18,6 +18,9 @@ public:
     ~MainWindow();
 
 
+private slots:
+    void on_registerbtn_windowIconChanged(const QIcon &icon);
+
 private:
     Ui::MainWindow *ui;
 };
