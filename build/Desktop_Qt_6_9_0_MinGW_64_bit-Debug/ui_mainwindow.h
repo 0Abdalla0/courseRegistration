@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -21,35 +22,40 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *registerbtn;
-    QPushButton *registerbtn_2;
+    QFrame *frame;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1355, 724);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/1.jpg);"));
+        MainWindow->resize(1349, 819);
+        MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        registerbtn = new QPushButton(centralwidget);
-        registerbtn->setObjectName("registerbtn");
-        registerbtn->setEnabled(true);
-        registerbtn->setGeometry(QRect(250, 590, 391, 81));
-        registerbtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
-"font: 36pt \"Segoe UI\";\n"
-"border: none;\n"
+        frame = new QFrame(centralwidget);
+        frame->setObjectName("frame");
+        frame->setGeometry(QRect(0, 0, 1361, 771));
+        frame->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/1.jpg);"));
+        frame->setFrameShape(QFrame::Shape::StyledPanel);
+        frame->setFrameShadow(QFrame::Shadow::Raised);
+        pushButton = new QPushButton(frame);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(240, 590, 411, 81));
+        pushButton->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
+"border:none;\n"
 "border-radius: 15%;\n"
-"color:black;"));
-        registerbtn_2 = new QPushButton(centralwidget);
-        registerbtn_2->setObjectName("registerbtn_2");
-        registerbtn_2->setEnabled(true);
-        registerbtn_2->setGeometry(QRect(800, 590, 391, 81));
-        registerbtn_2->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
-"font: 36pt \"Segoe UI\";\n"
-"border: none;\n"
+"color: white;\n"
+"font: 700 20pt \"Segoe UI\";"));
+        pushButton_2 = new QPushButton(frame);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(800, 590, 411, 81));
+        pushButton_2->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
+"border:none;\n"
 "border-radius: 15%;\n"
-"color:black;"));
+"color: white;\n"
+"font: 700 20pt \"Segoe UI\";"));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -60,8 +66,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        registerbtn->setText(QCoreApplication::translate("MainWindow", "Register", nullptr));
-        registerbtn_2->setText(QCoreApplication::translate("MainWindow", "Sign in", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "REGISTER NOW", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "SIGN IN", nullptr));
     } // retranslateUi
 
 };
