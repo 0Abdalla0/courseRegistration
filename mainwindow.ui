@@ -35,7 +35,7 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="registerBtn">
      <property name="geometry">
       <rect>
        <x>240</x>
@@ -55,7 +55,7 @@ font: 700 20pt &quot;Segoe UI&quot;;</string>
       <string>REGISTER NOW</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="signInBtn">
      <property name="geometry">
       <rect>
        <x>800</x>

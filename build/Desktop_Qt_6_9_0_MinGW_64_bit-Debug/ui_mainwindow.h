@@ -23,8 +23,8 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QFrame *frame;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *registerBtn;
+    QPushButton *signInBtn;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -40,18 +40,18 @@ public:
         frame->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/1.jpg);"));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(240, 590, 411, 81));
-        pushButton->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
+        registerBtn = new QPushButton(frame);
+        registerBtn->setObjectName("registerBtn");
+        registerBtn->setGeometry(QRect(240, 590, 411, 81));
+        registerBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
 "border:none;\n"
 "border-radius: 15%;\n"
 "color: white;\n"
 "font: 700 20pt \"Segoe UI\";"));
-        pushButton_2 = new QPushButton(frame);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(800, 590, 411, 81));
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
+        signInBtn = new QPushButton(frame);
+        signInBtn->setObjectName("signInBtn");
+        signInBtn->setGeometry(QRect(800, 590, 411, 81));
+        signInBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
 "border:none;\n"
 "border-radius: 15%;\n"
 "color: white;\n"
@@ -66,8 +66,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "REGISTER NOW", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "SIGN IN", nullptr));
+        registerBtn->setText(QCoreApplication::translate("MainWindow", "REGISTER NOW", nullptr));
+        signInBtn->setText(QCoreApplication::translate("MainWindow", "SIGN IN", nullptr));
     } // retranslateUi
 
 };

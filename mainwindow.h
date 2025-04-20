@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <signup.h>
+#include<student.h>
+#include<loginwindow.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,12 +19,21 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QList<student> students;
+    void loadUsersFromFile();
+    void saveStudentsToFile() const;
 
 
 private slots:
     void on_registerbtn_windowIconChanged(const QIcon &icon);
 
+    void on_registerBtn_clicked();
+
+    void on_signInBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
+    signup *signupWindow;
+    loginWindow* loginWin;
 };
 #endif // MAINWINDOW_H
