@@ -1,0 +1,13 @@
+debug/course.o
+debug/loginwindow.o
+debug/main.o
+debug/mainwindow.o
+debug/registercourse.o
+debug/signup.o
+debug/student.o
+debug/studentpage.o
+debug/qrc_img.o
+debug/moc_loginwindow.o
+debug/moc_mainwindow.o
+debug/moc_signup.o
+debug/moc_studentpage.o

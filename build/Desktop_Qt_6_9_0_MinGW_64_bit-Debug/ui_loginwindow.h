@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
@@ -21,51 +20,45 @@ QT_BEGIN_NAMESPACE
 class Ui_loginWindow
 {
 public:
-    QFrame *frame;
     QPushButton *SignInBtn;
+    QPushButton *DontHaveBtn;
     QLineEdit *lineEdit_ID;
     QLineEdit *lineEdit_pass;
-    QPushButton *DontHaveBtn;
 
     void setupUi(QDialog *loginWindow)
     {
         if (loginWindow->objectName().isEmpty())
             loginWindow->setObjectName("loginWindow");
         loginWindow->resize(1354, 657);
-        frame = new QFrame(loginWindow);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(0, 0, 1361, 651));
-        frame->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/3.jpg);"));
-        frame->setFrameShape(QFrame::Shape::StyledPanel);
-        frame->setFrameShadow(QFrame::Shadow::Raised);
-        SignInBtn = new QPushButton(frame);
+        loginWindow->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/3.jpg);"));
+        SignInBtn = new QPushButton(loginWindow);
         SignInBtn->setObjectName("SignInBtn");
-        SignInBtn->setGeometry(QRect(600, 490, 251, 51));
+        SignInBtn->setGeometry(QRect(560, 490, 251, 51));
         SignInBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/blue.jpg);\n"
 "border:none;\n"
 "border-radius: 15%;\n"
 "color: white;\n"
 "font: 700 14pt \"Segoe UI\";"));
-        lineEdit_ID = new QLineEdit(frame);
-        lineEdit_ID->setObjectName("lineEdit_ID");
-        lineEdit_ID->setGeometry(QRect(450, 350, 581, 31));
-        lineEdit_ID->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
-"border:none;\n"
-"font-size: 16pt;"));
-        lineEdit_pass = new QLineEdit(frame);
-        lineEdit_pass->setObjectName("lineEdit_pass");
-        lineEdit_pass->setGeometry(QRect(450, 430, 581, 31));
-        lineEdit_pass->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
-"border:none;\n"
-"font-size: 16pt;"));
-        DontHaveBtn = new QPushButton(frame);
+        DontHaveBtn = new QPushButton(loginWindow);
         DontHaveBtn->setObjectName("DontHaveBtn");
-        DontHaveBtn->setGeometry(QRect(570, 560, 311, 41));
+        DontHaveBtn->setGeometry(QRect(530, 550, 311, 41));
         DontHaveBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/blue.jpg);\n"
 "border:none;\n"
 "border-radius: 15%;\n"
 "color: white;\n"
 "font: 700 14pt \"Segoe UI\";"));
+        lineEdit_ID = new QLineEdit(loginWindow);
+        lineEdit_ID->setObjectName("lineEdit_ID");
+        lineEdit_ID->setGeometry(QRect(450, 350, 581, 31));
+        lineEdit_ID->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"border:none;\n"
+"font-size: 16pt;"));
+        lineEdit_pass = new QLineEdit(loginWindow);
+        lineEdit_pass->setObjectName("lineEdit_pass");
+        lineEdit_pass->setGeometry(QRect(450, 430, 581, 31));
+        lineEdit_pass->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"border:none;\n"
+"font-size: 16pt;"));
 
         retranslateUi(loginWindow);
 
@@ -76,8 +69,8 @@ public:
     {
         loginWindow->setWindowTitle(QCoreApplication::translate("loginWindow", "Dialog", nullptr));
         SignInBtn->setText(QCoreApplication::translate("loginWindow", "Sign in", nullptr));
-        lineEdit_ID->setText(QString());
         DontHaveBtn->setText(QCoreApplication::translate("loginWindow", "Dont't have an account?", nullptr));
+        lineEdit_ID->setText(QString());
     } // retranslateUi
 
 };

@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -22,7 +21,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QFrame *frame;
     QPushButton *registerBtn;
     QPushButton *signInBtn;
 
@@ -30,27 +28,21 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1349, 819);
-        MainWindow->setStyleSheet(QString::fromUtf8(""));
+        MainWindow->resize(1349, 731);
+        MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/1.jpg);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(0, 0, 1361, 771));
-        frame->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/1.jpg);"));
-        frame->setFrameShape(QFrame::Shape::StyledPanel);
-        frame->setFrameShadow(QFrame::Shadow::Raised);
-        registerBtn = new QPushButton(frame);
+        registerBtn = new QPushButton(centralwidget);
         registerBtn->setObjectName("registerBtn");
-        registerBtn->setGeometry(QRect(240, 590, 411, 81));
+        registerBtn->setGeometry(QRect(250, 590, 411, 81));
         registerBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
 "border:none;\n"
 "border-radius: 15%;\n"
 "color: white;\n"
 "font: 700 20pt \"Segoe UI\";"));
-        signInBtn = new QPushButton(frame);
+        signInBtn = new QPushButton(centralwidget);
         signInBtn->setObjectName("signInBtn");
-        signInBtn->setGeometry(QRect(800, 590, 411, 81));
+        signInBtn->setGeometry(QRect(780, 590, 411, 81));
         signInBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/darkblue.jpg);\n"
 "border:none;\n"
 "border-radius: 15%;\n"

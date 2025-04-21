@@ -13,97 +13,81 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QFrame" name="frame">
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/imgs/images/3.jpg);</string>
+  </property>
+  <widget class="QPushButton" name="SignInBtn">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1361</width>
-     <height>651</height>
+     <x>560</x>
+     <y>490</y>
+     <width>251</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/imgs/images/3.jpg);</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
-   <widget class="QPushButton" name="SignInBtn">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>490</y>
-      <width>251</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/imgs/images/blue.jpg);
+    <string notr="true">background-image: url(:/imgs/images/blue.jpg);
 border:none;
 border-radius: 15%;
 color: white;
 font: 700 14pt &quot;Segoe UI&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Sign in</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_ID">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>350</y>
-      <width>581</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border:none;
-font-size: 16pt;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_pass">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>430</y>
-      <width>581</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border:none;
-font-size: 16pt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="DontHaveBtn">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>560</y>
-      <width>311</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/imgs/images/blue.jpg);
+   </property>
+   <property name="text">
+    <string>Sign in</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DontHaveBtn">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>550</y>
+     <width>311</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/blue.jpg);
 border:none;
 border-radius: 15%;
 color: white;
 font: 700 14pt &quot;Segoe UI&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Dont't have an account?</string>
-    </property>
-   </widget>
+   </property>
+   <property name="text">
+    <string>Dont't have an account?</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_ID">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>350</y>
+     <width>581</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+border:none;
+font-size: 16pt;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_pass">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>430</y>
+     <width>581</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+border:none;
+font-size: 16pt;</string>
+   </property>
   </widget>
  </widget>
  <resources/>
