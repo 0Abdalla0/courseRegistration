@@ -1,3 +1,5 @@
+debug/admin.o
+debug/adminpage.o
 debug/course.o
 debug/loginwindow.o
 debug/main.o
@@ -6,8 +8,11 @@ debug/registercourse.o
 debug/signup.o
 debug/student.o
 debug/studentpage.o
+debug/uploadcourse.o
 debug/qrc_img.o
+debug/moc_adminpage.o
 debug/moc_loginwindow.o
 debug/moc_mainwindow.o
 debug/moc_signup.o
 debug/moc_studentpage.o
+debug/moc_uploadcourse.o

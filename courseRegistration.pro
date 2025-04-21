@@ -9,29 +9,43 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admin.cpp \
+    adminpage.cpp \
     course.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    managegrades.cpp \
     registercourse.cpp \
+    setprerequisites.cpp \
     signup.cpp \
     student.cpp \
-    studentpage.cpp
+    studentpage.cpp \
+    uploadcourse.cpp
 
 HEADERS += \
+    admin.h \
+    adminpage.h \
     course.h \
     loginwindow.h \
     mainwindow.h \
+    managegrades.h \
     registercourse.h \
+    setprerequisites.h \
     signup.h \
     student.h \
-    studentpage.h
+    studentpage.h \
+    uploadcourse.h
 
 FORMS += \
+    adminpage.ui \
     loginwindow.ui \
     mainwindow.ui \
+    managegrades.ui \
+    setprerequisites.ui \
     signup.ui \
-    studentpage.ui
+    studentpage.ui \
+    uploadcourse.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

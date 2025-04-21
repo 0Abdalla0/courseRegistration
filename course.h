@@ -8,26 +8,22 @@
 using namespace std;
 class Course {
 public:
-    map <int,QString> CourseTitle;
-    map <int , vector <int>> prerequisites;
+    map <int,vector<string>> CourseDiscription; // course id and title
+    map <int , vector <int>> prerequisites;// course id and pre courses
 
     Course();
-    Course(const QString& id, const QString& title, const QString& instructor,
-           int creditHours);
 
     QString getId() const;
     QString getTitle() const;
     QString getInstructor() const;
     int getCreditHours() const;
     QStringList getPrerequisites() const;
-
-    void setPrerequisites(const QStringList& newPrereqs);
-
 private:
     QString id;
     QString title;
     QString instructor;
     int creditHours;
+
 };
 
 #endif // COURSE_H

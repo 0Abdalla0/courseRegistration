@@ -1,3 +1,5 @@
+release/admin.o
+release/adminpage.o
 release/course.o
 release/loginwindow.o
 release/main.o
@@ -6,8 +8,11 @@ release/registercourse.o
 release/signup.o
 release/student.o
 release/studentpage.o
+release/uploadcourse.o
 release/qrc_img.o
+release/moc_adminpage.o
 release/moc_loginwindow.o
 release/moc_mainwindow.o
 release/moc_signup.o
 release/moc_studentpage.o
+release/moc_uploadcourse.o
