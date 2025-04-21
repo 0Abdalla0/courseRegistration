@@ -29,7 +29,7 @@ public:
     {
         if (loginWindow->objectName().isEmpty())
             loginWindow->setObjectName("loginWindow");
-        loginWindow->resize(1354, 657);
+        loginWindow->resize(1354, 671);
         loginWindow->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/3.jpg);"));
         SignInBtn = new QPushButton(loginWindow);
         SignInBtn->setObjectName("SignInBtn");
@@ -52,7 +52,9 @@ public:
         lineEdit_ID->setGeometry(QRect(450, 350, 581, 31));
         lineEdit_ID->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
-"font-size: 16pt;"));
+"font-size: 16pt;\n"
+"color: black;\n"
+""));
         lineEdit_pass = new QLineEdit(loginWindow);
         lineEdit_pass->setObjectName("lineEdit_pass");
         lineEdit_pass->setGeometry(QRect(450, 430, 581, 31));
