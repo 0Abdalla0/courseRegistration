@@ -16,9 +16,10 @@ public:
     ~uploadCourse();
 
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_uploadBtn_clicked();
+
+    void on_backBtn_clicked();
 
 private:
     Ui::uploadCourse *ui;

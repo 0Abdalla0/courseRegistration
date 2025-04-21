@@ -4,7 +4,9 @@ debug/course.o
 debug/loginwindow.o
 debug/main.o
 debug/mainwindow.o
+debug/managegrades.o
 debug/registercourse.o
+debug/setprerequisites.o
 debug/signup.o
 debug/student.o
 debug/studentpage.o
@@ -13,6 +15,8 @@ debug/qrc_img.o
 debug/moc_adminpage.o
 debug/moc_loginwindow.o
 debug/moc_mainwindow.o
+debug/moc_managegrades.o
+debug/moc_setprerequisites.o
 debug/moc_signup.o
 debug/moc_studentpage.o
 debug/moc_uploadcourse.o

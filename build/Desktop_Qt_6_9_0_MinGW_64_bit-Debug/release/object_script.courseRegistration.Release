@@ -4,7 +4,9 @@ release/course.o
 release/loginwindow.o
 release/main.o
 release/mainwindow.o
+release/managegrades.o
 release/registercourse.o
+release/setprerequisites.o
 release/signup.o
 release/student.o
 release/studentpage.o
@@ -13,6 +15,8 @@ release/qrc_img.o
 release/moc_adminpage.o
 release/moc_loginwindow.o
 release/moc_mainwindow.o
+release/moc_managegrades.o
+release/moc_setprerequisites.o
 release/moc_signup.o
 release/moc_studentpage.o
 release/moc_uploadcourse.o

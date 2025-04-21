@@ -14,6 +14,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 
 QT_BEGIN_NAMESPACE
 
@@ -22,19 +23,22 @@ class Ui_uploadCourse
 public:
     QLineEdit *codetxt;
     QLineEdit *nametxt;
-    QLineEdit *disctxt;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QLineEdit *syllabustxt;
+    QPushButton *uploadBtn;
+    QPushButton *backBtn;
+    QLineEdit *instNametxt;
+    QLineEdit *instemailtxt;
+    QSpinBox *creditHours;
 
     void setupUi(QDialog *uploadCourse)
     {
         if (uploadCourse->objectName().isEmpty())
             uploadCourse->setObjectName("uploadCourse");
         uploadCourse->resize(1351, 718);
-        uploadCourse->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/5.jpg);"));
+        uploadCourse->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/uploadCourse.jpg);"));
         codetxt = new QLineEdit(uploadCourse);
         codetxt->setObjectName("codetxt");
-        codetxt->setGeometry(QRect(420, 240, 581, 31));
+        codetxt->setGeometry(QRect(270, 190, 721, 31));
         codetxt->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "font-size: 16pt;\n"
@@ -42,38 +46,62 @@ public:
 ""));
         nametxt = new QLineEdit(uploadCourse);
         nametxt->setObjectName("nametxt");
-        nametxt->setGeometry(QRect(420, 340, 581, 31));
+        nametxt->setGeometry(QRect(260, 290, 731, 31));
         nametxt->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "font-size: 16pt;\n"
 "color: black;\n"
 ""));
-        disctxt = new QLineEdit(uploadCourse);
-        disctxt->setObjectName("disctxt");
-        disctxt->setGeometry(QRect(430, 480, 561, 71));
-        disctxt->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+        syllabustxt = new QLineEdit(uploadCourse);
+        syllabustxt->setObjectName("syllabustxt");
+        syllabustxt->setGeometry(QRect(260, 390, 731, 31));
+        syllabustxt->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "font-size: 16pt;\n"
 "color: black;\n"
 ""));
-        pushButton = new QPushButton(uploadCourse);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(590, 620, 211, 24));
-        pushButton->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+        uploadBtn = new QPushButton(uploadCourse);
+        uploadBtn->setObjectName("uploadBtn");
+        uploadBtn->setGeometry(QRect(1110, 350, 211, 61));
+        uploadBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "font: 18pt \"Segoe UI\";\n"
 "color:black;\n"
 "border:none;\n"
 "border-radius:15%;\n"
 ""));
-        pushButton_2 = new QPushButton(uploadCourse);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(30, 670, 80, 24));
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+        backBtn = new QPushButton(uploadCourse);
+        backBtn->setObjectName("backBtn");
+        backBtn->setGeometry(QRect(30, 670, 80, 31));
+        backBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "color:black;\n"
 "border:none;\n"
 "font: 18pt \"Segoe UI\";\n"
 "border-radius:15%;\n"
 ""));
+        instNametxt = new QLineEdit(uploadCourse);
+        instNametxt->setObjectName("instNametxt");
+        instNametxt->setGeometry(QRect(260, 460, 731, 31));
+        instNametxt->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"border:none;\n"
+"font-size: 16pt;\n"
+"color: black;\n"
+""));
+        instemailtxt = new QLineEdit(uploadCourse);
+        instemailtxt->setObjectName("instemailtxt");
+        instemailtxt->setGeometry(QRect(260, 540, 731, 31));
+        instemailtxt->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"border:none;\n"
+"font-size: 16pt;\n"
+"color: black;\n"
+""));
+        creditHours = new QSpinBox(uploadCourse);
+        creditHours->setObjectName("creditHours");
+        creditHours->setGeometry(QRect(270, 600, 81, 31));
+        creditHours->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"font: 18pt \"Segoe UI\";\n"
+"border:none;\n"
+"border-radius:15%;\n"
+"color:black;"));
 
         retranslateUi(uploadCourse);
 
@@ -83,8 +111,8 @@ public:
     void retranslateUi(QDialog *uploadCourse)
     {
         uploadCourse->setWindowTitle(QCoreApplication::translate("uploadCourse", "Dialog", nullptr));
-        pushButton->setText(QCoreApplication::translate("uploadCourse", "UPLOAD COURSE", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("uploadCourse", "BACK", nullptr));
+        uploadBtn->setText(QCoreApplication::translate("uploadCourse", "UPLOAD COURSE", nullptr));
+        backBtn->setText(QCoreApplication::translate("uploadCourse", "BACK", nullptr));
     } // retranslateUi
 
 };

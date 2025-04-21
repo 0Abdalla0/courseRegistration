@@ -14,14 +14,14 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/imgs/images/5.jpg);</string>
+   <string notr="true">background-image: url(:/imgs/images/uploadCourse.jpg);</string>
   </property>
   <widget class="QLineEdit" name="codetxt">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>240</y>
-     <width>581</width>
+     <x>270</x>
+     <y>190</y>
+     <width>721</width>
      <height>31</height>
     </rect>
    </property>
@@ -36,9 +36,9 @@ color: black;
   <widget class="QLineEdit" name="nametxt">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>340</y>
-     <width>581</width>
+     <x>260</x>
+     <y>290</y>
+     <width>731</width>
      <height>31</height>
     </rect>
    </property>
@@ -50,13 +50,13 @@ color: black;
 </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="disctxt">
+  <widget class="QLineEdit" name="syllabustxt">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>480</y>
-     <width>561</width>
-     <height>71</height>
+     <x>260</x>
+     <y>390</y>
+     <width>731</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -67,13 +67,13 @@ color: black;
 </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="uploadBtn">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>620</y>
+     <x>1110</x>
+     <y>350</y>
      <width>211</width>
-     <height>24</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -88,13 +88,13 @@ border-radius:15%;
     <string>UPLOAD COURSE</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="backBtn">
    <property name="geometry">
     <rect>
      <x>30</x>
      <y>670</y>
      <width>80</width>
-     <height>24</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -107,6 +107,57 @@ border-radius:15%;
    </property>
    <property name="text">
     <string>BACK</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="instNametxt">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>460</y>
+     <width>731</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+border:none;
+font-size: 16pt;
+color: black;
+</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="instemailtxt">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>540</y>
+     <width>731</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+border:none;
+font-size: 16pt;
+color: black;
+</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="creditHours">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>600</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:none;
+border-radius:15%;
+color:black;</string>
    </property>
   </widget>
  </widget>

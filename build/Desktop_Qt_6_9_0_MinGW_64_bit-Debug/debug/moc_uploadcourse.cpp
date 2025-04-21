@@ -39,15 +39,15 @@ template <> constexpr inline auto uploadCourse::qt_create_metaobjectdata<qt_meta
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "uploadCourse",
-        "on_pushButton_clicked",
+        "on_uploadBtn_clicked",
         "",
-        "on_pushButton_2_clicked"
+        "on_backBtn_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'on_pushButton_clicked'
+        // Slot 'on_uploadBtn_clicked'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_pushButton_2_clicked'
+        // Slot 'on_backBtn_clicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
@@ -72,8 +72,8 @@ void uploadCourse::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     auto *_t = static_cast<uploadCourse *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
-        case 1: _t->on_pushButton_2_clicked(); break;
+        case 0: _t->on_uploadBtn_clicked(); break;
+        case 1: _t->on_backBtn_clicked(); break;
         default: ;
         }
     }

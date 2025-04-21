@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1244</width>
+    <height>609</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/imgs/images/6.jpg);
+background-image: url(:/imgs/images/blue.jpg);</string>
   </property>
  </widget>
  <resources/>
