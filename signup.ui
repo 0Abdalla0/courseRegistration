@@ -67,7 +67,10 @@ font: 700 12pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border:none;</string>
+font: 18pt &quot;Segoe UI&quot;;
+border:none;
+color: black;
+</string>
    </property>
    <property name="text">
     <string/>
@@ -84,7 +87,9 @@ border:none;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border:none;</string>
+border:none;
+color: black;
+</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_gpa">
@@ -98,7 +103,9 @@ border:none;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border:none;</string>
+border:none;
+color: black;
+</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_pass">
@@ -112,7 +119,9 @@ border:none;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border:none;</string>
+border:none;
+color: black;
+</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_confirmPass">
@@ -126,7 +135,9 @@ border:none;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border:none;</string>
+border:none;
+color: black;
+</string>
    </property>
   </widget>
  </widget>

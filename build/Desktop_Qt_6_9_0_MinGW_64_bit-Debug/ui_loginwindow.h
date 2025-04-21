@@ -60,7 +60,9 @@ public:
         lineEdit_pass->setGeometry(QRect(450, 430, 581, 31));
         lineEdit_pass->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
-"font-size: 16pt;"));
+"font-size: 16pt;\n"
+"color: black;\n"
+""));
 
         retranslateUi(loginWindow);
 
