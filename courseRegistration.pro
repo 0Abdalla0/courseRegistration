@@ -13,6 +13,7 @@ SOURCES += \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    registercourse.cpp \
     signup.cpp \
     student.cpp
 
@@ -20,6 +21,7 @@ HEADERS += \
     course.h \
     loginwindow.h \
     mainwindow.h \
+    registercourse.h \
     signup.h \
     student.h
 
