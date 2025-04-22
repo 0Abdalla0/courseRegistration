@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -23,6 +24,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QTextEdit *textEdit;
 
     void setupUi(QDialog *adminPage)
     {
@@ -63,6 +65,12 @@ public:
 "color:black;\n"
 "border:none;\n"
 "border-radius:15%;"));
+        textEdit = new QTextEdit(adminPage);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(320, 20, 104, 51));
+        textEdit->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"color:Black;\n"
+""));
 
         retranslateUi(adminPage);
 

@@ -97,6 +97,21 @@ border-radius:15%;</string>
     <string>MANAGE STUDENTS' GRADES</string>
    </property>
   </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>20</y>
+     <width>104</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+color:Black;
+</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

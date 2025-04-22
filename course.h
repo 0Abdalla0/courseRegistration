@@ -4,24 +4,28 @@
 #include <QString>
 #include <QStringList>
 #include <map>
-
+#include<iostream>
 using namespace std;
 class Course {
 public:
     map <int,vector<string>> CourseDiscription; // course id and title
     map <int , vector <int>> prerequisites;// course id and pre courses
-
+    int cnt = 0;
     Course();
-
-    QString getId() const;
+    Course(const int& id, const QString& title, const QString& instructorName,QString& instructorEmail,QString& syllabus,int& creditHours);
+    int getId() const;
     QString getTitle() const;
-    QString getInstructor() const;
+    QString getInstructorName() const;
+    QString getInstructorEmail() const;
+    QString getSyllabus() const;
     int getCreditHours() const;
-    QStringList getPrerequisites() const;
+    // friend ostream& operator<<(ostream& out,Course& c);
 private:
-    QString id;
+    int id;
     QString title;
-    QString instructor;
+    QString instructorName;
+    QString instructorEmail;
+    QString syllabus;
     int creditHours;
 
 };
