@@ -2,6 +2,7 @@
 #include"uploadcourse.h"
 #include"ui_uploadcourse.h"
 #include<iostream>
+#include"adminpage.h"
 Course::Course()
     : id(0),
     title(""),
@@ -9,7 +10,13 @@ Course::Course()
     instructorEmail(""),
     syllabus(""),
     creditHours(0)
-{cnt++;}
+{
+    adminPage admin;
+    cnt++;
+    admin.updateCnt(cnt);
+
+
+}
 Course::Course(const int& id, const QString& title, const QString& instructorName, QString& instructorEmail,QString& syllabus,int& creditHours)
     : id(id),
     title(title),
@@ -17,7 +24,11 @@ Course::Course(const int& id, const QString& title, const QString& instructorNam
     instructorEmail(instructorEmail),
     syllabus(syllabus),
     creditHours(creditHours)
-{cnt++;}
+{
+    adminPage admin;
+    cnt++;
+    admin.updateCnt(cnt);
+}
 
 
 int Course::getId() const {

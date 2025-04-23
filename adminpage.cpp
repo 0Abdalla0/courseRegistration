@@ -29,15 +29,14 @@ void adminPage::on_pushButton_2_clicked()
     uploadCourse* uc=new uploadCourse();
     uc->show();
 }
-
-
-
-
-
-void adminPage::on_textEdit_textChanged()
-{
-    Course c;
-    QString cCnt = QString::number(c.cnt);
-    ui->textEdit->setText(cCnt);
+void adminPage::updateCnt(int& c){
+    QString coursesCnt =QString::number(c);
+    ui->coursesCnt->setText(coursesCnt);
 }
+
+
+
+
+
+
 

@@ -12,8 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,7 +24,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
-    QTextEdit *textEdit;
+    QLabel *coursesCnt;
 
     void setupUi(QDialog *adminPage)
     {
@@ -65,12 +65,12 @@ public:
 "color:black;\n"
 "border:none;\n"
 "border-radius:15%;"));
-        textEdit = new QTextEdit(adminPage);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(320, 20, 104, 51));
-        textEdit->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
-"color:Black;\n"
-""));
+        coursesCnt = new QLabel(adminPage);
+        coursesCnt->setObjectName("coursesCnt");
+        coursesCnt->setGeometry(QRect(380, 30, 41, 41));
+        coursesCnt->setStyleSheet(QString::fromUtf8("color:black;\n"
+"font: 700 26pt \"Segoe UI\";\n"
+"background-image: url(:/imgs/images/white.jpg);"));
 
         retranslateUi(adminPage);
 
@@ -84,6 +84,7 @@ public:
         pushButton_2->setText(QCoreApplication::translate("adminPage", "UPLOAD COURSE", nullptr));
         pushButton_3->setText(QCoreApplication::translate("adminPage", "SET PREREQUISITES", nullptr));
         pushButton_4->setText(QCoreApplication::translate("adminPage", "MANAGE STUDENTS' GRADES", nullptr));
+        coursesCnt->setText(QCoreApplication::translate("adminPage", "0", nullptr));
     } // retranslateUi
 
 };

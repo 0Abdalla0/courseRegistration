@@ -57,8 +57,13 @@ void uploadCourse::on_uploadBtn_clicked()
             cout << (it->second.getInstructorEmail().toStdString())<<endl;
             cout << (it->second.getSyllabus().toStdString())<<endl;
             cout << (it->second.getCreditHours())<<endl;
+            cout<<(it->second.cnt)<<endl;
+            cout<<"/////////////////////////////////////////////////////////////////\n";
+            (it->second.cnt)++;
             it++;
+
         }
+
         ui->codetxt->clear();
        ui->nametxt->clear();
        ui->syllabustxt->clear();

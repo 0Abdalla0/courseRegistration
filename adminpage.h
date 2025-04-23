@@ -14,13 +14,13 @@ class adminPage : public QDialog
 public:
     explicit adminPage(QWidget *parent = nullptr);
     ~adminPage();
+    void updateCnt(int& c);
 
 private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
-    void on_textEdit_textChanged();
 
 private:
     Ui::adminPage *ui;
