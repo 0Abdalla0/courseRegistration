@@ -1,11 +1,13 @@
 #include "signup.h"
-#include "ui_signup.h"
-#include <QMessageBox>
 #include <QFile>
+#include <QMessageBox>
 #include <QTextStream>
+#include "ui_signup.h"
 
-signup::signup(QWidget *parent, QList<student>* studentList)
-    : QDialog(parent), ui(new Ui::signup), students(studentList)
+signup::signup(QWidget *parent, QList<student> *studentList)
+    : QDialog(parent)
+    , ui(new Ui::signup)
+    , students(studentList)
 {
     ui->setupUi(this);
 }
@@ -23,7 +25,8 @@ void signup::on_pushButton_2_clicked()
     QString password = ui->lineEdit_pass->text();
     QString confirmPassword = ui->lineEdit_confirmPass->text();
 
-    if (name.isEmpty() || stdID.isEmpty() || cgpa.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+    if (name.isEmpty() || stdID.isEmpty() || cgpa.isEmpty() || password.isEmpty()
+        || confirmPassword.isEmpty()) {
         QMessageBox::warning(this, "Missing Info", "Please fill in all fields.");
         return;
     }
@@ -62,4 +65,3 @@ void signup::on_pushButton_clicked()
     loginWin = new loginWindow(this, students);
     loginWin->show();
 }
-

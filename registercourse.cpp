@@ -1,11 +1,12 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-class Course {
+class Course
+{
 public:
     string getId() const { return id; }
     string getTitle() const { return title; }
@@ -19,7 +20,8 @@ private:
     int creditHours;
 };
 
-class Student {
+class Student
+{
 public:
     string getName() const { return name; }
     string getId() const { return id; }
@@ -31,12 +33,16 @@ private:
     string cgpa;
 };
 
-class RegisterCourse {
+class RegisterCourse
+{
 public:
-    RegisterCourse(Student* student, vector<Course>* availableCourses)
-        : m_student(student), m_availableCourses(availableCourses) {}
+    RegisterCourse(Student *student, vector<Course> *availableCourses)
+        : m_student(student)
+        , m_availableCourses(availableCourses)
+    {}
 
-    void run() {
+    void run()
+    {
         while (true) {
             displayMenu();
             int choice;
@@ -69,7 +75,8 @@ public:
     }
 
 private:
-    void displayMenu() {
+    void displayMenu()
+    {
         cout << "\nCourse Registration System\n";
         cout << "1. View All Courses\n";
         cout << "2. Search Courses\n";
@@ -80,21 +87,21 @@ private:
         cout << "Enter your choice: ";
     }
 
-    void displayCourses() {
+    void displayCourses()
+    {
         cout << "\nAvailable Courses:\n";
         cout << "-------------------------------------------------\n";
         cout << "ID\tTitle\tInstructor\tCredits\n";
         cout << "-------------------------------------------------\n";
 
-        for (const auto& course : *m_availableCourses) {
-            cout << course.getId() << "\t"
-                 << course.getTitle() << "\t"
-                 << course.getInstructor() << "\t"
-                 << course.getCreditHours() << "\n";
+        for (const auto &course : *m_availableCourses) {
+            cout << course.getId() << "\t" << course.getTitle() << "\t" << course.getInstructor()
+                 << "\t" << course.getCreditHours() << "\n";
         }
     }
 
-    void searchCourses() {
+    void searchCourses()
+    {
         cout << "Enter search term: ";
         string searchTerm;
         getline(cin, searchTerm);
@@ -106,7 +113,7 @@ private:
         cout << "ID\tTitle\tInstructor\tCredits\n";
         cout << "-------------------------------------------------\n";
 
-        for (const auto& course : *m_availableCourses) {
+        for (const auto &course : *m_availableCourses) {
             string id = course.getId();
             string title = course.getTitle();
             string instructor = course.getInstructor();
@@ -117,27 +124,30 @@ private:
             string lowerInstructor = instructor;
             transform(lowerId.begin(), lowerId.end(), lowerId.begin(), ::tolower);
             transform(lowerTitle.begin(), lowerTitle.end(), lowerTitle.begin(), ::tolower);
-            transform(lowerInstructor.begin(), lowerInstructor.end(), lowerInstructor.begin(), ::tolower);
+            transform(lowerInstructor.begin(),
+                      lowerInstructor.end(),
+                      lowerInstructor.begin(),
+                      ::tolower);
 
-            if (lowerId.find(searchTerm) != string::npos ||
-                lowerTitle.find(searchTerm) != string::npos ||
-                lowerInstructor.find(searchTerm) != string::npos) {
-                cout << id << "\t"
-                     << title << "\t"
-                     << instructor << "\t"
-                     << course.getCreditHours() << "\n";
+            if (lowerId.find(searchTerm) != string::npos
+                || lowerTitle.find(searchTerm) != string::npos
+                || lowerInstructor.find(searchTerm) != string::npos) {
+                cout << id << "\t" << title << "\t" << instructor << "\t" << course.getCreditHours()
+                     << "\n";
             }
         }
     }
 
-    void registerForCourse() {
+    void registerForCourse()
+    {
         cout << "Enter Course ID to register: ";
         string courseId;
         getline(cin, courseId);
 
         // Find the course
-        auto it = find_if(m_availableCourses->begin(), m_availableCourses->end(),
-                          [&courseId](const Course& c) { return c.getId() == courseId; });
+        auto it = find_if(m_availableCourses->begin(),
+                          m_availableCourses->end(),
+                          [&courseId](const Course &c) { return c.getId() == courseId; });
 
         if (it == m_availableCourses->end()) {
             cout << "Course not found.\n";
@@ -153,13 +163,15 @@ private:
         cout << "Successfully registered for " << it->getTitle() << "\n";
     }
 
-    void viewCourseDetails() {
+    void viewCourseDetails()
+    {
         cout << "Enter Course ID to view details: ";
         string courseId;
         getline(cin, courseId);
 
-        auto it = find_if(m_availableCourses->begin(), m_availableCourses->end(),
-                          [&courseId](const Course& c) { return c.getId() == courseId; });
+        auto it = find_if(m_availableCourses->begin(),
+                          m_availableCourses->end(),
+                          [&courseId](const Course &c) { return c.getId() == courseId; });
 
         if (it == m_availableCourses->end()) {
             cout << "Course not found.\n";
@@ -174,7 +186,8 @@ private:
         cout << "Credits: " << it->getCreditHours() << "\n";
     }
 
-    void displayStudentInfo() {
+    void displayStudentInfo()
+    {
         cout << "\nStudent Information:\n";
         cout << "-------------------------------------------------\n";
         cout << "Name: " << m_student->getName() << "\n";
@@ -182,13 +195,13 @@ private:
         cout << "CGPA: " << m_student->getCgpa() << "\n";
     }
 
-    bool checkPrerequisites(const Course& course) {
+    bool checkPrerequisites(const Course &course)
+    {
         // Implementation depends on how prerequisites are stored
         // This is a placeholder - adjust according to your actual data structure
         return true; // Assuming all prerequisites are met for this example
     }
 
-    Student* m_student;
-    vector<Course>* m_availableCourses;
+    Student *m_student;
+    vector<Course> *m_availableCourses;
 };
-

@@ -2,9 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <loginwindow.h>
 #include <signup.h>
-#include<student.h>
-#include<loginwindow.h>
+#include <student.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,7 +22,7 @@ public:
     QList<student> students;
     void loadUsersFromFile();
     void saveStudentsToFile() const;
-
+    void removeDuplicateStudents();
 
 private slots:
     void on_registerbtn_windowIconChanged(const QIcon &icon);
@@ -31,9 +31,12 @@ private slots:
 
     void on_signInBtn_clicked();
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 private:
     Ui::MainWindow *ui;
     signup *signupWindow;
-    loginWindow* loginWin;
+    loginWindow *loginWin;
 };
 #endif // MAINWINDOW_H

@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QList>
 #include "student.h"
-#include<loginwindow.h>
+#include <loginwindow.h>
 
 namespace Ui {
 class signup;
@@ -15,7 +15,7 @@ class signup : public QDialog
     Q_OBJECT
 
 public:
-    explicit signup(QWidget *parent = nullptr, QList<student>* studentList = nullptr);
+    explicit signup(QWidget *parent = nullptr, QList<student> *studentList = nullptr);
     ~signup();
 
 private slots:
@@ -26,7 +26,7 @@ private slots:
 private:
     Ui::signup *ui;
     loginWindow *loginWin;
-    QList<student>* students;
+    QList<student> *students;
 };
 
 #endif

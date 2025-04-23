@@ -1,21 +1,33 @@
 #include "student.h"
 
+student::student(const QString &name,
+                 const QString &id,
+                 const QString &cgpa,
+                 const QString &password)
+    : name(name)
+    , id(id)
+    , cgpa(cgpa)
+    , password(password)
+{}
 
-student::student(const QString &name, const QString &id, const QString &cgpa, const QString &password)
-    : name(name), id(id), cgpa(cgpa), password(password) {}
+student::student(){}
 
-QString student::getName() const {
+QString student::getName() const
+{
     return name;
 }
 
-QString student::getId() const {
+QString student::getId() const
+{
     return id;
 }
 
-QString student::getCgpa() const {
+QString student::getCgpa() const
+{
     return cgpa;
 }
 
-QString student::getPassword() const {
+QString student::getPassword() const
+{
     return password;
 }

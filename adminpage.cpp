@@ -1,8 +1,8 @@
 #include "adminpage.h"
+#include "course.h"
+#include "mainwindow.h"
 #include "ui_adminpage.h"
-#include"mainwindow.h"
-#include"uploadcourse.h"
-#include"course.h"
+#include "uploadcourse.h"
 adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)
@@ -18,25 +18,18 @@ adminPage::~adminPage()
 void adminPage::on_pushButton_clicked()
 {
     this->hide();
-    MainWindow* main = new MainWindow();
+    MainWindow *main = new MainWindow();
     main->show();
 }
-
 
 void adminPage::on_pushButton_2_clicked()
 {
     this->hide();
-    uploadCourse* uc=new uploadCourse();
+    uploadCourse *uc = new uploadCourse();
     uc->show();
 }
-void adminPage::updateCnt(int& c){
-    QString coursesCnt =QString::number(c);
+void adminPage::updateCnt(int &c)
+{
+    QString coursesCnt = QString::number(c);
     ui->coursesCnt->setText(coursesCnt);
 }
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 #define LOGINWINDOW_H
 
 #include <QDialog>
-#include<student.h>
+#include <student.h>
 
 namespace Ui {
 class loginWindow;
@@ -13,7 +13,7 @@ class loginWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit loginWindow(QWidget *parent = nullptr, QList<student>* studentList = nullptr);
+    explicit loginWindow(QWidget *parent = nullptr, QList<student> *studentList = nullptr);
     ~loginWindow();
 
 private slots:
@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::loginWindow *ui;
-    QList<student>* students;
+    QList<student> *students;
 };
 
 #endif // LOGINWINDOW_H

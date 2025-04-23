@@ -1,13 +1,14 @@
 #ifndef REGISTERCOURSE_H
 #define REGISTERCOURSE_H
 
-#include "student.h"
 #include "course.h"
+#include "student.h"
 #include <vector>
 using namespace std;
-class RegisterCourse {
+class RegisterCourse
+{
 public:
-    RegisterCourse(student* student, vector<Course>* availableCourses);
+    RegisterCourse(student *student, vector<Course> *availableCourses);
 
     void run();
 
@@ -19,17 +20,14 @@ private:
     void viewCourseDetails() const;
     void displayStudentInfo() const;
 
+    bool checkPrerequisites(const Course &course) const;
+    const Course *findCourseById(const string &courseId) const;
 
-    bool checkPrerequisites(const Course& course) const;
-    const Course* findCourseById(const string& courseId) const;
-
-    student* m_student;
-    vector<Course>* m_availableCourses;
+    student *m_student;
+    vector<Course> *m_availableCourses;
 };
 
 #endif // REGISTERCOURSE_H
-
-
 
 // #ifndef REGISTERCOURSE_H
 // #define REGISTERCOURSE_H
