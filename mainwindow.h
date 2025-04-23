@@ -5,7 +5,7 @@
 #include <loginwindow.h>
 #include <signup.h>
 #include <student.h>
-
+#include"course.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;

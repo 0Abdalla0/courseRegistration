@@ -14,7 +14,8 @@ class uploadCourse : public QDialog
 public:
     explicit uploadCourse(QWidget *parent = nullptr);
     ~uploadCourse();
-
+    void saveCoursesToFile(const QString& filename);
+    void loadCoursesFromFile(const QString& filename);
 private slots:
 
     void on_uploadBtn_clicked();

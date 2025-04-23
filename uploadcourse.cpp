@@ -7,6 +7,7 @@
 #include <map>
 #include <unordered_map>
 #include <vector>
+#include<QFile>
 using namespace std;
 //101->programming
 //201 -> math
@@ -68,6 +69,54 @@ void uploadCourse::on_uploadBtn_clicked()
         ui->instemailtxt->clear();
         ui->creditHours->clear();
     }
+}
+void uploadCourse::saveCoursesToFile(const QString& filename)
+{
+    QFile file(filename);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+        qDebug() << "Could not open file for writing.";
+        return;
+    }
+
+    QTextStream out(&file);
+    for (const auto& [id, course] : courseTable) {
+        out << id << ","
+            << course.getTitle() << ","
+            << course.getInstructorName() << ","
+            << course.getInstructorEmail() << ","
+            << course.getSyllabus() << ","
+            << course.getCreditHours() << "\n-----------------------------------------------------------------\n";
+    }
+
+    file.close();
+}
+void uploadCourse::loadCoursesFromFile(const QString& filename)
+{
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Could not open file for reading.";
+        return;
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine().trimmed();
+        QStringList parts = line.split(",");
+
+        if (parts.size() == 6) {
+            int id = parts[0].toInt();
+            QString name = parts[1];
+            QString instName = parts[2];
+            QString instEmail = parts[3];
+            QString syllabus = parts[4];
+            int credit = parts[5].toInt();
+
+            Course course(id, name, instName, instEmail, syllabus, credit);
+            courseTable[id] = course;
+        }
+    }
+
+    file.close();
 }
 
 void uploadCourse::on_backBtn_clicked()

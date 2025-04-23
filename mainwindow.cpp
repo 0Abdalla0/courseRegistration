@@ -9,7 +9,7 @@
 #include <QCoreApplication>
 #include <QSet>
 #include <QCloseEvent>
-
+#include"uploadcourse.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -19,13 +19,17 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
+    uploadCourse courses;
     saveStudentsToFile();
+    courses.saveCoursesToFile("courses.txt");
     QMainWindow::closeEvent(event);
 }
 
 MainWindow::~MainWindow()
 {
+    uploadCourse courses;
     saveStudentsToFile();
+    courses.saveCoursesToFile("courses.txt");
     delete ui;
 }
 

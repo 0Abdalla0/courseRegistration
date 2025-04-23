@@ -26,6 +26,7 @@ void adminPage::on_pushButton_2_clicked()
 {
     this->hide();
     uploadCourse *uc = new uploadCourse();
+    uc->loadCoursesFromFile("courses.txt");
     uc->show();
 }
 void adminPage::updateCnt(int &c)
