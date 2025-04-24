@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "ui_adminpage.h"
 #include "uploadcourse.h"
+#include"setprerequisites.h"
 adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)
@@ -34,3 +35,12 @@ void adminPage::updateCnt(int &c)
     QString coursesCnt = QString::number(c);
     ui->coursesCnt->setText(coursesCnt);
 }
+
+void adminPage::on_pushButton_3_clicked()
+{
+    this->hide();
+    setPrerequisites *setPre = new setPrerequisites();
+    //uc->loadCoursesFromFile("courses.txt");
+    setPre->show();
+}
+
