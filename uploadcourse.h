@@ -1,6 +1,6 @@
 #ifndef UPLOADCOURSE_H
 #define UPLOADCOURSE_H
-
+#include "course.h"
 #include <QDialog>
 
 namespace Ui {
@@ -16,6 +16,10 @@ public:
     ~uploadCourse();
     void saveCoursesToFile(const QString& filename);
     void loadCoursesFromFile(const QString& filename);
+    unordered_map<int, Course> courseTable;
+    //unordered_map<int, Course> getCourseTable(unordered_map<int, Course>& courseTable);
+    unordered_map<int, Course> getCourseTable(unordered_map<int, Course>& courseTable);
+
 private slots:
 
     void on_uploadBtn_clicked();

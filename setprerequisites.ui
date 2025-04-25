@@ -16,25 +16,6 @@
   <property name="styleSheet">
    <string notr="true">background-image: url(:/imgs/images/setPre.jpg);</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>1050</x>
-     <y>520</y>
-     <width>131</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:none;
-border-radius:15%;
-color:black;
-font: 22pt &quot;Segoe UI&quot;;</string>
-   </property>
-   <property name="text">
-    <string>SET</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
@@ -56,18 +37,58 @@ border-radius:15%;
     <string>BACK</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QLineEdit" name="courseid_input">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>270</y>
-     <width>561</width>
-     <height>41</height>
+     <x>422</x>
+     <y>267</y>
+     <width>601</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/imgs/images/white.jpg);
-border-radius:15%;</string>
+    <string notr="true">border-radius: 15%;
+color: black;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="prerequisites_input">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>390</y>
+     <width>601</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 15%;
+color:black;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setbtn">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>520</y>
+     <width>83</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SET</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>500</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
    </property>
   </widget>
  </widget>

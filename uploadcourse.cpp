@@ -125,3 +125,7 @@ void uploadCourse::on_backBtn_clicked()
     adminPage *admin = new adminPage();
     admin->show();
 }
+unordered_map<int, Course> uploadCourse::getCourseTable(unordered_map<int, Course>& courseTable) {
+    return this->courseTable;
+}
+
