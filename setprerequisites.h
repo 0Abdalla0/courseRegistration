@@ -16,23 +16,15 @@ public:
     ~setPrerequisites();
     unordered_map<int,Course>* coursePtr;
     vector <int> programming_course ;
-    unordered_map<int, Course> courseMap;
 
-    void on_setbtn_clicked(unordered_map<int, Course>& courseTable);
 
 private slots:
     void on_pushButton_2_clicked();
-
-    void on_comboBox_activated(int index);
-
-    void on_pushButton_clicked(unordered_map<int, Course>& courseTable);
-
-    void on_pushButton_clicked();
-
-    void on_setbtn_clicked();
+    void on_setBtn_clicked();
 
 private:
     Ui::setPrerequisites *ui;
+    unordered_map<int, Course>* courses;
 };
 
 #endif // SETPREREQUISITES_H

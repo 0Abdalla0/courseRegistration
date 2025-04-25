@@ -18,7 +18,7 @@ public:
     void loadCoursesFromFile(const QString& filename);
     unordered_map<int, Course> courseTable;
     //unordered_map<int, Course> getCourseTable(unordered_map<int, Course>& courseTable);
-    unordered_map<int, Course> getCourseTable(unordered_map<int, Course>& courseTable);
+    unordered_map<int, Course> getCourseTable();
 
 private slots:
 

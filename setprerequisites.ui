@@ -65,30 +65,17 @@ color: black;</string>
 color:black;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="setbtn">
+  <widget class="QPushButton" name="setBtn">
    <property name="geometry">
     <rect>
-     <x>1070</x>
-     <y>520</y>
-     <width>83</width>
-     <height>61</height>
+     <x>1110</x>
+     <y>560</y>
+     <width>80</width>
+     <height>24</height>
     </rect>
    </property>
    <property name="text">
     <string>SET</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>500</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
    </property>
   </widget>
  </widget>

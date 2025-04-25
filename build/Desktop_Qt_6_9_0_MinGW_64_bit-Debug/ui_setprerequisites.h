@@ -23,8 +23,7 @@ public:
     QPushButton *pushButton_2;
     QLineEdit *courseid_input;
     QLineEdit *prerequisites_input;
-    QPushButton *setbtn;
-    QPushButton *pushButton;
+    QPushButton *setBtn;
 
     void setupUi(QDialog *setPrerequisites)
     {
@@ -51,12 +50,9 @@ public:
         prerequisites_input->setGeometry(QRect(420, 390, 601, 51));
         prerequisites_input->setStyleSheet(QString::fromUtf8("border-radius: 15%;\n"
 "color:black;"));
-        setbtn = new QPushButton(setPrerequisites);
-        setbtn->setObjectName("setbtn");
-        setbtn->setGeometry(QRect(1070, 520, 83, 61));
-        pushButton = new QPushButton(setPrerequisites);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(400, 500, 121, 41));
+        setBtn = new QPushButton(setPrerequisites);
+        setBtn->setObjectName("setBtn");
+        setBtn->setGeometry(QRect(1110, 560, 80, 24));
 
         retranslateUi(setPrerequisites);
 
@@ -67,8 +63,7 @@ public:
     {
         setPrerequisites->setWindowTitle(QCoreApplication::translate("setPrerequisites", "Dialog", nullptr));
         pushButton_2->setText(QCoreApplication::translate("setPrerequisites", "BACK", nullptr));
-        setbtn->setText(QCoreApplication::translate("setPrerequisites", "SET", nullptr));
-        pushButton->setText(QCoreApplication::translate("setPrerequisites", "PushButton", nullptr));
+        setBtn->setText(QCoreApplication::translate("setPrerequisites", "SET", nullptr));
     } // retranslateUi
 
 };
