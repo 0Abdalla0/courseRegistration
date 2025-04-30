@@ -2803,7 +2803,9 @@ debug/main.o: D:/qt/projects/courseRegistration/main.cpp D:/QTTT/6.9.0/mingw_64/
 		D:/qt/projects/courseRegistration/signup.h \
 		D:/qt/projects/courseRegistration/course.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QString \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QStringList
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/QStringList \
+		D:/qt/projects/courseRegistration/uploadcourse.h \
+		D:/qt/projects/courseRegistration/setprerequisites.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o D:\qt\projects\courseRegistration\main.cpp
 
 debug/mainwindow.o: D:/qt/projects/courseRegistration/mainwindow.cpp D:/qt/projects/courseRegistration/mainwindow.h \
@@ -3041,7 +3043,8 @@ debug/mainwindow.o: D:/qt/projects/courseRegistration/mainwindow.cpp D:/qt/proje
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QCoreApplication \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QSet \
 		D:/QTTT/6.9.0/mingw_64/include/QtGui/QCloseEvent \
-		D:/qt/projects/courseRegistration/uploadcourse.h
+		D:/qt/projects/courseRegistration/uploadcourse.h \
+		D:/qt/projects/courseRegistration/setprerequisites.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o D:\qt\projects\courseRegistration\mainwindow.cpp
 
 debug/managegrades.o: D:/qt/projects/courseRegistration/managegrades.cpp D:/qt/projects/courseRegistration/managegrades.h \
@@ -3457,7 +3460,10 @@ debug/setprerequisites.o: D:/qt/projects/courseRegistration/setprerequisites.cpp
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QMessageBox \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QTextStream
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/QTextStream \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/QFile \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfile.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfiledevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\setprerequisites.o D:\qt\projects\courseRegistration\setprerequisites.cpp
 
 debug/signup.o: D:/qt/projects/courseRegistration/signup.cpp D:/qt/projects/courseRegistration/signup.h \

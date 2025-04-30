@@ -15,7 +15,8 @@ public:
     explicit setPrerequisites(QWidget *parent = nullptr);
     ~setPrerequisites();
     static unordered_map<int, vector<int>>& getPrerequisitesTable();
-
+    void savePrerequisitesToFile(const QString& filename);
+    void loadPrerequisitesFromFile(const QString& filename);
 private slots:
     void on_backBTN_clicked();
     void on_setBtn_clicked();

@@ -8,7 +8,9 @@ adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)
 {
+    uploadCourse uc;
     ui->setupUi(this);
+    updateCnt(uploadCourse::coursesCnt);
 }
 
 adminPage::~adminPage()

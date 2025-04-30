@@ -10,6 +10,7 @@
 #include <QSet>
 #include <QCloseEvent>
 #include"uploadcourse.h"
+#include"setprerequisites.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -20,14 +21,19 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::closeEvent(QCloseEvent *event) {
     uploadCourse courses;
+    setPrerequisites prerequisite;
+    prerequisite.savePrerequisitesToFile("prerequisites");
     saveStudentsToFile();
     courses.saveCoursesToFile("courses.txt");
+
     QMainWindow::closeEvent(event);
 }
 
 MainWindow::~MainWindow()
 {
     uploadCourse courses;
+    setPrerequisites prerequisite;
+    prerequisite.savePrerequisitesToFile("prerequisites.txt");
     saveStudentsToFile();
     courses.saveCoursesToFile("courses.txt");
     delete ui;
@@ -45,7 +51,6 @@ void MainWindow::on_registerBtn_clicked()
 void MainWindow::loadUsersFromFile()
 {
     QFile file("students.txt");
-
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Error: Unable to open file for reading.";
         return;
