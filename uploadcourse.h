@@ -16,9 +16,8 @@ public:
     ~uploadCourse();
     void saveCoursesToFile(const QString& filename);
     void loadCoursesFromFile(const QString& filename);
-    unordered_map<int, Course> courseTable;
-    //unordered_map<int, Course> getCourseTable(unordered_map<int, Course>& courseTable);
-    unordered_map<int, Course> getCourseTable();
+    static unordered_map<int, Course>& getCourseTable();
+    static int coursesCnt;
 
 private slots:
 

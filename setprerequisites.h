@@ -14,12 +14,10 @@ class setPrerequisites : public QDialog
 public:
     explicit setPrerequisites(QWidget *parent = nullptr);
     ~setPrerequisites();
-    unordered_map<int,Course>* coursePtr;
-    vector <int> programming_course ;
-
+    static unordered_map<int, vector<int>>& getPrerequisitesTable();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_backBTN_clicked();
     void on_setBtn_clicked();
 
 private:

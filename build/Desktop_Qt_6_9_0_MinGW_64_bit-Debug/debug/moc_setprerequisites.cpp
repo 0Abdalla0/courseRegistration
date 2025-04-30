@@ -39,13 +39,13 @@ template <> constexpr inline auto setPrerequisites::qt_create_metaobjectdata<qt_
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "setPrerequisites",
-        "on_pushButton_2_clicked",
+        "on_backBTN_clicked",
         "",
         "on_setBtn_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'on_pushButton_2_clicked'
+        // Slot 'on_backBTN_clicked'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_setBtn_clicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
@@ -72,7 +72,7 @@ void setPrerequisites::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
     auto *_t = static_cast<setPrerequisites *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_pushButton_2_clicked(); break;
+        case 0: _t->on_backBTN_clicked(); break;
         case 1: _t->on_setBtn_clicked(); break;
         default: ;
         }

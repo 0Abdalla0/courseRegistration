@@ -98,6 +98,7 @@ public:
         creditHours->setObjectName("creditHours");
         creditHours->setGeometry(QRect(270, 600, 81, 31));
         creditHours->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"background-color: rgb(255, 255, 255);\n"
 "font: 18pt \"Segoe UI\";\n"
 "border:none;\n"
 "border-radius:15%;\n"

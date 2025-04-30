@@ -18,13 +18,11 @@ uploadCourse::uploadCourse(QWidget *parent)
 {
     ui->setupUi(this);
 }
-
 uploadCourse::~uploadCourse()
 {
     delete ui;
 }
-unordered_map<int, Course> courseTable;
-
+int uploadCourse::coursesCnt = 0;
 void uploadCourse::on_uploadBtn_clicked()
 {
     QString courseIDString = ui->codetxt->text();
@@ -36,32 +34,30 @@ void uploadCourse::on_uploadBtn_clicked()
     QString creditHours = ui->creditHours->text();
     int hours = creditHours.toInt();
     static QRegularExpression emailRegex(R"(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$)");
+    bool foundID = (uploadCourse::getCourseTable().find(courseID) != uploadCourse::getCourseTable().end());
+    for (const auto& [id, course] : uploadCourse::getCourseTable()) {
+        if (course.getTitle() == courseName) {
+            foundID = true;
+            break;
+        }
+    }
 
     if (courseIDString.isEmpty() || courseName.isEmpty() || courseSyllabus.isEmpty()
         || courseSyllabus.isEmpty() || instructorName.isEmpty() || instructorEmail.isEmpty()) {
-        QMessageBox::warning(this, "FAILURE", "Missing INFO.");
+        QMessageBox::warning(this, "Empty Input ", "Missing INFO.");
     } else if (hours < 1 || hours > 4) {
-        QMessageBox::warning(this, "FAILURE", "Credit Hour Value is  Out OF Bounds");
+        QMessageBox::warning(this, "Wrong input", "Credit Hour Value is  Out OF Bounds");
     } else if (!emailRegex.match(instructorEmail).hasMatch()) {
         QMessageBox::warning(this, "Invalid Email", "Please enter a valid email address.");
         return;
-    } else {
+    }else if(foundID){
+        QMessageBox::warning(this, "Duplicate ID", "THIS COURSE ID OR COURSE NAME ARE ALREADY IN THE SYSTEM !!!");
+    }
+    else {
         QMessageBox::information(this, "SUCCESSFUL", "SUCCESSFULLY UPLOADED COURSE");
         Course course(courseID, courseName, instructorName, instructorEmail, courseSyllabus, hours);
-        courseTable[course.getId()] = course;
-        unordered_map<int, Course>::iterator it = courseTable.begin();
-        while (it != courseTable.end()) {
-            cout << (it->second.getId()) << endl;
-            cout << (it->second.getInstructorName().toStdString()) << endl;
-            cout << (it->second.getInstructorEmail().toStdString()) << endl;
-            cout << (it->second.getSyllabus().toStdString()) << endl;
-            cout << (it->second.getCreditHours()) << endl;
-            cout << (it->second.cnt) << endl;
-            cout << "/////////////////////////////////////////////////////////////////\n";
-            (it->second.cnt)++;
-            it++;
-        }
-
+        uploadCourse::getCourseTable()[course.getId()] = course;
+        coursesCnt++;
         ui->codetxt->clear();
         ui->nametxt->clear();
         ui->syllabustxt->clear();
@@ -79,7 +75,7 @@ void uploadCourse::saveCoursesToFile(const QString& filename)
     }
 
     QTextStream out(&file);
-    for (const auto& [id, course] : courseTable) {
+    for (const auto& [id, course] : uploadCourse::getCourseTable()) {
         out << id << ","
             << course.getTitle() << ","
             << course.getInstructorName() << ","
@@ -112,7 +108,7 @@ void uploadCourse::loadCoursesFromFile(const QString& filename)
             int credit = parts[5].toInt();
 
             Course course(id, name, instName, instEmail, syllabus, credit);
-            courseTable[id] = course;
+            uploadCourse::getCourseTable()[id] = course;
         }
     }
 
@@ -124,8 +120,10 @@ void uploadCourse::on_backBtn_clicked()
     this->hide();
     adminPage *admin = new adminPage();
     admin->show();
+    admin->updateCnt(coursesCnt);
 }
-unordered_map<int, Course> uploadCourse::getCourseTable() {
-    return this->courseTable;
+unordered_map<int, Course>& uploadCourse::getCourseTable(){
+    static unordered_map<int, Course> courseTable;
+    return courseTable;
 }
 

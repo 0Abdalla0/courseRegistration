@@ -154,6 +154,7 @@ color: black;
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
+background-color: rgb(255, 255, 255);
 font: 18pt &quot;Segoe UI&quot;;
 border:none;
 border-radius:15%;
