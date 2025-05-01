@@ -1,24 +1,22 @@
 #include "setprerequisites.h"
-#include "ui_setprerequisites.h"
-#include"adminPage.h"
-#include "uploadcourse.h"
-#include "course.h"
-#include <stack>
+#include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
+#include "adminPage.h"
+#include "course.h"
+#include "ui_setprerequisites.h"
+#include "uploadcourse.h"
+#include <stack>
 #include <vector>
-#include<QFile>
 setPrerequisites::setPrerequisites(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::setPrerequisites)
 
 {
-
     ui->setupUi(this);
-    for (const auto& [id, course] : uploadCourse::getCourseTable()) {
+    for (const auto &[id, course] : uploadCourse::getCourseTable()) {
         ui->coursescmb->addItem(QString::number(id));
     }
-
 }
 
 setPrerequisites::~setPrerequisites()
@@ -34,26 +32,25 @@ void setPrerequisites::on_backBTN_clicked()
     admin->updateCnt(uploadCourse::coursesCnt);
 }
 
-
 void setPrerequisites::on_setBtn_clicked()
 {
     QString preTitle = ui->prerequisites_input->text();
     int preID = preTitle.toInt();
-    QString courseid =ui->coursescmb->currentText();
-    int id =courseid.toInt();
-    if(id == preID){
-        QMessageBox::warning(this,"wrong input","Prerequisite id can not be course id");
-    }else{
-        QMessageBox::information(this,"SUCCESS SETTING","Prerequisite is susccessful setted");
+    QString courseid = ui->coursescmb->currentText();
+    int id = courseid.toInt();
+    if (id == preID) {
+        QMessageBox::warning(this, "wrong input", "Prerequisite id can not be course id");
+    } else {
+        QMessageBox::information(this, "SUCCESS SETTING", "Prerequisite is susccessful setted");
         setPrerequisites::getPrerequisitesTable()[id].push_back(preID);
     }
-
 }
-map<int, vector<int>>& setPrerequisites::getPrerequisitesTable(){
+map<int, vector<int>> &setPrerequisites::getPrerequisitesTable()
+{
     static map<int, vector<int>> prerequisitesTable;
     return prerequisitesTable;
 }
-void setPrerequisites::savePrerequisitesToFile(const QString& filename)
+void setPrerequisites::savePrerequisitesToFile(const QString &filename)
 {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
@@ -64,9 +61,9 @@ void setPrerequisites::savePrerequisitesToFile(const QString& filename)
     QTextStream out(&file);
 
     // For each course with prerequisites...
-    for (const auto& [courseId, preList] : getPrerequisitesTable()) {
+    for (const auto &[courseId, preList] : getPrerequisitesTable()) {
         if (preList.empty())
-            continue;  // skip courses with no prerequisites
+            continue; // skip courses with no prerequisites
 
         // Write the course ID...
         out << courseId;
@@ -82,7 +79,7 @@ void setPrerequisites::savePrerequisitesToFile(const QString& filename)
 
     file.close();
 }
-void setPrerequisites::loadPrerequisitesFromFile(const QString& filename)
+void setPrerequisites::loadPrerequisitesFromFile(const QString &filename)
 {
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {

@@ -1,16 +1,17 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <student.h>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
+#include <QCloseEvent>
+#include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
-#include <QCoreApplication>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QSet>
-#include <QCloseEvent>
-#include"uploadcourse.h"
-#include"setprerequisites.h"
+#include "setprerequisites.h"
+#include "ui_mainwindow.h"
+#include "uploadcourse.h"
+#include <student.h>
+#include"managegrades.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -19,9 +20,12 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(1366, 768); // Set your desired width and height
 }
 
-void MainWindow::closeEvent(QCloseEvent *event) {
+void MainWindow::closeEvent(QCloseEvent *event)
+{
     uploadCourse courses;
     setPrerequisites prerequisite;
+    manageGrades grades;
+    grades.saveToCsv("students'grades.csv");
     prerequisite.savePrerequisitesToFile("prerequisites");
     saveStudentsToFile();
     courses.saveCoursesToFile("courses.txt");
@@ -33,6 +37,8 @@ MainWindow::~MainWindow()
 {
     uploadCourse courses;
     setPrerequisites prerequisite;
+    manageGrades grades;
+    grades.saveToCsv("students'grades.csv");
     prerequisite.savePrerequisitesToFile("prerequisites.txt");
     saveStudentsToFile();
     courses.saveCoursesToFile("courses.txt");
@@ -44,7 +50,7 @@ void MainWindow::on_registerbtn_windowIconChanged(const QIcon &icon) {}
 void MainWindow::on_registerBtn_clicked()
 {
     this->hide();
-    signupWindow = new signup(this, &students);
+    signupWindow = new signup(this);
     signupWindow->show();
 }
 
@@ -63,7 +69,7 @@ void MainWindow::loadUsersFromFile()
 
         if (parts.size() == 4) {
             student newStudent(parts[0], parts[1], parts[2], parts[3]);
-            students.append(newStudent);
+            MainWindow::getStudents().append(newStudent);
         }
     }
     file.close();
@@ -71,18 +77,19 @@ void MainWindow::loadUsersFromFile()
 
 void MainWindow::saveStudentsToFile() const
 {
-    const_cast<MainWindow*>(this)->removeDuplicateStudents();
+    const_cast<MainWindow *>(this)->removeDuplicateStudents();
     QFile file("students.txt");
 
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {return;}
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+        return;
+    }
 
     QTextStream out(&file);
-    for (const student &stu : students) {
-        out
-            << stu.getName()     << ","
-            << stu.getId()       << ","
-            << stu.getCgpa()     << ","
-            << stu.getPassword() << "\n------------------------------------------------------------------------------------------------\n";
+    for (const student &stu : MainWindow::getStudents()) {
+        out << stu.getName() << "," << stu.getId() << "," << stu.getCgpa() << ","
+            << stu.getPassword()
+            << "\n---------------------------------------------------------------------------------"
+               "---------------\n";
     }
 }
 
@@ -92,19 +99,24 @@ void MainWindow::removeDuplicateStudents()
     QVector<student> unique;
     unique.reserve(students.size());
 
-    for (const student &s : students) {
+    for (const student &s : MainWindow::getStudents()) {
         if (!seenIds.contains(s.getId())) {
             seenIds.insert(s.getId());
             unique.append(s);
         }
     }
 
-    students = std::move(unique);
+    MainWindow::getStudents() = std::move(unique);
 }
 
 void MainWindow::on_signInBtn_clicked()
 {
     this->hide();
-    loginWin = new loginWindow(this, &students);
+    loginWin = new loginWindow(this);
     loginWin->show();
+}
+QList<student> &MainWindow::getStudents()
+{
+    static QList<student> students;
+    return students ;
 }

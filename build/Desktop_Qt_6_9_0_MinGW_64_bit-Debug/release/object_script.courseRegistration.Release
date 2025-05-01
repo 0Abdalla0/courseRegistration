@@ -4,7 +4,6 @@ release/checkprerequisites.o
 release/course.o
 release/loginwindow.o
 release/main.o
-release/mainwindow.o
 release/managegrades.o
 release/registercourse.o
 release/setprerequisites.o

@@ -13,7 +13,7 @@ class loginWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit loginWindow(QWidget *parent = nullptr, QList<student> *studentList = nullptr);
+    explicit loginWindow(QWidget *parent = nullptr);
     ~loginWindow();
 
 private slots:

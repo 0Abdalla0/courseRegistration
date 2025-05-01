@@ -1,16 +1,16 @@
 #include "checkprerequisites.h"
-#include "ui_checkprerequisites.h"
-#include"setprerequisites.h"
-#include "ui_setprerequisites.h"
-#include"adminPage.h"
-#include "uploadcourse.h"
-#include "course.h"
-#include <stack>
+#include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
+#include "adminPage.h"
+#include "course.h"
+#include "setprerequisites.h"
+#include "studentpage.h"
+#include "ui_checkprerequisites.h"
+#include "ui_setprerequisites.h"
+#include "uploadcourse.h"
+#include <stack>
 #include <vector>
-#include<QFile>
-#include"studentpage.h"
 
 checkprerequisites::checkprerequisites(QWidget *parent)
     : QDialog(parent)
@@ -31,7 +31,6 @@ checkprerequisites::checkprerequisites(QWidget *parent)
     QString courseid = ui->courseID_Cmb->itemText(0);
     int id = courseid.toInt();
 
-
     // Find prerequisites for selected course
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
         if (id == getPreit->first) {
@@ -45,7 +44,6 @@ checkprerequisites::checkprerequisites(QWidget *parent)
     }
 }
 
-
 checkprerequisites::~checkprerequisites()
 {
     delete ui;
@@ -57,4 +55,3 @@ void checkprerequisites::on_backBTN_clicked()
     studentPage *stdPage = new studentPage();
     stdPage->show();
 }
-

@@ -2,10 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "course.h"
 #include <loginwindow.h>
 #include <signup.h>
 #include <student.h>
-#include"course.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -23,7 +23,7 @@ public:
     void loadUsersFromFile();
     void saveStudentsToFile() const;
     void removeDuplicateStudents();
-
+    static QList<student> &getStudents();
 private slots:
     void on_registerbtn_windowIconChanged(const QIcon &icon);
 

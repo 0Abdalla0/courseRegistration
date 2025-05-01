@@ -15,7 +15,7 @@ class signup : public QDialog
     Q_OBJECT
 
 public:
-    explicit signup(QWidget *parent = nullptr, QList<student> *studentList = nullptr);
+    explicit signup(QWidget *parent = nullptr);
     ~signup();
 
 private slots:

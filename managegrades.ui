@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1395</width>
+    <width>1364</width>
     <height>728</height>
    </rect>
   </property>
@@ -36,17 +36,79 @@ border-radius:15%;</string>
     <string>ADD</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="studIDtxt">
+  <widget class="QComboBox" name="courseNameCmb">
    <property name="geometry">
     <rect>
      <x>420</x>
+     <y>350</y>
+     <width>601</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:1px solid black;
+border-radius:15%;
+color:black;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="studIdCmb">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
      <y>240</y>
-     <width>581</width>
+     <width>601</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:1px solid black;
+border-radius:15%;
+color:black;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="gradeCmb">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>460</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:1px solid black;
+border-radius:15%;
+color:black;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backBtn">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>680</y>
+     <width>80</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/imgs/images/white.jpg);</string>
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+color:black;
+border:none;
+font: 18pt &quot;Segoe UI&quot;;
+border-radius:15%;
+</string>
+   </property>
+   <property name="text">
+    <string>BACK</string>
    </property>
   </widget>
  </widget>

@@ -1,13 +1,13 @@
 #include "loginwindow.h"
 #include <QMessageBox>
 #include "adminpage.h"
+#include "studentpage.h"
 #include "ui_loginwindow.h"
+#include"mainwindow.h"
 #include <signup.h>
-#include"studentpage.h"
-loginWindow::loginWindow(QWidget *parent, QList<student> *studentList)
+loginWindow::loginWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::loginWindow)
-    , students(studentList)
 {
     ui->setupUi(this);
 }
@@ -20,7 +20,7 @@ loginWindow::~loginWindow()
 void loginWindow::on_DontHaveBtn_clicked()
 {
     this->hide();
-    signup *signUpWin = new signup(this, students);
+    signup *signUpWin = new signup(this);
     signUpWin->show();
 }
 
@@ -35,7 +35,7 @@ void loginWindow::on_SignInBtn_clicked()
     }
 
     bool userFound = false;
-    for (const student &s : *students) {
+    for (const student &s :MainWindow::getStudents()) {
         if (s.getId() == enteredID) {
             userFound = true;
             if (s.getPassword() == enteredPassword) {
@@ -55,10 +55,9 @@ void loginWindow::on_SignInBtn_clicked()
         admin->show();
     } else if (!userFound) {
         QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
-    }else {
+    } else {
         this->hide();
         studentPage *stdPage = new studentPage();
         stdPage->show();
     }
-
 }

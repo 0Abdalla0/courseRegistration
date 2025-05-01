@@ -1,4 +1,5 @@
 #include "uploadcourse.h"
+#include <QFile>
 #include <QMessageBox>
 #include "adminpage.h"
 #include "course.h"
@@ -7,7 +8,6 @@
 #include <map>
 #include <unordered_map>
 #include <vector>
-#include<QFile>
 using namespace std;
 //101->programming
 //201 -> math
@@ -34,8 +34,9 @@ void uploadCourse::on_uploadBtn_clicked()
     QString creditHours = ui->creditHours->text();
     int hours = creditHours.toInt();
     static QRegularExpression emailRegex(R"(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$)");
-    bool foundID = (uploadCourse::getCourseTable().find(courseID) != uploadCourse::getCourseTable().end());
-    for (const auto& [id, course] : uploadCourse::getCourseTable()) {
+    bool foundID = (uploadCourse::getCourseTable().find(courseID)
+                    != uploadCourse::getCourseTable().end());
+    for (const auto &[id, course] : uploadCourse::getCourseTable()) {
         if (course.getTitle() == courseName) {
             foundID = true;
             break;
@@ -50,10 +51,11 @@ void uploadCourse::on_uploadBtn_clicked()
     } else if (!emailRegex.match(instructorEmail).hasMatch()) {
         QMessageBox::warning(this, "Invalid Email", "Please enter a valid email address.");
         return;
-    }else if(foundID){
-        QMessageBox::warning(this, "Duplicate ID", "THIS COURSE ID OR COURSE NAME ARE ALREADY IN THE SYSTEM !!!");
-    }
-    else {
+    } else if (foundID) {
+        QMessageBox::warning(this,
+                             "Duplicate ID",
+                             "THIS COURSE ID OR COURSE NAME ARE ALREADY IN THE SYSTEM !!!");
+    } else {
         QMessageBox::information(this, "SUCCESSFUL", "SUCCESSFULLY UPLOADED COURSE");
         Course course(courseID, courseName, instructorName, instructorEmail, courseSyllabus, hours);
         uploadCourse::getCourseTable()[course.getId()] = course;
@@ -66,7 +68,7 @@ void uploadCourse::on_uploadBtn_clicked()
         ui->creditHours->clear();
     }
 }
-void uploadCourse::saveCoursesToFile(const QString& filename)
+void uploadCourse::saveCoursesToFile(const QString &filename)
 {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
@@ -75,18 +77,16 @@ void uploadCourse::saveCoursesToFile(const QString& filename)
     }
 
     QTextStream out(&file);
-    for (const auto& [id, course] : uploadCourse::getCourseTable()) {
-        out << id << ","
-            << course.getTitle() << ","
-            << course.getInstructorName() << ","
-            << course.getInstructorEmail() << ","
-            << course.getSyllabus() << ","
-            << course.getCreditHours() << "\n-----------------------------------------------------------------\n";
+    for (const auto &[id, course] : uploadCourse::getCourseTable()) {
+        out << id << "," << course.getTitle() << "," << course.getInstructorName() << ","
+            << course.getInstructorEmail() << "," << course.getSyllabus() << ","
+            << course.getCreditHours()
+            << "\n-----------------------------------------------------------------\n";
     }
 
     file.close();
 }
-void uploadCourse::loadCoursesFromFile(const QString& filename)
+void uploadCourse::loadCoursesFromFile(const QString &filename)
 {
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -122,8 +122,8 @@ void uploadCourse::on_backBtn_clicked()
     admin->show();
     admin->updateCnt(coursesCnt);
 }
-unordered_map<int, Course>& uploadCourse::getCourseTable(){
+unordered_map<int, Course> &uploadCourse::getCourseTable()
+{
     static unordered_map<int, Course> courseTable;
     return courseTable;
 }
-

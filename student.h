@@ -13,20 +13,22 @@ public:
     QString getCgpa() const;
     QString getPassword() const;
 
-    QJsonObject toJson() const {
+    QJsonObject toJson() const
+    {
         QJsonObject obj;
-        obj["name"]     = name;
-        obj["id"]       = id;
-        obj["cgpa"]     = cgpa;
+        obj["name"] = name;
+        obj["id"] = id;
+        obj["cgpa"] = cgpa;
         obj["password"] = password;
         return obj;
     }
 
-    static student fromJson(const QJsonObject &obj) {
+    static student fromJson(const QJsonObject &obj)
+    {
         student s;
-        s.name     = obj["name"].toString();
-        s.id       = obj["id"].toString();
-        s.cgpa     = obj["cgpa"].toString();
+        s.name = obj["name"].toString();
+        s.id = obj["id"].toString();
+        s.cgpa = obj["cgpa"].toString();
         s.password = obj["password"].toString();
         return s;
     }

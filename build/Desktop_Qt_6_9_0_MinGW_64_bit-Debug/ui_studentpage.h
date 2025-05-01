@@ -25,7 +25,7 @@ public:
     {
         if (studentPage->objectName().isEmpty())
             studentPage->setObjectName("studentPage");
-        studentPage->resize(1396, 844);
+        studentPage->resize(1396, 720);
         studentPage->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/8.jpg);"));
         pushButton_2 = new QPushButton(studentPage);
         pushButton_2->setObjectName("pushButton_2");

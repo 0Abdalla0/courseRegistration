@@ -3,11 +3,10 @@
 #include <QMessageBox>
 #include <QTextStream>
 #include "ui_signup.h"
-
-signup::signup(QWidget *parent, QList<student> *studentList)
+#include"mainwindow.h"
+signup::signup(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::signup)
-    , students(studentList)
 {
     ui->setupUi(this);
 }
@@ -37,7 +36,7 @@ void signup::on_pushButton_2_clicked()
     }
 
     bool idExists = false;
-    for (const student &s : *students) {
+    for (const student &s : MainWindow::getStudents()) {
         if (s.getId() == stdID) {
             QMessageBox::warning(this, "Duplicate", "A user with this ID already exists.");
             return;
@@ -45,7 +44,7 @@ void signup::on_pushButton_2_clicked()
     }
 
     student newStudent(name, stdID, cgpa, password);
-    students->append(newStudent);
+    MainWindow::getStudents().append(newStudent);
 
     QMessageBox::information(this, "Success", "Account created successfully!");
 
@@ -55,13 +54,13 @@ void signup::on_pushButton_2_clicked()
     ui->lineEdit_pass->clear();
     ui->lineEdit_confirmPass->clear();
     this->hide();
-    loginWin = new loginWindow(this, students);
+    loginWin = new loginWindow(this);
     loginWin->show();
 }
 
 void signup::on_pushButton_clicked()
 {
     this->hide();
-    loginWin = new loginWindow(this, students);
+    loginWin = new loginWindow(this);
     loginWin->show();
 }

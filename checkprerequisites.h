@@ -18,7 +18,6 @@ public:
 private slots:
     void on_backBTN_clicked();
 
-
 private:
     Ui::checkprerequisites *ui;
 };

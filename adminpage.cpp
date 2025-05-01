@@ -1,9 +1,10 @@
 #include "adminpage.h"
 #include "course.h"
 #include "mainwindow.h"
+#include "setprerequisites.h"
 #include "ui_adminpage.h"
 #include "uploadcourse.h"
-#include"setprerequisites.h"
+#include"managegrades.h"
 adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)
@@ -44,5 +45,12 @@ void adminPage::on_pushButton_3_clicked()
     setPrerequisites *setPre = new setPrerequisites();
     //uc->loadCoursesFromFile("courses.txt");
     setPre->show();
+}
+
+void adminPage::on_manageGrades_clicked()
+{
+    this->hide();
+    manageGrades* mg =new manageGrades();
+    mg->show();
 }
 

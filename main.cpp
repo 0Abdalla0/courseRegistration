@@ -1,8 +1,9 @@
 #include <QApplication>
 #include "mainwindow.h"
-#include"uploadcourse.h"
-#include"setprerequisites.h"
+#include "setprerequisites.h"
+#include "uploadcourse.h"
 #include <iostream>
+#include"managegrades.h"
 using namespace std;
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
     uploadCourse courses;
     courses.loadCoursesFromFile("courses.txt");
     setPrerequisites prerequisites;
+    manageGrades grades;
+    grades.loadFromCsv("students'grades.csv");
     prerequisites.loadPrerequisitesFromFile("prerequisites.txt");
     w.show();
     return a.exec();

@@ -4,7 +4,6 @@ debug/checkprerequisites.o
 debug/course.o
 debug/loginwindow.o
 debug/main.o
-debug/mainwindow.o
 debug/managegrades.o
 debug/registercourse.o
 debug/setprerequisites.o

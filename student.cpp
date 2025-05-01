@@ -10,7 +10,7 @@ student::student(const QString &name,
     , password(password)
 {}
 
-student::student(){}
+student::student() {}
 
 QString student::getName() const
 {
