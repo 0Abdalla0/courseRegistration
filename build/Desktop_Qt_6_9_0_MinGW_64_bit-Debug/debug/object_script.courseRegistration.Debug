@@ -1,5 +1,6 @@
 debug/admin.o
 debug/adminpage.o
+debug/checkprerequisites.o
 debug/course.o
 debug/loginwindow.o
 debug/main.o
@@ -13,6 +14,7 @@ debug/studentpage.o
 debug/uploadcourse.o
 debug/qrc_img.o
 debug/moc_adminpage.o
+debug/moc_checkprerequisites.o
 debug/moc_loginwindow.o
 debug/moc_mainwindow.o
 debug/moc_managegrades.o

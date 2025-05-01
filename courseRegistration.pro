@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     admin.cpp \
     adminpage.cpp \
+    checkprerequisites.cpp \
     course.cpp \
     loginwindow.cpp \
     main.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     admin.h \
     adminpage.h \
+    checkprerequisites.h \
     course.h \
     loginwindow.h \
     mainwindow.h \
@@ -39,6 +41,7 @@ HEADERS += \
 
 FORMS += \
     adminpage.ui \
+    checkprerequisites.ui \
     loginwindow.ui \
     mainwindow.ui \
     managegrades.ui \

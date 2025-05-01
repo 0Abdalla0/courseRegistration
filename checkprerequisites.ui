@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>checkprerequisites</class>
+ <widget class="QDialog" name="checkprerequisites">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1363</width>
+    <height>672</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/imgs/images/checkPrerequitis.jpg);</string>
+  </property>
+  <widget class="QComboBox" name="courseID_Cmb">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>280</y>
+     <width>591</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:1px solid black;
+border-radius:15%;
+color:black;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="prerequisetsID_Cmb">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>410</y>
+     <width>591</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:1px solid black;
+border-radius:15%;
+color:black;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
