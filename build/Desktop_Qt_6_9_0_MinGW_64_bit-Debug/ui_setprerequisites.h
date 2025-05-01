@@ -56,35 +56,12 @@ public:
         coursescmb = new QComboBox(setPrerequisites);
         coursescmb->setObjectName("coursescmb");
         coursescmb->setGeometry(QRect(430, 270, 581, 41));
-        coursescmb->setStyleSheet(QString::fromUtf8("QComboBox {\n"
-"    border: 1px solid #888;       /* light gray border */\n"
-"    border-radius: 6px;           /* rounded corners */\n"
-"    padding: 4px 30px 4px 8px;    /* top/right/bottom/left */\n"
-"    font-size: 14px;              /* larger text */\n"
-"    background-color: #fff;       /* white background */\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 24px;\n"
-"    border-left: 1px solid #888;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"    image: url(:/icons/arrow-down.svg);  /* your own icon */\n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"    border: 1px solid #888;\n"
-"    selection-background-color: #007ACC;  /* blue highlight */\n"
-"    selection-color: white;\n"
-"    padding: 2px;\n"
-"    outline: none;\n"
-"}\n"
-""));
+        coursescmb->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"background-image: url(:/imgs/images/white.jpg);\n"
+"font: 18pt \"Segoe UI\";\n"
+"border:1px solid black;\n"
+"border-radius:15%;\n"
+"color:black;"));
 
         retranslateUi(setPrerequisites);
 

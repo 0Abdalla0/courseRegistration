@@ -80,35 +80,12 @@ border-radius:15%;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QComboBox {
-    border: 1px solid #888;       /* light gray border */
-    border-radius: 6px;           /* rounded corners */
-    padding: 4px 30px 4px 8px;    /* top/right/bottom/left */
-    font-size: 14px;              /* larger text */
-    background-color: #fff;       /* white background */
-}
-
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 24px;
-    border-left: 1px solid #888;
-}
-
-QComboBox::down-arrow {
-    image: url(:/icons/arrow-down.svg);  /* your own icon */
-    width: 12px;
-    height: 12px;
-}
-
-QComboBox QAbstractItemView {
-    border: 1px solid #888;
-    selection-background-color: #007ACC;  /* blue highlight */
-    selection-color: white;
-    padding: 2px;
-    outline: none;
-}
-</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:1px solid black;
+border-radius:15%;
+color:black;</string>
    </property>
   </widget>
  </widget>
