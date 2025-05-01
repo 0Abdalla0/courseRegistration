@@ -14,7 +14,7 @@ class setPrerequisites : public QDialog
 public:
     explicit setPrerequisites(QWidget *parent = nullptr);
     ~setPrerequisites();
-    static unordered_map<int, vector<int>>& getPrerequisitesTable();
+    static map<int, vector<int>>& getPrerequisitesTable();
     void savePrerequisitesToFile(const QString& filename);
     void loadPrerequisitesFromFile(const QString& filename);
 private slots:

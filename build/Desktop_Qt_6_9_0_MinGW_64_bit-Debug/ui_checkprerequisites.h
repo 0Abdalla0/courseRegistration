@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -21,6 +22,7 @@ class Ui_checkprerequisites
 public:
     QComboBox *courseID_Cmb;
     QComboBox *prerequisetsID_Cmb;
+    QPushButton *backBTN;
 
     void setupUi(QDialog *checkprerequisites)
     {
@@ -46,6 +48,15 @@ public:
 "border:1px solid black;\n"
 "border-radius:15%;\n"
 "color:black;"));
+        backBTN = new QPushButton(checkprerequisites);
+        backBTN->setObjectName("backBTN");
+        backBTN->setGeometry(QRect(50, 600, 101, 41));
+        backBTN->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"color:black;\n"
+"border:none;\n"
+"font: 18pt \"Segoe UI\";\n"
+"border-radius:15%;\n"
+""));
 
         retranslateUi(checkprerequisites);
 
@@ -55,6 +66,7 @@ public:
     void retranslateUi(QDialog *checkprerequisites)
     {
         checkprerequisites->setWindowTitle(QCoreApplication::translate("checkprerequisites", "Dialog", nullptr));
+        backBTN->setText(QCoreApplication::translate("checkprerequisites", "BACK", nullptr));
     } // retranslateUi
 
 };

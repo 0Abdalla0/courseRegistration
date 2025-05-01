@@ -3,6 +3,7 @@
 #include "adminpage.h"
 #include "ui_loginwindow.h"
 #include <signup.h>
+#include"studentpage.h"
 loginWindow::loginWindow(QWidget *parent, QList<student> *studentList)
     : QDialog(parent)
     , ui(new Ui::loginWindow)
@@ -54,5 +55,10 @@ void loginWindow::on_SignInBtn_clicked()
         admin->show();
     } else if (!userFound) {
         QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
+    }else {
+        this->hide();
+        studentPage *stdPage = new studentPage();
+        stdPage->show();
     }
+
 }

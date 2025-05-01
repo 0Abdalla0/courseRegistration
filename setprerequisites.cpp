@@ -49,8 +49,8 @@ void setPrerequisites::on_setBtn_clicked()
     }
 
 }
-unordered_map<int, vector<int>>& setPrerequisites::getPrerequisitesTable(){
-    static unordered_map<int, vector<int>> prerequisitesTable;
+map<int, vector<int>>& setPrerequisites::getPrerequisitesTable(){
+    static map<int, vector<int>> prerequisitesTable;
     return prerequisitesTable;
 }
 void setPrerequisites::savePrerequisitesToFile(const QString& filename)

@@ -15,6 +15,10 @@ public:
     explicit checkprerequisites(QWidget *parent = nullptr);
     ~checkprerequisites();
 
+private slots:
+    void on_backBTN_clicked();
+
+
 private:
     Ui::checkprerequisites *ui;
 };
