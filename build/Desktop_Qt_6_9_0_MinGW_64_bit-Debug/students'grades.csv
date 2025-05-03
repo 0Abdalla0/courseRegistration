@@ -1,6 +1,3 @@
-StudentID,CourseID,Grade
-7,asdadsas,B
-7,aadsd,D+
-7,adds,A
-7,ziad,A+
-10,adds,A
+Student ID,Course Name,Grade
+4,ziad,D
+7,adds,C-

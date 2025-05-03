@@ -61,12 +61,12 @@ using namespace std;
         }
 
         QTextStream out(&file);
-        out << "StudentID,CourseID,Grade\n";
+        out << "Student ID,Course Name,Grade\n";
 
         const auto& grades = manageGrades::getGrades();
         for (const auto& [stuId, courses] : grades) {
-            for (const auto& [courseId, grade] : courses) {
-                out << stuId << "," << courseId << "," << grade << "\n";
+            for (const auto& [courseName, grade] : courses) {
+                out << stuId << "," << courseName << "," << grade << "\n";
             }
         }
 
@@ -92,10 +92,10 @@ using namespace std;
             int stuId = parts[0].toInt(&ok);
             if (!ok) continue;
 
-            QString courseId = parts[1];  // CourseID is a QString
+            QString courseName = parts[1];
             QString grade = parts[2];
 
-            manageGrades::getGrades()[stuId][courseId] = grade;
+            manageGrades::getGrades()[stuId][courseName] = grade;
         }
 
         file.close();
