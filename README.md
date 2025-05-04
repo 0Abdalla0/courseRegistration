@@ -1,1 +1,1 @@
-# courseRegistration
+# course Registration
