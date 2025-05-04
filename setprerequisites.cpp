@@ -8,6 +8,7 @@
 #include "uploadcourse.h"
 #include <stack>
 #include <vector>
+using namespace std;
 setPrerequisites::setPrerequisites(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::setPrerequisites)
@@ -35,16 +36,48 @@ void setPrerequisites::on_backBTN_clicked()
 void setPrerequisites::on_setBtn_clicked()
 {
     QString preTitle = ui->prerequisites_input->text();
-    int preID = preTitle.toInt();
+    bool isNumberPre;
+    int preID = preTitle.toInt(&isNumberPre);
+
     QString courseid = ui->coursescmb->currentText();
-    int id = courseid.toInt();
-    if (id == preID) {
-        QMessageBox::warning(this, "wrong input", "Prerequisite id can not be course id");
-    } else {
-        QMessageBox::information(this, "SUCCESS SETTING", "Prerequisite is susccessful setted");
-        setPrerequisites::getPrerequisitesTable()[id].push_back(preID);
+    bool isNumberCourse;
+    int id = courseid.toInt(&isNumberCourse);
+
+    if (!isNumberPre || !isNumberCourse) {
+        QMessageBox::warning(this, "Invalid input", "Course ID and prerequisite must be valid numbers.");
+        return;
     }
+
+    if (id == preID) {
+        QMessageBox::warning(this, "Wrong input", "A course cannot be its own prerequisite.");
+        return;
+    }
+
+    unordered_map<int,Course> courseTable = uploadCourse::getCourseTable();
+    if (courseTable.find(id) == courseTable.end()) {
+        QMessageBox::warning(this, "Invalid Course", "Selected course does not exist.");
+        return;
+    }
+    if(preID == 0)
+    {
+         QMessageBox::warning(this, "NO Prerequisite ?", "You will not add prerequisite to this course ok?");
+    }
+    if (courseTable.find(preID) == courseTable.end() && preID!=0) {
+        QMessageBox::warning(this, "Invalid Prerequisite", "Prerequisite course ID does not exist.");
+        return;
+    }
+
+    if (std::find(setPrerequisites::getPrerequisitesTable()[id].begin(), setPrerequisites::getPrerequisitesTable()[id].end(), preID) != setPrerequisites::getPrerequisitesTable()[id].end()) {
+        QMessageBox::information(this, "Duplicate", "This prerequisite is already added.");
+        return;
+    }
+
+    // All checks passed
+    setPrerequisites::getPrerequisitesTable()[id].push_back(preID);
+    QMessageBox::information(this, "Success", "Prerequisite successfully set.");
 }
+
+
 map<int, vector<int>> &setPrerequisites::getPrerequisitesTable()
 {
     static map<int, vector<int>> prerequisitesTable;
@@ -61,7 +94,7 @@ void setPrerequisites::savePrerequisitesToFile(const QString &filename)
     QTextStream out(&file);
 
     // For each course with prerequisites...
-    for (const auto &[courseId, preList] : getPrerequisitesTable()) {
+    for (const auto &[courseId, preList] : setPrerequisites::getPrerequisitesTable()) {
         if (preList.empty())
             continue; // skip courses with no prerequisites
 
@@ -69,7 +102,7 @@ void setPrerequisites::savePrerequisitesToFile(const QString &filename)
         out << courseId;
 
         // ...then each prereq ID, comma-separated
-        for (int i = 0; i < preList.size(); ++i) {
+        for (unsigned long long i = 0; i < preList.size(); ++i) {
             out << "," << preList[i];
         }
 
@@ -90,16 +123,20 @@ void setPrerequisites::loadPrerequisitesFromFile(const QString &filename)
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
+
+        // Skip separator lines
+        if (line.startsWith("-") || line.isEmpty())
+            continue;
+
         QStringList parts = line.split(",");
 
-        if (parts.size() == 2) {
-            int id = parts[0].toInt();
-            int preid = parts[1].toInt();
-
-            // Append to the prerequisites vector
-            setPrerequisites::getPrerequisitesTable()[id].push_back(preid);
+        if (parts.size() >= 2) {
+            int courseId = parts[0].toInt();
+            for (int i = 1; i < parts.size(); ++i) {
+                int preId = parts[i].toInt();
+                getPrerequisitesTable()[courseId].push_back(preId);
+            }
         }
     }
-
     file.close();
 }
