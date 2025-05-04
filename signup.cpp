@@ -4,6 +4,7 @@
 #include <QTextStream>
 #include "ui_signup.h"
 #include"mainwindow.h"
+#include"adminpage.h"
 signup::signup(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::signup)
@@ -18,6 +19,7 @@ signup::~signup()
 
 void signup::on_pushButton_2_clicked()
 {
+    adminPage* admin =new adminPage();
     QString name = ui->lineEdit_name->text();
     QString stdID = ui->lineEdit_id->text();
     QString cgpa = ui->lineEdit_gpa->text();
@@ -45,7 +47,8 @@ void signup::on_pushButton_2_clicked()
 
     student newStudent(name, stdID, cgpa, password);
     MainWindow::getStudents().append(newStudent);
-
+    ++admin->studCnt;
+    admin->updateStudCnt(admin->studCnt);
     QMessageBox::information(this, "Success", "Account created successfully!");
 
     ui->lineEdit_name->clear();

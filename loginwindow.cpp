@@ -55,8 +55,8 @@ void loginWindow::on_SignInBtn_clicked()
         admin->show();
     } else if (!userFound) {
         QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
-    } else {
-        this->hide();
+    }else{
+        this->close();
         studentPage *stdPage = new studentPage();
         stdPage->show();
     }

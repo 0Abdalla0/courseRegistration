@@ -3242,7 +3242,8 @@ debug/main.o: ../../main.cpp D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplicati
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
 		../../signup.h \
 		../../setprerequisites.h \
-		../../uploadcourse.h
+		../../uploadcourse.h \
+		../../managegrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\..\main.cpp
 
 debug/managegrades.o: ../../managegrades.cpp ../../managegrades.h \
@@ -3485,7 +3486,10 @@ debug/managegrades.o: ../../managegrades.cpp ../../managegrades.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QSet \
 		../../setprerequisites.h \
 		ui_mainwindow.h \
-		../../adminpage.h
+		../../adminpage.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QMessageBox \
+		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\managegrades.o ..\..\managegrades.cpp
 
 debug/registercourse.o: ../../registercourse.cpp 

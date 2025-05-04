@@ -9,9 +9,6 @@
 #include <unordered_map>
 #include <vector>
 using namespace std;
-//101->programming
-//201 -> math
-//301 ->elective
 uploadCourse::uploadCourse(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::uploadCourse)
@@ -109,6 +106,7 @@ void uploadCourse::loadCoursesFromFile(const QString &filename)
 
             Course course(id, name, instName, instEmail, syllabus, credit);
             uploadCourse::getCourseTable()[id] = course;
+            coursesCnt++;
         }
     }
 

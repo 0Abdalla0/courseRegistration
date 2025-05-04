@@ -25,6 +25,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *manageGrades;
     QLabel *coursesCnt;
+    QLabel *studCnt;
 
     void setupUi(QDialog *adminPage)
     {
@@ -71,6 +72,12 @@ public:
         coursesCnt->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font: 700 26pt \"Segoe UI\";\n"
 "background-image: url(:/imgs/images/white.jpg);"));
+        studCnt = new QLabel(adminPage);
+        studCnt->setObjectName("studCnt");
+        studCnt->setGeometry(QRect(780, 30, 41, 41));
+        studCnt->setStyleSheet(QString::fromUtf8("color:black;\n"
+"font: 700 26pt \"Segoe UI\";\n"
+"background-image: url(:/imgs/images/white.jpg);"));
 
         retranslateUi(adminPage);
 
@@ -85,6 +92,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("adminPage", "SET PREREQUISITES", nullptr));
         manageGrades->setText(QCoreApplication::translate("adminPage", "MANAGE STUDENTS' GRADES", nullptr));
         coursesCnt->setText(QCoreApplication::translate("adminPage", "0", nullptr));
+        studCnt->setText(QCoreApplication::translate("adminPage", "0", nullptr));
     } // retranslateUi
 
 };

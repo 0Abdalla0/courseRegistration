@@ -93,20 +93,13 @@ void setPrerequisites::savePrerequisitesToFile(const QString &filename)
 
     QTextStream out(&file);
 
-    // For each course with prerequisites...
     for (const auto &[courseId, preList] : setPrerequisites::getPrerequisitesTable()) {
         if (preList.empty())
-            continue; // skip courses with no prerequisites
-
-        // Write the course ID...
+            continue;
         out << courseId;
-
-        // ...then each prereq ID, comma-separated
         for (unsigned long long i = 0; i < preList.size(); ++i) {
             out << "," << preList[i];
         }
-
-        // End with a separator line (same style as your courses file)
         out << "\n-----------------------------------------------------------------\n";
     }
 
@@ -123,8 +116,6 @@ void setPrerequisites::loadPrerequisitesFromFile(const QString &filename)
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
-
-        // Skip separator lines
         if (line.startsWith("-") || line.isEmpty())
             continue;
 

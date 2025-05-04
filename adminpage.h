@@ -15,7 +15,8 @@ public:
     explicit adminPage(QWidget *parent = nullptr);
     ~adminPage();
     void updateCnt(int &c);
-
+    void updateStudCnt(int &c);
+    int studCnt =0;
 private slots:
     void on_pushButton_clicked();
 

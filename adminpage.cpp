@@ -30,7 +30,6 @@ void adminPage::on_pushButton_2_clicked()
 {
     this->hide();
     uploadCourse *uc = new uploadCourse();
-    uc->loadCoursesFromFile("courses.txt");
     uc->show();
 }
 void adminPage::updateCnt(int &c)
@@ -38,12 +37,15 @@ void adminPage::updateCnt(int &c)
     QString coursesCnt = QString::number(c);
     ui->coursesCnt->setText(coursesCnt);
 }
-
+void adminPage::updateStudCnt(int &c)
+{
+    QString studCnt = QString::number(c);
+    ui->studCnt->setText(studCnt);
+}
 void adminPage::on_pushButton_3_clicked()
 {
     this->hide();
     setPrerequisites *setPre = new setPrerequisites();
-    //uc->loadCoursesFromFile("courses.txt");
     setPre->show();
 }
 

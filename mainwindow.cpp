@@ -12,14 +12,14 @@
 #include "uploadcourse.h"
 #include <student.h>
 #include"managegrades.h"
+#include"adminpage.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setFixedSize(1366, 768); // Set your desired width and height
+    this->setFixedSize(1366, 768);
 }
-
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     uploadCourse courses;
@@ -53,9 +53,9 @@ void MainWindow::on_registerBtn_clicked()
     signupWindow = new signup(this);
     signupWindow->show();
 }
-
 void MainWindow::loadUsersFromFile()
 {
+    adminPage* admin =new adminPage();
     QFile file("students.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Error: Unable to open file for reading.";
@@ -70,8 +70,10 @@ void MainWindow::loadUsersFromFile()
         if (parts.size() == 4) {
             student newStudent(parts[0], parts[1], parts[2], parts[3]);
             MainWindow::getStudents().append(newStudent);
+            ++admin->studCnt;
         }
     }
+    admin->updateStudCnt(admin->studCnt);
     file.close();
 }
 
@@ -114,6 +116,7 @@ void MainWindow::on_signInBtn_clicked()
     this->hide();
     loginWin = new loginWindow(this);
     loginWin->show();
+
 }
 QList<student> &MainWindow::getStudents()
 {

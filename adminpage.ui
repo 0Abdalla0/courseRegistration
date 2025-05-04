@@ -115,6 +115,24 @@ background-image: url(:/imgs/images/white.jpg);</string>
     <string>0</string>
    </property>
   </widget>
+  <widget class="QLabel" name="studCnt">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>30</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font: 700 26pt &quot;Segoe UI&quot;;
+background-image: url(:/imgs/images/white.jpg);</string>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
