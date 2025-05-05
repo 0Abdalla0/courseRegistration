@@ -3,40 +3,48 @@
 #include "student.h"
 #include "loginWindow.h"
 #include <QDebug>
+#include "managegrades.h"
 viewGrades::viewGrades(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::viewGrades)
 {
     ui->setupUi(this);
     std = loginWindow::getSignedIn();
-    // Set demo grades for testing
-    std.setGrades({
-        {111, "A"},
-        {112, "B"},
-        {113, "C+"}
-    });
     qDebug() << "std id is" << std.getId();
-    for (auto& course :std.getGrades()) {
-        ui->comboBox->addItem(QString::number(course.first));
+
+    int studentId = std.getId().toInt();
+
+    const auto& allGrades = manageGrades::getGrades();
+
+    auto it = allGrades.find(studentId);
+    if (it != allGrades.end()) {
+        const auto& studentCourses = it->second;
+        for (const auto& [courseName, grade] : studentCourses) {
+            ui->comboBox->addItem(courseName);
+        }
+    } else {
+        qDebug() << "No grades found for student ID:" << studentId;
     }
 }
 void viewGrades::on_comboBox_currentIndexChanged(int index)
 {
-    if (index < 0) return;
 
-    // Get the selected course ID as a string, convert to int
-    QString courseIdStr = ui->comboBox->itemText(index);
-    int courseId = courseIdStr.toInt();
+    QString selectedCourseName = ui->comboBox->itemText(index);
+    int studentId = std.getId().toInt();
 
-    // Look up the grade in the student's grades map
-    const auto& grades = std.getGrades();
-    auto it = grades.find(courseId);
-    if (it != grades.end()) {
-        QString grade = it->second;
-        ui->label->setText("Grade: " + grade);
-    } else {
-        ui->label->setText("Grade not found.");
+    const auto& allGrades = manageGrades::getGrades();
+    auto it = allGrades.find(studentId);
+    if (it != allGrades.end()) {
+        const auto& studentCourses = it->second;
+        auto courseIt = studentCourses.find(selectedCourseName);
+        if (courseIt != studentCourses.end()) {
+            QString grade = courseIt->second;
+            ui->label->setText("Grade: " + grade);
+            return;
+        }
     }
+
+    ui->label->setText("Grade not found.");
 }
 
 viewGrades::~viewGrades()

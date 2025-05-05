@@ -14,16 +14,20 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/imgs/images/blue.jpg);</string>
+   <string notr="true">background-image: url(:/imgs/images/11.jpg);</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>590</x>
-     <y>310</y>
-     <width>91</width>
+     <y>470</y>
+     <width>191</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 20pt &quot;Segoe UI&quot;;
+color:white;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -32,11 +36,18 @@
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>200</y>
-     <width>431</width>
-     <height>41</height>
+     <x>460</x>
+     <y>300</y>
+     <width>451</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 127);
+background-image: url(:/imgs/images/blue.jpg);
+border-radius: 15%;
+color:white;
+font: 22pt &quot;Segoe UI&quot;;</string>
    </property>
   </widget>
  </widget>

@@ -28,13 +28,20 @@ public:
         if (viewGrades->objectName().isEmpty())
             viewGrades->setObjectName("viewGrades");
         viewGrades->resize(1302, 566);
-        viewGrades->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/blue.jpg);"));
+        viewGrades->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/11.jpg);"));
         label = new QLabel(viewGrades);
         label->setObjectName("label");
-        label->setGeometry(QRect(590, 310, 91, 41));
+        label->setGeometry(QRect(590, 470, 191, 41));
+        label->setStyleSheet(QString::fromUtf8("font: 20pt \"Segoe UI\";\n"
+"color:white;"));
         comboBox = new QComboBox(viewGrades);
         comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(420, 200, 431, 41));
+        comboBox->setGeometry(QRect(460, 300, 451, 61));
+        comboBox->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 127);\n"
+"background-image: url(:/imgs/images/blue.jpg);\n"
+"border-radius: 15%;\n"
+"color:white;\n"
+"font: 22pt \"Segoe UI\";"));
 
         retranslateUi(viewGrades);
 
