@@ -1,9 +1,9 @@
 #include "viewgrades.h"
-#include "ui_viewgrades.h"
-#include "student.h"
-#include "loginWindow.h"
 #include <QDebug>
+#include "loginWindow.h"
 #include "managegrades.h"
+#include "student.h"
+#include "ui_viewgrades.h"
 viewGrades::viewGrades(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::viewGrades)
@@ -14,12 +14,12 @@ viewGrades::viewGrades(QWidget *parent)
 
     int studentId = std.getId().toInt();
 
-    const auto& allGrades = manageGrades::getGrades();
+    const auto &allGrades = manageGrades::getGrades();
 
     auto it = allGrades.find(studentId);
     if (it != allGrades.end()) {
-        const auto& studentCourses = it->second;
-        for (const auto& [courseName, grade] : studentCourses) {
+        const auto &studentCourses = it->second;
+        for (const auto &[courseName, grade] : studentCourses) {
             ui->comboBox->addItem(courseName);
         }
     } else {
@@ -28,14 +28,13 @@ viewGrades::viewGrades(QWidget *parent)
 }
 void viewGrades::on_comboBox_currentIndexChanged(int index)
 {
-
     QString selectedCourseName = ui->comboBox->itemText(index);
     int studentId = std.getId().toInt();
 
-    const auto& allGrades = manageGrades::getGrades();
+    const auto &allGrades = manageGrades::getGrades();
     auto it = allGrades.find(studentId);
     if (it != allGrades.end()) {
-        const auto& studentCourses = it->second;
+        const auto &studentCourses = it->second;
         auto courseIt = studentCourses.find(selectedCourseName);
         if (courseIt != studentCourses.end()) {
             QString grade = courseIt->second;
@@ -52,8 +51,6 @@ viewGrades::~viewGrades()
     delete ui;
 }
 
-
-
 // const map<int, QString>& grades = std.getGrades();
 // if (grades.empty()) {
 //     ui->listWidget->addItem("No grades available.");
@@ -63,5 +60,3 @@ viewGrades::~viewGrades()
 //         ui->listWidget->addItem(itemText);
 //     }
 // }
-
-

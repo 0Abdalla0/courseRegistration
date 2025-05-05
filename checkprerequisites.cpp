@@ -1,4 +1,5 @@
 #include "checkprerequisites.h"
+#include <QDebug>
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
@@ -11,7 +12,6 @@
 #include "uploadcourse.h"
 #include <stack>
 #include <vector>
-#include <QDebug>
 
 checkprerequisites::checkprerequisites(QWidget *parent)
     : QDialog(parent)
@@ -25,11 +25,12 @@ checkprerequisites::checkprerequisites(QWidget *parent)
         ui->courseID_Cmb->addItem(QString::number(getPreit->first));
     }
 
-    connect(ui->courseID_Cmb, QOverload<int>::of(&QComboBox::currentIndexChanged),
-    this, &checkprerequisites::on_courseID_Cmb_currentIndexChanged);
+    connect(ui->courseID_Cmb,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            &checkprerequisites::on_courseID_Cmb_currentIndexChanged);
     ui->courseID_Cmb->setCurrentIndex(0);
     on_courseID_Cmb_currentIndexChanged(0);
-
 }
 
 checkprerequisites::~checkprerequisites()
@@ -63,4 +64,3 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
         }
     }
 }
-

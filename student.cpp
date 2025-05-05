@@ -5,8 +5,7 @@ student::student(const QString &name,
                  const QString &id,
                  const QString &cgpa,
                  const QString &password,
-                 const map<int, QString> &grades
-)
+                 const map<int, QString> &grades)
     : name(name)
     , id(id)
     , cgpa(cgpa)
@@ -35,10 +34,12 @@ QString student::getPassword() const
 {
     return password;
 }
-const map<int, QString>& student::getGrades() const {
+const map<int, QString> &student::getGrades() const
+{
     return grades;
 }
-void student::setGrades(const std::map<int, QString> &newGrades) {
+void student::setGrades(const std::map<int, QString> &newGrades)
+{
     grades = newGrades;
 }
 

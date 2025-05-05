@@ -2,9 +2,9 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
+#include "adminpage.h"
+#include "mainwindow.h"
 #include "ui_signup.h"
-#include"mainwindow.h"
-#include"adminpage.h"
 signup::signup(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::signup)
@@ -19,7 +19,7 @@ signup::~signup()
 
 void signup::on_pushButton_2_clicked()
 {
-    adminPage* admin =new adminPage();
+    adminPage *admin = new adminPage();
     QString name = ui->lineEdit_name->text();
     QString stdID = ui->lineEdit_id->text();
     QString cgpa = ui->lineEdit_gpa->text();

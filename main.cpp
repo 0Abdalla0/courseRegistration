@@ -1,9 +1,9 @@
 #include <QApplication>
 #include "mainwindow.h"
+#include "managegrades.h"
 #include "setprerequisites.h"
 #include "uploadcourse.h"
 #include <iostream>
-#include"managegrades.h"
 using namespace std;
 int main(int argc, char *argv[])
 {

@@ -44,7 +44,9 @@ void setPrerequisites::on_setBtn_clicked()
     int id = courseid.toInt(&isNumberCourse);
 
     if (!isNumberPre || !isNumberCourse) {
-        QMessageBox::warning(this, "Invalid input", "Course ID and prerequisite must be valid numbers.");
+        QMessageBox::warning(this,
+                             "Invalid input",
+                             "Course ID and prerequisite must be valid numbers.");
         return;
     }
 
@@ -53,21 +55,25 @@ void setPrerequisites::on_setBtn_clicked()
         return;
     }
 
-    unordered_map<int,Course> courseTable = uploadCourse::getCourseTable();
+    unordered_map<int, Course> courseTable = uploadCourse::getCourseTable();
     if (courseTable.find(id) == courseTable.end()) {
         QMessageBox::warning(this, "Invalid Course", "Selected course does not exist.");
         return;
     }
-    if(preID == 0)
-    {
-         QMessageBox::warning(this, "NO Prerequisite ?", "You will not add prerequisite to this course ok?");
+    if (preID == 0) {
+        QMessageBox::warning(this,
+                             "NO Prerequisite ?",
+                             "You will not add prerequisite to this course ok?");
     }
-    if (courseTable.find(preID) == courseTable.end() && preID!=0) {
+    if (courseTable.find(preID) == courseTable.end() && preID != 0) {
         QMessageBox::warning(this, "Invalid Prerequisite", "Prerequisite course ID does not exist.");
         return;
     }
 
-    if (std::find(setPrerequisites::getPrerequisitesTable()[id].begin(), setPrerequisites::getPrerequisitesTable()[id].end(), preID) != setPrerequisites::getPrerequisitesTable()[id].end()) {
+    if (std::find(setPrerequisites::getPrerequisitesTable()[id].begin(),
+                  setPrerequisites::getPrerequisitesTable()[id].end(),
+                  preID)
+        != setPrerequisites::getPrerequisitesTable()[id].end()) {
         QMessageBox::information(this, "Duplicate", "This prerequisite is already added.");
         return;
     }
@@ -76,7 +82,6 @@ void setPrerequisites::on_setBtn_clicked()
     setPrerequisites::getPrerequisitesTable()[id].push_back(preID);
     QMessageBox::information(this, "Success", "Prerequisite successfully set.");
 }
-
 
 map<int, vector<int>> &setPrerequisites::getPrerequisitesTable()
 {

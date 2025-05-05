@@ -7,12 +7,12 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSet>
+#include "adminpage.h"
+#include "managegrades.h"
 #include "setprerequisites.h"
 #include "ui_mainwindow.h"
 #include "uploadcourse.h"
 #include <student.h>
-#include"managegrades.h"
-#include"adminpage.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -55,7 +55,7 @@ void MainWindow::on_registerBtn_clicked()
 }
 void MainWindow::loadUsersFromFile()
 {
-    adminPage* admin =new adminPage();
+    adminPage *admin = new adminPage();
     QFile file("students.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Error: Unable to open file for reading.";
@@ -116,10 +116,9 @@ void MainWindow::on_signInBtn_clicked()
     this->hide();
     loginWin = new loginWindow(this);
     loginWin->show();
-
 }
 QList<student> &MainWindow::getStudents()
 {
     static QList<student> students;
-    return students ;
+    return students;
 }

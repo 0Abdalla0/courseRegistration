@@ -7,7 +7,11 @@ using namespace std;
 class student
 {
 public:
-    student(const QString &name, const QString &id, const QString &cgpa, const QString &password, const map<int, QString> &grades = {});
+    student(const QString &name,
+            const QString &id,
+            const QString &cgpa,
+            const QString &password,
+            const map<int, QString> &grades = {});
     student();
     QString getName() const;
     QString getId() const;
@@ -15,8 +19,7 @@ public:
     QString getPassword() const;
     void viewGrades() const;
     void setGrades(const map<int, QString> &newGrades);
-    const map<int, QString>& getGrades() const;
-
+    const map<int, QString> &getGrades() const;
 
 private:
     QString name;

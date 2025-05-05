@@ -2,6 +2,7 @@
 #include "checkprerequisites.h"
 #include "ui_studentpage.h"
 #include "viewgrades.h"
+#include"generatereport.h"
 studentPage::studentPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::studentPage)
@@ -26,5 +27,12 @@ void studentPage::on_pushButton_3_clicked()
     this->hide();
     viewGrades *viewPage = new viewGrades(this);
     viewPage->show();
+}
+
+void studentPage::on_pushButton_4_clicked()
+{
+    this->hide();
+    generateReport *genReport = new generateReport(this);
+    genReport->show();
 }
 

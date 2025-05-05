@@ -1,7 +1,7 @@
 #ifndef CHECKPREREQUISITES_H
 #define CHECKPREREQUISITES_H
-#include<vector>
-#include<map>
+#include <map>
+#include <vector>
 
 using namespace std;
 #include <QDialog>
@@ -20,7 +20,6 @@ public:
     map<int, vector<int>> prerequisitesTable;
     map<int, vector<int>>::iterator getPreit;
 
-
 private slots:
     void on_backBTN_clicked();
 
@@ -28,7 +27,6 @@ private slots:
 
 private:
     Ui::checkprerequisites *ui;
-
 };
 
 #endif // CHECKPREREQUISITES_H

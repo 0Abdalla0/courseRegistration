@@ -21,6 +21,7 @@ class Ui_studentPage
 public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
 
     void setupUi(QDialog *studentPage)
     {
@@ -46,6 +47,15 @@ public:
 "color:white;\n"
 "border:none;\n"
 "border-radius:15%;"));
+        pushButton_4 = new QPushButton(studentPage);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setGeometry(QRect(820, 390, 241, 221));
+        pushButton_4->setStyleSheet(QString::fromUtf8("\n"
+"background-image: url(:/imgs/images/blue.jpg);\n"
+"font: 22pt \"Segoe UI\" bold;\n"
+"color:white;\n"
+"border:none;\n"
+"border-radius:15%;"));
 
         retranslateUi(studentPage);
 
@@ -59,6 +69,8 @@ public:
 "PREREQUISITES", nullptr));
         pushButton_3->setText(QCoreApplication::translate("studentPage", "VIEW \n"
 "GRADES", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("studentPage", "GENERATE \n"
+"REPORT", nullptr));
     } // retranslateUi
 
 };

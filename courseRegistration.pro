@@ -13,6 +13,7 @@ SOURCES += \
     adminpage.cpp \
     checkprerequisites.cpp \
     course.cpp \
+    generatereport.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     adminpage.h \
     checkprerequisites.h \
     course.h \
+    generatereport.h \
     loginwindow.h \
     mainwindow.h \
     managegrades.h \
@@ -44,6 +46,7 @@ HEADERS += \
 FORMS += \
     adminpage.ui \
     checkprerequisites.ui \
+    generatereport.ui \
     loginwindow.ui \
     mainwindow.ui \
     managegrades.ui \

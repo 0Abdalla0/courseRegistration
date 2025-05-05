@@ -1,7 +1,7 @@
 #ifndef VIEWGRADES_H
 #define VIEWGRADES_H
-#include "loginwindow.h"
 #include <QDialog>
+#include "loginwindow.h"
 #include "student.h"
 namespace Ui {
 class viewGrades;

@@ -60,6 +60,28 @@ border-radius:15%;</string>
 GRADES</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>390</y>
+     <width>241</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-image: url(:/imgs/images/blue.jpg);
+font: 22pt &quot;Segoe UI&quot; bold;
+color:white;
+border:none;
+border-radius:15%;</string>
+   </property>
+   <property name="text">
+    <string>GENERATE 
+REPORT</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
