@@ -22,7 +22,8 @@ SOURCES += \
     signup.cpp \
     student.cpp \
     studentpage.cpp \
-    uploadcourse.cpp
+    uploadcourse.cpp \
+    viewgrades.cpp
 
 HEADERS += \
     admin.h \
@@ -37,7 +38,8 @@ HEADERS += \
     signup.h \
     student.h \
     studentpage.h \
-    uploadcourse.h
+    uploadcourse.h \
+    viewgrades.h
 
 FORMS += \
     adminpage.ui \
@@ -48,7 +50,8 @@ FORMS += \
     setprerequisites.ui \
     signup.ui \
     studentpage.ui \
-    uploadcourse.ui
+    uploadcourse.ui \
+    viewgrades.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

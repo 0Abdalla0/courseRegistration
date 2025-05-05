@@ -2,42 +2,28 @@
 #define STUDENT_H
 #include <QFile>
 #include <QJsonObject>
-
+#include <map>
+using namespace std;
 class student
 {
 public:
-    student(const QString &name, const QString &id, const QString &cgpa, const QString &password);
+    student(const QString &name, const QString &id, const QString &cgpa, const QString &password, const map<int, QString> &grades = {});
     student();
     QString getName() const;
     QString getId() const;
     QString getCgpa() const;
     QString getPassword() const;
+    void viewGrades() const;
+    void setGrades(const map<int, QString> &newGrades);
+    const map<int, QString>& getGrades() const;
 
-    QJsonObject toJson() const
-    {
-        QJsonObject obj;
-        obj["name"] = name;
-        obj["id"] = id;
-        obj["cgpa"] = cgpa;
-        obj["password"] = password;
-        return obj;
-    }
-
-    static student fromJson(const QJsonObject &obj)
-    {
-        student s;
-        s.name = obj["name"].toString();
-        s.id = obj["id"].toString();
-        s.cgpa = obj["cgpa"].toString();
-        s.password = obj["password"].toString();
-        return s;
-    }
 
 private:
     QString name;
     QString id;
     QString cgpa;
     QString password;
+    map<int, QString> grades;
 };
 
 #endif

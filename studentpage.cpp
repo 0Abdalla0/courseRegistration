@@ -1,7 +1,7 @@
 #include "studentpage.h"
 #include "checkprerequisites.h"
 #include "ui_studentpage.h"
-
+#include "viewgrades.h"
 studentPage::studentPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::studentPage)
@@ -20,3 +20,11 @@ void studentPage::on_pushButton_2_clicked()
     checkprerequisites *checkPage = new checkprerequisites(this);
     checkPage->show();
 }
+
+void studentPage::on_pushButton_3_clicked()
+{
+    this->hide();
+    viewGrades *viewPage = new viewGrades(this);
+    viewPage->show();
+}
+

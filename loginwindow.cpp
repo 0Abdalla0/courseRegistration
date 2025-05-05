@@ -5,6 +5,7 @@
 #include "ui_loginwindow.h"
 #include"mainwindow.h"
 #include <signup.h>
+#include "student.h"
 loginWindow::loginWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::loginWindow)
@@ -16,6 +17,8 @@ loginWindow::~loginWindow()
 {
     delete ui;
 }
+student loginWindow::signedIn;
+
 
 void loginWindow::on_DontHaveBtn_clicked()
 {
@@ -43,6 +46,7 @@ void loginWindow::on_SignInBtn_clicked()
                                          "Login Success",
                                          "Welcome back, " + s.getName() + "!");
                 this->accept();
+                signedIn = s;
             } else {
                 QMessageBox::warning(this, "Login Failed", "Incorrect password. Please try again.");
             }
@@ -57,7 +61,10 @@ void loginWindow::on_SignInBtn_clicked()
         QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
     }else{
         this->close();
-        studentPage *stdPage = new studentPage();
+        studentPage *stdPage = new studentPage(this);
         stdPage->show();
     }
+}
+student loginWindow::getSignedIn(){
+    return signedIn;
 }

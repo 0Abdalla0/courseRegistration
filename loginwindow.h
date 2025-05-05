@@ -15,6 +15,8 @@ class loginWindow : public QDialog
 public:
     explicit loginWindow(QWidget *parent = nullptr);
     ~loginWindow();
+    static student getSignedIn();
+    static student signedIn ;
 
 private slots:
     void on_DontHaveBtn_clicked();
