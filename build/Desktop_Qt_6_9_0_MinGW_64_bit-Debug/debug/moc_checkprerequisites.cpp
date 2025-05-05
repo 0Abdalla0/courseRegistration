@@ -40,12 +40,18 @@ template <> constexpr inline auto checkprerequisites::qt_create_metaobjectdata<q
     QtMocHelpers::StringRefStorage qt_stringData {
         "checkprerequisites",
         "on_backBTN_clicked",
-        ""
+        "",
+        "on_courseID_Cmb_currentIndexChanged",
+        "index"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'on_backBTN_clicked'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_courseID_Cmb_currentIndexChanged'
+        QtMocHelpers::SlotData<void(int)>(3, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 4 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -70,10 +76,10 @@ void checkprerequisites::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->on_backBTN_clicked(); break;
+        //case 1: _t->on_courseID_Cmb_currentIndexChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *checkprerequisites::metaObject() const
@@ -95,14 +101,14 @@ int checkprerequisites::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

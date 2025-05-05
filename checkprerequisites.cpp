@@ -11,6 +11,7 @@
 #include "uploadcourse.h"
 #include <stack>
 #include <vector>
+#include <QDebug>
 
 checkprerequisites::checkprerequisites(QWidget *parent)
     : QDialog(parent)
@@ -18,18 +19,37 @@ checkprerequisites::checkprerequisites(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // unordered_map<int, Course> courseTable = uploadCourse::getCourseTable();
-    // unordered_map<int, Course>::iterator uploadCourseit;
-    map<int, vector<int>> prerequisitesTable = setPrerequisites::getPrerequisitesTable();
-    map<int, vector<int>>::iterator getPreit;
+    prerequisitesTable = setPrerequisites::getPrerequisitesTable();
 
-    // Populate courseID combo box
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
         ui->courseID_Cmb->addItem(QString::number(getPreit->first));
     }
+
+    connect(ui->courseID_Cmb, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    this, &checkprerequisites::on_courseID_Cmb_currentIndexChanged);
     ui->courseID_Cmb->setCurrentIndex(0);
-    QString courseid = ui->courseID_Cmb->itemText(0);
+    on_courseID_Cmb_currentIndexChanged(0);
+
+}
+
+checkprerequisites::~checkprerequisites()
+{
+    delete ui;
+}
+
+void checkprerequisites::on_backBTN_clicked()
+{
+    this->hide();
+    studentPage *stdPage = new studentPage();
+    stdPage->show();
+}
+
+void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
+{
+    ui->prerequisetsID_Cmb->clear();
+    QString courseid = ui->courseID_Cmb->currentText();
     int id = courseid.toInt();
+    qDebug() << "Index changed to" << index;
 
     // Find prerequisites for selected course
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
@@ -44,14 +64,3 @@ checkprerequisites::checkprerequisites(QWidget *parent)
     }
 }
 
-checkprerequisites::~checkprerequisites()
-{
-    delete ui;
-}
-
-void checkprerequisites::on_backBTN_clicked()
-{
-    this->hide();
-    studentPage *stdPage = new studentPage();
-    stdPage->show();
-}
