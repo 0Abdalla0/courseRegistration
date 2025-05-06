@@ -52,7 +52,6 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
     int id = courseid.toInt();
     qDebug() << "Index changed to" << index;
 
-    // Find prerequisites for selected course
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
         if (id == getPreit->first) {
             vector<int> prereqList = getPreit->second;

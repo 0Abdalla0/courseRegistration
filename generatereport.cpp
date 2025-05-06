@@ -29,28 +29,33 @@ generateReport::generateReport(QWidget *parent)
     unordered_map<QString, QString> innerUnMap;
 
 
-    QVBoxLayout* layout = new QVBoxLayout();
+    QVBoxLayout* layoutCourseName = new QVBoxLayout();
+    QVBoxLayout* layoutId = new QVBoxLayout();
+    QVBoxLayout* layoutGrades = new QVBoxLayout();
     for (auto it = grades.begin(); it != grades.end(); ++it) {
         if(it->first==stdID)
         {
-         innerUnMap=it->second;
+            innerUnMap=it->second;
             break;
-            }
         }
+    }
     unordered_map<QString, QString>::iterator it2;
 
     for(it2=innerUnMap.begin();it2!=innerUnMap.end();it2++)
     {
-         qDebug() << "Number of students in grades map:" << it2->second;
+        qDebug() << "Number of students in grades map:" << it2->second;
+        // int courseGrade = it->first;
+        // QString courseGradeStr = QString::number(courseGrade);
+
+        QLabel* labelCourseName = new QLabel(it2->first, this);
+        layoutCourseName->addWidget(labelCourseName);
+        ui->widgetCourseName->setLayout(layoutCourseName);
+        QLabel* labelGrades = new QLabel(it2->second, this);
+        layoutGrades->addWidget(labelGrades);
+        ui->widgetGrades->setLayout(layoutGrades);
     }
 
-    //     int courseGrade = it->first;
-    //     QString courseGradeStr = QString::number(courseGrade);
 
-    //     QLabel* label = new QLabel(courseGradeStr, this);
-    //     layout->addWidget(label);
-
-    //  ui->widget->setLayout(layout);
 
 }
 

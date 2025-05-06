@@ -26,13 +26,19 @@ public:
     QLabel *label_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QWidget *widget;
+    QWidget *widgetCourseName;
+    QScrollArea *scrollArea_Id;
+    QWidget *scrollAreaWidgetContents_2;
+    QWidget *widgetGrades;
+    QScrollArea *scrollArea_2;
+    QWidget *scrollAreaWidgetContents_3;
+    QWidget *widgetSemster;
 
     void setupUi(QDialog *generateReport)
     {
         if (generateReport->objectName().isEmpty())
             generateReport->setObjectName("generateReport");
-        generateReport->resize(1345, 782);
+        generateReport->resize(1325, 702);
         generateReport->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/10.jpg);"));
         label = new QLabel(generateReport);
         label->setObjectName("label");
@@ -57,16 +63,52 @@ public:
 "background-image: url(:/imgs/images/blue.jpg);"));
         scrollArea = new QScrollArea(generateReport);
         scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(890, 294, 391, 111));
+        scrollArea->setGeometry(QRect(10, 294, 471, 391));
+        scrollArea->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);"));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 389, 109));
-        widget = new QWidget(scrollAreaWidgetContents);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(10, 10, 371, 80));
-        widget->setStyleSheet(QString::fromUtf8("color:black"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 469, 389));
+        widgetCourseName = new QWidget(scrollAreaWidgetContents);
+        widgetCourseName->setObjectName("widgetCourseName");
+        widgetCourseName->setGeometry(QRect(0, 0, 471, 391));
+        widgetCourseName->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background-image: url(:/imgs/images/white.jpg);\n"
+"font-size:20px;\n"
+""));
         scrollArea->setWidget(scrollAreaWidgetContents);
+        scrollArea_Id = new QScrollArea(generateReport);
+        scrollArea_Id->setObjectName("scrollArea_Id");
+        scrollArea_Id->setGeometry(QRect(499, 294, 371, 391));
+        scrollArea_Id->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);"));
+        scrollArea_Id->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 369, 389));
+        widgetGrades = new QWidget(scrollAreaWidgetContents_2);
+        widgetGrades->setObjectName("widgetGrades");
+        widgetGrades->setGeometry(QRect(-1, -1, 371, 391));
+        widgetGrades->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background-image: url(:/imgs/images/white.jpg);\n"
+"font-size:20px;\n"
+""));
+        scrollArea_Id->setWidget(scrollAreaWidgetContents_2);
+        scrollArea_2 = new QScrollArea(generateReport);
+        scrollArea_2->setObjectName("scrollArea_2");
+        scrollArea_2->setGeometry(QRect(889, 294, 421, 391));
+        scrollArea_2->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);"));
+        scrollArea_2->setWidgetResizable(true);
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 419, 389));
+        widgetSemster = new QWidget(scrollAreaWidgetContents_3);
+        widgetSemster->setObjectName("widgetSemster");
+        widgetSemster->setGeometry(QRect(0, -1, 421, 391));
+        widgetSemster->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background-image: url(:/imgs/images/white.jpg);\n"
+"font-size:20px;\n"
+""));
+        scrollArea_2->setWidget(scrollAreaWidgetContents_3);
 
         retranslateUi(generateReport);
 

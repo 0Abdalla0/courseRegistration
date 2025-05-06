@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1345</width>
-    <height>782</height>
+    <width>1325</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -86,11 +86,14 @@ background-image: url(:/imgs/images/blue.jpg);</string>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>890</x>
+     <x>10</x>
      <y>294</y>
-     <width>391</width>
-     <height>111</height>
+     <width>471</width>
+     <height>391</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);</string>
    </property>
    <property name="widgetResizable">
     <bool>true</bool>
@@ -100,21 +103,108 @@ background-image: url(:/imgs/images/blue.jpg);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>389</width>
-      <height>109</height>
+      <width>469</width>
+      <height>389</height>
      </rect>
     </property>
-    <widget class="QWidget" name="widget" native="true">
+    <widget class="QWidget" name="widgetCourseName" native="true">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>371</width>
-       <height>80</height>
+       <x>0</x>
+       <y>0</y>
+       <width>471</width>
+       <height>391</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color:black</string>
+      <string notr="true">color:black;
+background-image: url(:/imgs/images/white.jpg);
+font-size:20px;
+</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea_Id">
+   <property name="geometry">
+    <rect>
+     <x>499</x>
+     <y>294</y>
+     <width>371</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>369</width>
+      <height>389</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="widgetGrades" native="true">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>-1</y>
+       <width>371</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:black;
+background-image: url(:/imgs/images/white.jpg);
+font-size:20px;
+</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea_2">
+   <property name="geometry">
+    <rect>
+     <x>889</x>
+     <y>294</y>
+     <width>421</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>419</width>
+      <height>389</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="widgetSemster" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>-1</y>
+       <width>421</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:black;
+background-image: url(:/imgs/images/white.jpg);
+font-size:20px;
+</string>
      </property>
     </widget>
    </widget>
