@@ -12,6 +12,7 @@
 #include "uploadcourse.h"
 #include <stack>
 #include <vector>
+#include"managegrades.h"
 
 checkprerequisites::checkprerequisites(QWidget *parent)
     : QDialog(parent)
@@ -31,6 +32,7 @@ checkprerequisites::checkprerequisites(QWidget *parent)
             &checkprerequisites::on_courseID_Cmb_currentIndexChanged);
     ui->courseID_Cmb->setCurrentIndex(0);
     on_courseID_Cmb_currentIndexChanged(0);
+    gradesTabel = manageGrades::getGrades();
 }
 
 checkprerequisites::~checkprerequisites()
@@ -61,4 +63,16 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
             break;
         }
     }
+}
+bool checkprerequisites::checkCourseValidation(int id)
+{
+    map<int, unordered_map<QString, QString>>::iterator gradesIt;
+    for(gradesIt=gradesTabel.begin();gradesIt!=gradesTabel.begin();gradesIt++)
+    {
+        if(id==gradesIt->first)
+        {
+            return true;
+        }
+     }
+    return false;
 }
