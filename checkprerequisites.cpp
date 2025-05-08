@@ -22,9 +22,7 @@ checkprerequisites::checkprerequisites(QWidget *parent)
     prerequisitesTable = setPrerequisites::getPrerequisitesTable();
     getCourseInfo = uploadCourse::getCourseTable();
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
-        // ui->courseID_Cmb->addItem(QString::number(getPreit->first));
           ui->courseID_Cmb->addItem(getCourseInfo[getPreit->first].getTitle());
-        // qDebug()<<getPreit->first;
     }
 
     connect(ui->courseID_Cmb,
@@ -58,7 +56,6 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
             vector<int> prereqList = getPreit->second;
             vector<int>::iterator vecIt;
             for (vecIt = prereqList.begin(); vecIt != prereqList.end(); ++vecIt) {
-                // ui->prerequisetsID_Cmb->addItem(QString::number(*vecIt));
                  ui->prerequisetsID_Cmb->addItem(getCourseInfo[*vecIt].getTitle());
             }
             break;
