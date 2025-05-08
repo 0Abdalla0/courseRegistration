@@ -20,9 +20,11 @@ checkprerequisites::checkprerequisites(QWidget *parent)
     ui->setupUi(this);
 
     prerequisitesTable = setPrerequisites::getPrerequisitesTable();
-
+    getCourseInfo = uploadCourse::getCourseTable();
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
-        ui->courseID_Cmb->addItem(QString::number(getPreit->first));
+        // ui->courseID_Cmb->addItem(QString::number(getPreit->first));
+          ui->courseID_Cmb->addItem(getCourseInfo[getPreit->first].getTitle());
+        // qDebug()<<getPreit->first;
     }
 
     connect(ui->courseID_Cmb,
@@ -48,16 +50,16 @@ void checkprerequisites::on_backBTN_clicked()
 void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
 {
     ui->prerequisetsID_Cmb->clear();
-    QString courseid = ui->courseID_Cmb->currentText();
-    int id = courseid.toInt();
+    QString courseName = ui->courseID_Cmb->currentText();
     qDebug() << "Index changed to" << index;
 
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
-        if (id == getPreit->first) {
+        if (courseName == getCourseInfo[getPreit->first].getTitle()) {
             vector<int> prereqList = getPreit->second;
             vector<int>::iterator vecIt;
             for (vecIt = prereqList.begin(); vecIt != prereqList.end(); ++vecIt) {
-                ui->prerequisetsID_Cmb->addItem(QString::number(*vecIt));
+                // ui->prerequisetsID_Cmb->addItem(QString::number(*vecIt));
+                 ui->prerequisetsID_Cmb->addItem(getCourseInfo[*vecIt].getTitle());
             }
             break;
         }

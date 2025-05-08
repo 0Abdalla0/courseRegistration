@@ -1,16 +1,8 @@
-107,CCCC,CCC,C@gmaail.com,CCCC,2
+101,intro to cs,Ahmed Amr,Amr@gmail.com,lgknlg,3
 -----------------------------------------------------------------
-102,asdadsas,asdasad,asda@gmail.com,asdasd,3
+102,sp,Ahmed Amr,Amr@gmail.com,computers,3
 -----------------------------------------------------------------
-106,BBBBB,BBB,B@gmail.com,BBBBB,2
+103,Data mining,Ziad,Ziad@gmail.com,Data,3
 -----------------------------------------------------------------
-101,aadsd,asdasd,assd@gmail.com,asadsadas,2
------------------------------------------------------------------
-104,AAAAAAAAA,AAAAA,A@gmail.com,AAAAA,2
------------------------------------------------------------------
-105,ziad,dgfgd,gggg@gmail.com,flfnkfjn,1
------------------------------------------------------------------
-103,adds,adas,adasa@gmail.com,aadas,3
------------------------------------------------------------------
-108,DDDD,DD,D@gmail.com,DDDD,3
+104,Data Structures,Abdalla,Abdalla@gmail.com,Data manipulation,3
 -----------------------------------------------------------------

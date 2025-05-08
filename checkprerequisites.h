@@ -2,6 +2,7 @@
 #define CHECKPREREQUISITES_H
 #include <map>
 #include <vector>
+#include"course.h"
 
 using namespace std;
 #include <QDialog>
@@ -19,7 +20,7 @@ public:
     ~checkprerequisites();
     map<int, vector<int>> prerequisitesTable;
     map<int, vector<int>>::iterator getPreit;
-
+    unordered_map<int, Course> getCourseInfo;
 private slots:
     void on_backBTN_clicked();
 
