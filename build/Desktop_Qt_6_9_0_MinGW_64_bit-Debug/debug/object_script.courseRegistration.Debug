@@ -20,6 +20,7 @@ debug/moc_generatereport.o
 debug/moc_loginwindow.o
 debug/moc_mainwindow.o
 debug/moc_managegrades.o
+debug/moc_registercourse.o
 debug/moc_setprerequisites.o
 debug/moc_signup.o
 debug/moc_studentpage.o

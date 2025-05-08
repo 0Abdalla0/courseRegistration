@@ -50,6 +50,7 @@ FORMS += \
     loginwindow.ui \
     mainwindow.ui \
     managegrades.ui \
+    registercourse.ui \
     setprerequisites.ui \
     signup.ui \
     studentpage.ui \
@@ -63,3 +64,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     img.qrc
+
+DISTFILES += \
+    images/12.jpg

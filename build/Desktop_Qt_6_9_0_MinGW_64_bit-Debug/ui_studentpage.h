@@ -22,6 +22,8 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *studentPage)
     {
@@ -56,6 +58,21 @@ public:
 "color:white;\n"
 "border:none;\n"
 "border-radius:15%;"));
+        pushButton_5 = new QPushButton(studentPage);
+        pushButton_5->setObjectName("pushButton_5");
+        pushButton_5->setGeometry(QRect(330, 140, 241, 221));
+        pushButton_5->setStyleSheet(QString::fromUtf8("\n"
+"background-image: url(:/imgs/images/blue.jpg);\n"
+"font: 22pt \"Segoe UI\" bold;\n"
+"color:white;\n"
+"border:none;\n"
+"border-radius:15%;"));
+        pushButton = new QPushButton(studentPage);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(110, 600, 141, 71));
+        pushButton->setStyleSheet(QString::fromUtf8("border-radius:25%;\n"
+"color:white;\n"
+"font: 18pt \"Segoe UI\";"));
 
         retranslateUi(studentPage);
 
@@ -71,6 +88,9 @@ public:
 "GRADES", nullptr));
         pushButton_4->setText(QCoreApplication::translate("studentPage", "GENERATE \n"
 "REPORT", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("studentPage", "REGISTER \n"
+"COURSE", nullptr));
+        pushButton->setText(QCoreApplication::translate("studentPage", "SIGN OUT", nullptr));
     } // retranslateUi
 
 };

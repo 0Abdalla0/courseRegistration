@@ -82,6 +82,46 @@ border-radius:15%;</string>
 REPORT</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>140</y>
+     <width>241</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-image: url(:/imgs/images/blue.jpg);
+font: 22pt &quot;Segoe UI&quot; bold;
+color:white;
+border:none;
+border-radius:15%;</string>
+   </property>
+   <property name="text">
+    <string>REGISTER 
+COURSE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>600</y>
+     <width>141</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:25%;
+color:white;
+font: 18pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>SIGN OUT</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

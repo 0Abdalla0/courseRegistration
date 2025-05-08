@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>registerCourse</class>
+ <widget class="QDialog" name="registerCourse">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1326</width>
+    <height>772</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/imgs/images/register.jpg);</string>
+  </property>
+  <widget class="QPushButton" name="backBTN">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>730</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/blue.jpg);
+color:white;
+border:none;
+font: 18pt &quot;Segoe UI&quot;;
+border-radius:15%;
+</string>
+   </property>
+   <property name="text">
+    <string>BACK</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="titleItem">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>250</y>
+     <width>481</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+font: 14pt &quot;Segoe UI&quot;;
+border-radius:25%</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="registerBtn">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>400</y>
+     <width>151</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+color:blue;
+font: 22pt &quot;Segoe UI&quot;;
+border-radius:25%;
+
+</string>
+   </property>
+   <property name="text">
+    <string>REGISTER</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

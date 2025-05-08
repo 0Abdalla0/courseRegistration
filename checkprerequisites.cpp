@@ -77,9 +77,9 @@ bool checkprerequisites::checkCourseValidation(int id)
             for (vecIt = prereqList.begin(); vecIt != prereqList.end(); ++vecIt) {
                 for(gradesIt=gradesTabel.begin();gradesIt!=gradesTabel.begin();gradesIt++)
                 {
-                    if((*vecIt)!=gradesIt->first)
+                    if((*vecIt)==gradesIt->first)
                     {
-                        return false;
+                        return true;
                     }
                 }
             }
@@ -87,5 +87,5 @@ bool checkprerequisites::checkCourseValidation(int id)
         }
 
     }
-    return true;
+    return false;
 }

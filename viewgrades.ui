@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1302</width>
-    <height>566</height>
+    <width>1315</width>
+    <height>788</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,6 +48,24 @@ background-image: url(:/imgs/images/blue.jpg);
 border-radius: 15%;
 color:white;
 font: 22pt &quot;Segoe UI&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>620</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">BORDER-RADIUS:25%;
+font: 20pt &quot;Segoe UI&quot;;
+color:white;</string>
+   </property>
+   <property name="text">
+    <string>BACK</string>
    </property>
   </widget>
  </widget>

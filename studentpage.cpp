@@ -3,6 +3,8 @@
 #include "ui_studentpage.h"
 #include "viewgrades.h"
 #include"generatereport.h"
+#include "registercourse.h"
+#include "mainwindow.h"
 studentPage::studentPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::studentPage)
@@ -35,4 +37,21 @@ void studentPage::on_pushButton_4_clicked()
     generateReport *genReport = new generateReport(this);
     genReport->show();
 }
+
+
+void studentPage::on_pushButton_5_clicked()
+{
+    this->hide();
+    registerCourse *courseReg = new registerCourse(this);
+    courseReg->show();
+}
+
+
+void studentPage::on_pushButton_clicked()
+{
+    this->hide();
+    MainWindow *main = new MainWindow();
+    main->show();
+}
+
 

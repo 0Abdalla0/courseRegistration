@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
@@ -33,6 +34,7 @@ public:
     QScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_3;
     QWidget *widgetSemster;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *generateReport)
     {
@@ -109,6 +111,13 @@ public:
 "font-size:20px;\n"
 ""));
         scrollArea_2->setWidget(scrollAreaWidgetContents_3);
+        pushButton = new QPushButton(generateReport);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(30, 20, 151, 61));
+        pushButton->setStyleSheet(QString::fromUtf8("BORDER-RADIUS:25%;\n"
+"background-image: url(:/imgs/images/blue.jpg);\n"
+"font: 20pt \"Segoe UI\";\n"
+"color:white;"));
 
         retranslateUi(generateReport);
 
@@ -121,6 +130,7 @@ public:
         label->setText(QCoreApplication::translate("generateReport", "unkown", nullptr));
         label_2->setText(QCoreApplication::translate("generateReport", "0.0", nullptr));
         label_3->setText(QCoreApplication::translate("generateReport", "-1", nullptr));
+        pushButton->setText(QCoreApplication::translate("generateReport", "BACK", nullptr));
     } // retranslateUi
 
 };

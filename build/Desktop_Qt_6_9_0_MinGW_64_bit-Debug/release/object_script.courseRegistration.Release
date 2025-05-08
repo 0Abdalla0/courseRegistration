@@ -20,6 +20,7 @@ release/moc_generatereport.o
 release/moc_loginwindow.o
 release/moc_mainwindow.o
 release/moc_managegrades.o
+release/moc_registercourse.o
 release/moc_setprerequisites.o
 release/moc_signup.o
 release/moc_studentpage.o

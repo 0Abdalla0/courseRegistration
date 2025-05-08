@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include"mainwindow.h"
 #include"managegrades.h"
+#include "studentpage.h"
 
 generateReport::generateReport(QWidget *parent)
     : QDialog(parent)
@@ -63,3 +64,11 @@ generateReport::~generateReport()
 {
     delete ui;
 }
+
+void generateReport::on_pushButton_clicked()
+{
+    this->hide();
+    studentPage *stdPage = new studentPage;
+    stdPage->show();
+}
+

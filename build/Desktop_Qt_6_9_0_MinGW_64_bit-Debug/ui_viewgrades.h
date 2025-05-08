@@ -14,6 +14,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -22,12 +23,13 @@ class Ui_viewGrades
 public:
     QLabel *label;
     QComboBox *comboBox;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *viewGrades)
     {
         if (viewGrades->objectName().isEmpty())
             viewGrades->setObjectName("viewGrades");
-        viewGrades->resize(1302, 566);
+        viewGrades->resize(1315, 788);
         viewGrades->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/11.jpg);"));
         label = new QLabel(viewGrades);
         label->setObjectName("label");
@@ -42,6 +44,12 @@ public:
 "border-radius: 15%;\n"
 "color:white;\n"
 "font: 22pt \"Segoe UI\";"));
+        pushButton = new QPushButton(viewGrades);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(150, 620, 151, 51));
+        pushButton->setStyleSheet(QString::fromUtf8("BORDER-RADIUS:25%;\n"
+"font: 20pt \"Segoe UI\";\n"
+"color:white;"));
 
         retranslateUi(viewGrades);
 
@@ -52,6 +60,7 @@ public:
     {
         viewGrades->setWindowTitle(QCoreApplication::translate("viewGrades", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("viewGrades", "TextLabel", nullptr));
+        pushButton->setText(QCoreApplication::translate("viewGrades", "BACK", nullptr));
     } // retranslateUi
 
 };

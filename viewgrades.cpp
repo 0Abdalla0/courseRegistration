@@ -4,6 +4,7 @@
 #include "managegrades.h"
 #include "student.h"
 #include "ui_viewgrades.h"
+#include "studentpage.h"
 viewGrades::viewGrades(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::viewGrades)
@@ -60,3 +61,11 @@ viewGrades::~viewGrades()
 //         ui->listWidget->addItem(itemText);
 //     }
 // }
+
+void viewGrades::on_pushButton_clicked()
+{
+    this->hide();
+    studentPage *stPage = new studentPage;
+    stPage->show();
+}
+

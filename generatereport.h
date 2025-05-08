@@ -18,6 +18,9 @@ public:
     student std;
     ~generateReport();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::generateReport *ui;
 };
