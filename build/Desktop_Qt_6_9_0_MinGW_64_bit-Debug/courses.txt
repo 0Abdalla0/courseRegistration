@@ -1,8 +1,8 @@
-104,Data Structures,Abdalla,Abdalla@gmail.com,Data manipulation,3
------------------------------------------------------------------
-103,Data mining,Ziad,Ziad@gmail.com,Data,3
+101,intro to cs,Ahmed Amr,Amr@gmail.com,lgknlg,3
 -----------------------------------------------------------------
 102,sp,Ahmed Amr,Amr@gmail.com,computers,3
 -----------------------------------------------------------------
-101,intro to cs,Ahmed Amr,Amr@gmail.com,lgknlg,3
+103,Data mining,Ziad,Ziad@gmail.com,Data,3
+-----------------------------------------------------------------
+104,Data Structures,Abdalla,Abdalla@gmail.com,Data manipulation,3
 -----------------------------------------------------------------
