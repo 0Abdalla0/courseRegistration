@@ -3,6 +3,7 @@ debug/adminpage.o
 debug/checkprerequisites.o
 debug/course.o
 debug/generatereport.o
+debug/grade.o
 debug/loginwindow.o
 debug/main.o
 debug/managegrades.o

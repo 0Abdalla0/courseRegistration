@@ -2,8 +2,7 @@
 #define GENERATEREPORT_H
 #include"loginwindow.h"
 #include <QDialog>
-
-
+#include"grade.h"
 namespace Ui {
 class generateReport;
 }
@@ -14,7 +13,7 @@ class generateReport : public QDialog
 
 public:
     explicit generateReport(QWidget *parent = nullptr);
-    map<int, unordered_map<QString, QString>> std1;
+    map<int, unordered_map<QString, grade*>> std1;
     student std;
     ~generateReport();
 

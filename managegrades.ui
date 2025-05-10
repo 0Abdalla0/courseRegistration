@@ -111,6 +111,24 @@ border-radius:15%;
     <string>BACK</string>
    </property>
   </widget>
+  <widget class="QComboBox" name="semesterCmb">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>460</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+background-image: url(:/imgs/images/white.jpg);
+font: 18pt &quot;Segoe UI&quot;;
+border:1px solid black;
+border-radius:15%;
+color:black;</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

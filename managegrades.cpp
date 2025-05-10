@@ -6,6 +6,7 @@
 #include "ui_managegrades.h"
 #include "uploadcourse.h"
 #include <signup.h>
+#include "grade.h"
 using namespace std;
 manageGrades::manageGrades(QWidget *parent)
     : QDialog(parent)
@@ -22,6 +23,10 @@ manageGrades::manageGrades(QWidget *parent)
     vector<QString> grades = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"};
     for (unsigned long long var = 0; var < grades.size(); ++var) {
         ui->gradeCmb->addItem(grades[var]);
+    }
+    vector<QString> semesters = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"};
+    for (unsigned long long var = 0; var < semesters.size(); ++var) {
+        ui->semesterCmb->addItem(semesters[var]);
     }
 }
 
@@ -42,13 +47,15 @@ void manageGrades::on_addGradeBtn_clicked()
     QString studentId = ui->studIdCmb->currentText();
     QString courseName = ui->courseNameCmb->currentText();
     QString gradeValue = ui->gradeCmb->currentText();
-    manageGrades::getGrades()[studentId.toInt()][courseName] = gradeValue;
+    QString semester = ui->semesterCmb->currentText();
+    grade* Grade = new grade(gradeValue,semester);
+    manageGrades::getGrades()[studentId.toInt()][courseName] = Grade;
     QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUMBIITED");
 }
 
-map<int, unordered_map<QString, QString>> &manageGrades::getGrades()
+map<int, unordered_map<QString, grade*>> &manageGrades::getGrades()
 {
-    static map<int, unordered_map<QString, QString>> grades; // Corrected declaration
+    static map<int, unordered_map<QString, grade*>> grades; // Corrected declaration
     return grades;
 }
 
@@ -62,12 +69,12 @@ void manageGrades::saveToCsv(const QString &filename)
     }
 
     QTextStream out(&file);
-    out << "Student ID,Course Name,Grade\n";
+    out << "Student ID,Course Name,Grade,Semester\n";
 
     const auto &grades = manageGrades::getGrades();
     for (const auto &[stuId, courses] : grades) {
         for (const auto &[courseName, grade] : courses) {
-            out << stuId << "," << courseName << "," << grade << "\n";
+            out << stuId << "," << courseName << "," << grade->courseGrade << "," << grade->semester<< "\n";
         }
     }
 
@@ -88,7 +95,7 @@ void manageGrades::loadFromCsv(const QString &filename)
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
         QStringList parts = line.split(",");
-        if (parts.size() != 3)
+        if (parts.size() != 4)
             continue;
 
         bool ok;
@@ -97,9 +104,10 @@ void manageGrades::loadFromCsv(const QString &filename)
             continue;
 
         QString courseName = parts[1];
-        QString grade = parts[2];
-
-        manageGrades::getGrades()[stuId][courseName] = grade;
+        QString gradeValue = parts[2];
+        QString semester = parts[3];
+        grade* Grade = new grade(gradeValue,semester);
+        manageGrades::getGrades()[stuId][courseName] = Grade;
     }
 
     file.close();

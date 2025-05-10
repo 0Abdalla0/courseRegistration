@@ -13,6 +13,7 @@
 #include <stack>
 #include <vector>
 #include"managegrades.h"
+#include"grade.h"
 ///////////to be commited
 checkprerequisites::checkprerequisites(QWidget *parent)
     : QDialog(parent)
@@ -66,7 +67,7 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
 }
 bool checkprerequisites::checkCourseValidation(int id)
 {
-    map<int, unordered_map<QString, QString>>::iterator gradesIt;
+    map<int, unordered_map<QString, grade*>>::iterator gradesIt;
     prerequisitesTable;
     for(getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit)
     {

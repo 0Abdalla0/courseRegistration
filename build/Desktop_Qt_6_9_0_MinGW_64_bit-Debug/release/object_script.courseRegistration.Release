@@ -3,6 +3,7 @@ release/adminpage.o
 release/checkprerequisites.o
 release/course.o
 release/generatereport.o
+release/grade.o
 release/loginwindow.o
 release/main.o
 release/managegrades.o

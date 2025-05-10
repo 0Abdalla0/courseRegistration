@@ -7,6 +7,7 @@
 #include"mainwindow.h"
 #include"managegrades.h"
 #include "studentpage.h"
+#include"grade.h"
 
 generateReport::generateReport(QWidget *parent)
     : QDialog(parent)
@@ -27,7 +28,7 @@ generateReport::generateReport(QWidget *parent)
     ui->label_3->setText(stdIdStr);
     auto grades = std1;
     auto it = grades.begin();
-    unordered_map<QString, QString> innerUnMap;
+    unordered_map<QString, grade*> innerUnMap;
 
 
     QVBoxLayout* layoutCourseName = new QVBoxLayout();
@@ -40,7 +41,7 @@ generateReport::generateReport(QWidget *parent)
             break;
         }
     }
-    unordered_map<QString, QString>::iterator it2;
+    unordered_map<QString, grade*>::iterator it2;
 
     for(it2=innerUnMap.begin();it2!=innerUnMap.end();it2++)
     {
@@ -51,7 +52,7 @@ generateReport::generateReport(QWidget *parent)
         QLabel* labelCourseName = new QLabel(it2->first, this);
         layoutCourseName->addWidget(labelCourseName);
         ui->widgetCourseName->setLayout(layoutCourseName);
-        QLabel* labelGrades = new QLabel(it2->second, this);
+        QLabel* labelGrades = new QLabel(it2->second->courseGrade, this);
         layoutGrades->addWidget(labelGrades);
         ui->widgetGrades->setLayout(layoutGrades);
     }

@@ -25,6 +25,7 @@ public:
     QComboBox *studIdCmb;
     QComboBox *gradeCmb;
     QPushButton *backBtn;
+    QComboBox *semesterCmb;
 
     void setupUi(QDialog *manageGrades)
     {
@@ -76,6 +77,15 @@ public:
 "font: 18pt \"Segoe UI\";\n"
 "border-radius:15%;\n"
 ""));
+        semesterCmb = new QComboBox(manageGrades);
+        semesterCmb->setObjectName("semesterCmb");
+        semesterCmb->setGeometry(QRect(850, 460, 141, 61));
+        semesterCmb->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"background-image: url(:/imgs/images/white.jpg);\n"
+"font: 18pt \"Segoe UI\";\n"
+"border:1px solid black;\n"
+"border-radius:15%;\n"
+"color:black;"));
 
         retranslateUi(manageGrades);
 

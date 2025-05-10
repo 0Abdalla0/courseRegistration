@@ -14,6 +14,7 @@ SOURCES += \
     checkprerequisites.cpp \
     course.cpp \
     generatereport.cpp \
+    grade.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     checkprerequisites.h \
     course.h \
     generatereport.h \
+    grade.h \
     loginwindow.h \
     mainwindow.h \
     managegrades.h \

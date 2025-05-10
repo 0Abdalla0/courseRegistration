@@ -38,7 +38,7 @@ void viewGrades::on_comboBox_currentIndexChanged(int index)
         const auto &studentCourses = it->second;
         auto courseIt = studentCourses.find(selectedCourseName);
         if (courseIt != studentCourses.end()) {
-            QString grade = courseIt->second;
+            QString grade = courseIt->second->courseGrade;
             ui->label->setText("Grade: " + grade);
             return;
         }
