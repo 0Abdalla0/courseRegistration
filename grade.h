@@ -9,7 +9,8 @@ class grade
 public:
     QString courseGrade;
     QString semester;
-    grade(QString,QString);
+    double gpa;
+    grade(QString,QString,double);
 };
 
 #endif // GRADE_H

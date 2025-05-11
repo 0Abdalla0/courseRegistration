@@ -17,6 +17,7 @@ class signup : public QDialog
 public:
     explicit signup(QWidget *parent = nullptr);
     ~signup();
+    static int cnt;
 
 private slots:
     void on_pushButton_2_clicked();

@@ -70,10 +70,10 @@ void MainWindow::loadUsersFromFile()
         if (parts.size() == 4) {
             student newStudent(parts[0], parts[1], parts[2], parts[3]);
             MainWindow::getStudents().append(newStudent);
-            ++admin->studCnt;
+            signup::cnt++;
         }
     }
-    admin->updateStudCnt(admin->studCnt);
+    admin->updateStudCnt(signup::cnt);
     file.close();
 }
 

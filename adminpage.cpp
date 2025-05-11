@@ -5,6 +5,7 @@
 #include "setprerequisites.h"
 #include "ui_adminpage.h"
 #include "uploadcourse.h"
+#include"signup.h"
 adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)
@@ -12,6 +13,7 @@ adminPage::adminPage(QWidget *parent)
     uploadCourse uc;
     ui->setupUi(this);
     updateCnt(uploadCourse::coursesCnt);
+    updateStudCnt(signup::cnt);
 }
 
 adminPage::~adminPage()
@@ -37,6 +39,7 @@ void adminPage::updateCnt(int &c)
     QString coursesCnt = QString::number(c);
     ui->coursesCnt->setText(coursesCnt);
 }
+
 void adminPage::updateStudCnt(int &c)
 {
     QString studCnt = QString::number(c);

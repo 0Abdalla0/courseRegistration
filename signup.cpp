@@ -16,7 +16,7 @@ signup::~signup()
 {
     delete ui;
 }
-
+int signup::cnt = 0;
 void signup::on_pushButton_2_clicked()
 {
     adminPage *admin = new adminPage();
@@ -47,8 +47,8 @@ void signup::on_pushButton_2_clicked()
 
     student newStudent(name, stdID, cgpa, password);
     MainWindow::getStudents().append(newStudent);
-    ++admin->studCnt;
-    admin->updateStudCnt(admin->studCnt);
+    signup::cnt++;
+    admin->updateStudCnt(signup::cnt);
     QMessageBox::information(this, "Success", "Account created successfully!");
 
     ui->lineEdit_name->clear();
@@ -56,6 +56,7 @@ void signup::on_pushButton_2_clicked()
     ui->lineEdit_gpa->clear();
     ui->lineEdit_pass->clear();
     ui->lineEdit_confirmPass->clear();
+    cnt++;
     this->hide();
     loginWin = new loginWindow(this);
     loginWin->show();
