@@ -5,6 +5,8 @@
 #include <QTextStream>
 #include "adminPage.h"
 #include "course.h"
+#include "grade.h"
+#include "managegrades.h"
 #include "setprerequisites.h"
 #include "studentpage.h"
 #include "ui_checkprerequisites.h"
@@ -12,8 +14,6 @@
 #include "uploadcourse.h"
 #include <stack>
 #include <vector>
-#include"managegrades.h"
-#include"grade.h"
 ///////////to be commited
 checkprerequisites::checkprerequisites(QWidget *parent)
     : QDialog(parent)
@@ -24,7 +24,7 @@ checkprerequisites::checkprerequisites(QWidget *parent)
     prerequisitesTable = setPrerequisites::getPrerequisitesTable();
     getCourseInfo = uploadCourse::getCourseTable();
     for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
-          ui->courseID_Cmb->addItem(getCourseInfo[getPreit->first].getTitle());
+        ui->courseID_Cmb->addItem(getCourseInfo[getPreit->first].getTitle());
     }
 
     connect(ui->courseID_Cmb,
@@ -59,7 +59,7 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
             vector<int> prereqList = getPreit->second;
             vector<int>::iterator vecIt;
             for (vecIt = prereqList.begin(); vecIt != prereqList.end(); ++vecIt) {
-                 ui->prerequisetsID_Cmb->addItem(getCourseInfo[*vecIt].getTitle());
+                ui->prerequisetsID_Cmb->addItem(getCourseInfo[*vecIt].getTitle());
             }
             break;
         }
@@ -67,26 +67,20 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
 }
 bool checkprerequisites::checkCourseValidation(int id)
 {
-    map<int, unordered_map<QString, grade*>>::iterator gradesIt;
+    map<int, unordered_map<QString, grade *>>::iterator gradesIt;
     prerequisitesTable;
-    for(getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit)
-    {
-        if (getPreit->first==id)
-        {
+    for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
+        if (getPreit->first == id) {
             vector<int> prereqList = getPreit->second;
             vector<int>::iterator vecIt;
             for (vecIt = prereqList.begin(); vecIt != prereqList.end(); ++vecIt) {
-                for(gradesIt=gradesTabel.begin();gradesIt!=gradesTabel.begin();gradesIt++)
-                {
-                    if((*vecIt)==gradesIt->first)
-                    {
+                for (gradesIt = gradesTabel.begin(); gradesIt != gradesTabel.begin(); gradesIt++) {
+                    if ((*vecIt) == gradesIt->first) {
                         return true;
                     }
                 }
             }
-
         }
-
     }
     return false;
 }

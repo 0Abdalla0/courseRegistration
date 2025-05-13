@@ -3,9 +3,9 @@
 #include "mainwindow.h"
 #include "managegrades.h"
 #include "setprerequisites.h"
+#include "signup.h"
 #include "ui_adminpage.h"
 #include "uploadcourse.h"
-#include"signup.h"
 adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)

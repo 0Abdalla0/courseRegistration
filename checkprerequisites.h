@@ -1,9 +1,9 @@
 #ifndef CHECKPREREQUISITES_H
 #define CHECKPREREQUISITES_H
+#include "course.h"
+#include "grade.h"
 #include <map>
 #include <vector>
-#include"course.h"
-#include"grade.h"
 using namespace std;
 #include <QDialog>
 
@@ -22,7 +22,7 @@ public:
     map<int, vector<int>>::iterator getPreit;
     unordered_map<int, Course> getCourseInfo;
     bool checkCourseValidation(int id);
-    map<int, unordered_map<QString, grade*>> gradesTabel;
+    map<int, unordered_map<QString, grade *>> gradesTabel;
 private slots:
     void on_backBTN_clicked();
 

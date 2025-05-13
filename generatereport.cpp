@@ -1,13 +1,16 @@
 #include "generatereport.h"
-#include "ui_generatereport.h"
-#include "loginwindow.h"
-#include <QVBoxLayout>
 #include <QLabel>
-#include <unordered_map>
-#include"mainwindow.h"
-#include"managegrades.h"
+#include<iostream>
+#include <QVBoxLayout>
+#include "grade.h"
+#include "loginwindow.h"
+#include "mainwindow.h"
+#include "managegrades.h"
 #include "studentpage.h"
-#include"grade.h"
+#include "ui_generatereport.h"
+#include<QDebug>
+#include <unordered_map>
+using namespace std;
 
 generateReport::generateReport(QWidget *parent)
     : QDialog(parent)
@@ -28,37 +31,46 @@ generateReport::generateReport(QWidget *parent)
     ui->label_3->setText(stdIdStr);
     auto grades = std1;
     auto it = grades.begin();
-    unordered_map<QString, grade*> innerUnMap;
+    unordered_map<QString, grade *> innerUnMap;
 
+    qDebug() << "first -----> (1) " << it->second.begin()->first << "\n";
+    qDebug() << "first -----> (2) " << it->second.begin()->second->semester << "\n";
+    qDebug() << "second -----> " << it->first << "\n";
 
-    QVBoxLayout* layoutCourseName = new QVBoxLayout();
-    QVBoxLayout* layoutId = new QVBoxLayout();
-    QVBoxLayout* layoutGrades = new QVBoxLayout();
+    QVBoxLayout *layoutCourseName = new QVBoxLayout();
+
+    QVBoxLayout *layoutId = new QVBoxLayout();
+
+    QVBoxLayout *layoutGrades = new QVBoxLayout();
+
+    QVBoxLayout *layoutSemester = new QVBoxLayout();
+
     for (auto it = grades.begin(); it != grades.end(); ++it) {
-        if(it->first==stdID)
-        {
-            innerUnMap=it->second;
+        if (it->first == stdID) {
+            innerUnMap = it->second;
+            qDebug() << innerUnMap.begin()->first <<"\n";
+            qDebug() << innerUnMap.begin()->second->semester <<"\n";
             break;
         }
     }
-    unordered_map<QString, grade*>::iterator it2;
 
-    for(it2=innerUnMap.begin();it2!=innerUnMap.end();it2++)
-    {
+    unordered_map<QString, grade *>::iterator it2;
+
+    for (it2 = innerUnMap.begin(); it2 != innerUnMap.end(); it2++) {
         qDebug() << "Number of students in grades map:" << it2->second;
         // int courseGrade = it->first;
         // QString courseGradeStr = QString::number(courseGrade);
 
-        QLabel* labelCourseName = new QLabel(it2->first, this);
+        QLabel *labelCourseName = new QLabel(it2->first, this);
         layoutCourseName->addWidget(labelCourseName);
         ui->widgetCourseName->setLayout(layoutCourseName);
-        QLabel* labelGrades = new QLabel(it2->second->courseGrade, this);
+        QLabel *labelGrades = new QLabel(it2->second->courseGrade, this);
         layoutGrades->addWidget(labelGrades);
         ui->widgetGrades->setLayout(layoutGrades);
+        QLabel *labelSemester = new QLabel(it2->second->semester, this);
+        layoutSemester->addWidget(labelSemester);
+        ui->widgetSemster->setLayout(layoutSemester);
     }
-
-
-
 }
 
 generateReport::~generateReport()
@@ -72,4 +84,3 @@ void generateReport::on_pushButton_clicked()
     studentPage *stdPage = new studentPage;
     stdPage->show();
 }
-

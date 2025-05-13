@@ -1,9 +1,9 @@
 #ifndef MANAGEGRADES_H
 #define MANAGEGRADES_H
 #include <QDialog>
+#include "grade.h"
 #include <map>
 #include <unordered_map>
-#include"grade.h"
 using namespace std;
 namespace Ui {
 class manageGrades;
@@ -16,7 +16,7 @@ class manageGrades : public QDialog
 public:
     explicit manageGrades(QWidget *parent = nullptr);
     ~manageGrades();
-    static map<int, unordered_map<QString, grade*>> &getGrades();
+    static map<int, unordered_map<QString, grade *>> &getGrades();
     static void saveToCsv(const QString &filename);
     static void loadFromCsv(const QString &filename);
 

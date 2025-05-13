@@ -1,10 +1,10 @@
 #include "registercourse.h"
-#include "ui_registercourse.h"
-#include "studentpage.h"
-#include "uploadcourse.h"
-#include <QTableWidgetItem>
-#include <QMessageBox>
 #include <QFont>
+#include <QMessageBox>
+#include <QTableWidgetItem>
+#include "studentpage.h"
+#include "ui_registercourse.h"
+#include "uploadcourse.h"
 #include <unordered_map>
 
 registerCourse::registerCourse(QWidget *parent)
@@ -22,7 +22,6 @@ registerCourse::registerCourse(QWidget *parent)
     ui->titleItem->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->titleItem->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-
     QFont font = ui->titleItem->font();
     font.setPointSize(12);
     ui->titleItem->setFont(font);
@@ -31,7 +30,9 @@ registerCourse::registerCourse(QWidget *parent)
     for (const auto &[id, course] : courseTable) {
         ui->titleItem->setItem(row, 0, new QTableWidgetItem(QString::number(course.getId())));
         ui->titleItem->setItem(row, 1, new QTableWidgetItem(course.getTitle()));
-        ui->titleItem->setItem(row, 2, new QTableWidgetItem(QString::number(course.getCreditHours())));
+        ui->titleItem->setItem(row,
+                               2,
+                               new QTableWidgetItem(QString::number(course.getCreditHours())));
         ui->titleItem->setRowHeight(row, 30);
         row++;
     }
@@ -39,8 +40,7 @@ registerCourse::registerCourse(QWidget *parent)
     ui->titleItem->resizeColumnsToContents();
     ui->titleItem->horizontalHeader()->setStretchLastSection(true);
 
-    connect(ui->titleItem, &QTableWidget::cellClicked,
-            this, &registerCourse::onCourseSelected);
+    connect(ui->titleItem, &QTableWidget::cellClicked, this, &registerCourse::onCourseSelected);
 }
 
 registerCourse::~registerCourse()
@@ -69,10 +69,11 @@ void registerCourse::on_registerBtn_clicked()
     if (it != courseTable.end()) {
         const Course &course = it->second;
         // TODO: Save to student course list (if needed)
-        QMessageBox::information(this, "Registration Successful",
-                                 "You have registered for:\n" +
-                                     course.getTitle() + "\nCredit Hours: " +
-                                     QString::number(course.getCreditHours()));
+        QMessageBox::information(this,
+                                 "Registration Successful",
+                                 "You have registered for:\n" + course.getTitle()
+                                     + "\nCredit Hours: "
+                                     + QString::number(course.getCreditHours()));
     } else {
         QMessageBox::warning(this, "Error", "Selected course not found.");
     }

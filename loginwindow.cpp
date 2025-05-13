@@ -37,6 +37,7 @@ void loginWindow::on_SignInBtn_clicked()
     }
 
     bool userFound = false;
+    bool isLoggedIn = false;
     for (const student &s : MainWindow::getStudents()) {
         if (s.getId() == enteredID) {
             userFound = true;
@@ -46,6 +47,7 @@ void loginWindow::on_SignInBtn_clicked()
                                          "Welcome back, " + s.getName() + "!");
                 this->accept();
                 signedIn = s;
+                isLoggedIn = true;
             } else {
                 QMessageBox::warning(this, "Login Failed", "Incorrect password. Please try again.");
             }
@@ -58,7 +60,7 @@ void loginWindow::on_SignInBtn_clicked()
         admin->show();
     } else if (!userFound) {
         QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
-    } else {
+    } else if(isLoggedIn) {
         this->close();
         studentPage *stdPage = new studentPage(this);
         stdPage->show();

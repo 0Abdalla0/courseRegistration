@@ -3,8 +3,8 @@
 #include "loginWindow.h"
 #include "managegrades.h"
 #include "student.h"
-#include "ui_viewgrades.h"
 #include "studentpage.h"
+#include "ui_viewgrades.h"
 viewGrades::viewGrades(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::viewGrades)
@@ -68,4 +68,3 @@ void viewGrades::on_pushButton_clicked()
     studentPage *stPage = new studentPage;
     stPage->show();
 }
-
