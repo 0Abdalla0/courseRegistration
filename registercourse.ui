@@ -14,7 +14,8 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/imgs/images/register.jpg);</string>
+   <string notr="true">background-image: url(:/imgs/images/register.jpg);
+</string>
   </property>
   <widget class="QPushButton" name="backBTN">
    <property name="geometry">
@@ -40,16 +41,17 @@ border-radius:15%;
   <widget class="QTableWidget" name="titleItem">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>250</y>
-     <width>481</width>
-     <height>441</height>
+     <x>380</x>
+     <y>230</y>
+     <width>601</width>
+     <height>491</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
 font: 14pt &quot;Segoe UI&quot;;
-border-radius:25%</string>
+
+  </string>
    </property>
   </widget>
   <widget class="QPushButton" name="registerBtn">

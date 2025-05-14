@@ -1,5 +1,9 @@
 #include "managegrades.h"
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QFileDialog>
 #include <QMessageBox>
+#include <QMimeData>
 #include <QString>
 #include "adminpage.h"
 #include "grade.h"
@@ -8,10 +12,6 @@
 #include "ui_managegrades.h"
 #include "uploadcourse.h"
 #include <signup.h>
-#include <QDragEnterEvent>
-#include <QDropEvent>
-#include <QMimeData>
-#include <QFileDialog>
 using namespace std;
 manageGrades::manageGrades(QWidget *parent)
     : QDialog(parent)
@@ -137,7 +137,10 @@ void manageGrades::loadFromCsv(const QString &filename)
 
 void manageGrades::on_uploadGradesBtn_clicked()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, "Open Grades CSV", "", "CSV Files (*.csv)");
+    QString fileName = QFileDialog::getOpenFileName(this,
+                                                    "Open Grades CSV",
+                                                    "",
+                                                    "CSV Files (*.csv)");
     if (!fileName.isEmpty()) {
         loadFromCsv(fileName);
         QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUMBIITED");

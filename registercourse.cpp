@@ -2,11 +2,11 @@
 #include <QFont>
 #include <QMessageBox>
 #include <QTableWidgetItem>
+#include "adminpage.h"
 #include "studentpage.h"
 #include "ui_registercourse.h"
 #include "uploadcourse.h"
 #include <unordered_map>
-#include"adminpage.h"
 registerCourse::registerCourse(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::registerCourse)
@@ -37,8 +37,48 @@ registerCourse::registerCourse(QWidget *parent)
         row++;
     }
 
+    ui->titleItem->setStyleSheet(
+        "QTableWidget {"
+        "   background-color: white;"
+        "   color: black;"
+        "   gridline-color: #e0e0e0;"
+        "border:none"
+        "}"
+        "QTableWidget QTableCornerButton::section {"
+        "   background: #f5f5f5;"
+        "   border: 1px solid #e0e0e0;"
+        "}"
+        "QHeaderView::section {"
+        "   background-color: #f5f5f5;"
+        "   color: black;"
+        "   padding: 5px;"
+        "   border: none;"
+        "   min-width: 100px;"
+        "   border-bottom: 2px solid #e0e0e0;"
+        "}"
+        "QTableWidget::item {"
+        "   border-bottom: 1px solid #f0f0f0;"
+        "}"
+        );
+
+
+
+    for (int col = 0; col < 4; ++col) {
+        ui->titleItem->horizontalHeader()->setSectionResizeMode(col, QHeaderView::Stretch);
+    }
+
+    // Center-align numeric columns
+    for (int row = 0; row < ui->titleItem->rowCount(); ++row) {
+        for (int col : {0, 1, 3}) {  // Columns #, ID, and Credit Hours
+            if (auto item = ui->titleItem->item(row, col)) {
+                item->setTextAlignment(Qt::AlignCenter);
+            }
+        }
+    }
     ui->titleItem->resizeColumnsToContents();
-    ui->titleItem->horizontalHeader()->setStretchLastSection(true);
+    ui->titleItem->verticalHeader()->setStretchLastSection(true);
+    ui->titleItem->horizontalHeader()->setStretchLastSection(false);
+    ui->titleItem->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     connect(ui->titleItem, &QTableWidget::cellClicked, this, &registerCourse::onCourseSelected);
 }
@@ -47,7 +87,7 @@ registerCourse::~registerCourse()
 {
     delete ui;
 }
-int registerCourse::regCnt =0;
+int registerCourse::regCnt = 0;
 void registerCourse::onCourseSelected(int row, int column)
 {
     QTableWidgetItem *idItem = ui->titleItem->item(row, 0);
@@ -69,7 +109,7 @@ void registerCourse::on_registerBtn_clicked()
 
     if (it != courseTable.end()) {
         const Course &course = it->second;
-        // TODO: Save to student course list (if needed)
+
         QMessageBox::information(this,
                                  "Registration Successful",
                                  "You have registered for:\n" + course.getTitle()
@@ -82,6 +122,7 @@ void registerCourse::on_registerBtn_clicked()
         QMessageBox::warning(this, "Error", "Selected course not found.");
     }
 }
+
 
 void registerCourse::on_backBTN_clicked()
 {

@@ -30,7 +30,8 @@ public:
         if (registerCourse->objectName().isEmpty())
             registerCourse->setObjectName("registerCourse");
         registerCourse->resize(1326, 772);
-        registerCourse->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/register.jpg);"));
+        registerCourse->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/register.jpg);\n"
+""));
         backBTN = new QPushButton(registerCourse);
         backBTN->setObjectName("backBTN");
         backBTN->setGeometry(QRect(40, 730, 151, 41));
@@ -42,10 +43,11 @@ public:
 ""));
         titleItem = new QTableWidget(registerCourse);
         titleItem->setObjectName("titleItem");
-        titleItem->setGeometry(QRect(450, 250, 481, 441));
+        titleItem->setGeometry(QRect(380, 230, 601, 491));
         titleItem->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "font: 14pt \"Segoe UI\";\n"
-"border-radius:25%"));
+"\n"
+"  "));
         registerBtn = new QPushButton(registerCourse);
         registerBtn->setObjectName("registerBtn");
         registerBtn->setGeometry(QRect(1070, 400, 151, 121));

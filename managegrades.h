@@ -1,11 +1,11 @@
 #ifndef MANAGEGRADES_H
 #define MANAGEGRADES_H
 #include <QDialog>
+#include <QDragEnterEvent>
+#include <QDropEvent>
 #include "grade.h"
 #include <map>
 #include <unordered_map>
-#include <QDragEnterEvent>
-#include <QDropEvent>
 using namespace std;
 namespace Ui {
 class manageGrades;
@@ -21,6 +21,7 @@ public:
     static map<int, unordered_map<QString, grade *>> &getGrades();
     static void saveToCsv(const QString &filename);
     static void loadFromCsv(const QString &filename);
+
 protected:
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;

@@ -2,11 +2,11 @@
 #include "course.h"
 #include "mainwindow.h"
 #include "managegrades.h"
+#include "registercourse.h"
 #include "setprerequisites.h"
 #include "signup.h"
 #include "ui_adminpage.h"
 #include "uploadcourse.h"
-#include"registercourse.h"
 adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)
@@ -16,7 +16,6 @@ adminPage::adminPage(QWidget *parent)
     updateCnt(uploadCourse::coursesCnt);
     updateStudCnt(signup::cnt);
     updateRegistrationsCnt(registerCourse::regCnt);
-
 }
 
 adminPage::~adminPage()
