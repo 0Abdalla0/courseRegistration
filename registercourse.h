@@ -16,6 +16,7 @@ class registerCourse : public QDialog
 public:
     explicit registerCourse(QWidget *parent = nullptr);
     ~registerCourse();
+    static int regCnt;
 
 private slots:
     void on_backBTN_clicked();

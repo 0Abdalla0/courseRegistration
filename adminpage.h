@@ -16,6 +16,7 @@ public:
     ~adminPage();
     void updateCnt(int &c);
     void updateStudCnt(int &c);
+    void updateRegistrationsCnt(int &c);
 private slots:
     void on_pushButton_clicked();
 

@@ -56,7 +56,6 @@ void signup::on_pushButton_2_clicked()
     ui->lineEdit_gpa->clear();
     ui->lineEdit_pass->clear();
     ui->lineEdit_confirmPass->clear();
-    cnt++;
     this->hide();
     loginWin = new loginWindow(this);
     loginWin->show();

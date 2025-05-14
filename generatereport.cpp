@@ -1,6 +1,6 @@
 #include "generatereport.h"
+#include <QDebug>
 #include <QLabel>
-#include<iostream>
 #include <QVBoxLayout>
 #include "grade.h"
 #include "loginwindow.h"
@@ -8,7 +8,7 @@
 #include "managegrades.h"
 #include "studentpage.h"
 #include "ui_generatereport.h"
-#include<QDebug>
+#include <iostream>
 #include <unordered_map>
 using namespace std;
 
@@ -48,8 +48,8 @@ generateReport::generateReport(QWidget *parent)
     for (auto it = grades.begin(); it != grades.end(); ++it) {
         if (it->first == stdID) {
             innerUnMap = it->second;
-            qDebug() << innerUnMap.begin()->first <<"\n";
-            qDebug() << innerUnMap.begin()->second->semester <<"\n";
+            qDebug() << innerUnMap.begin()->first << "\n";
+            qDebug() << innerUnMap.begin()->second->semester << "\n";
             break;
         }
     }

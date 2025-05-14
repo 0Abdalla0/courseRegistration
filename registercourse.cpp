@@ -6,7 +6,7 @@
 #include "ui_registercourse.h"
 #include "uploadcourse.h"
 #include <unordered_map>
-
+#include"adminpage.h"
 registerCourse::registerCourse(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::registerCourse)
@@ -47,7 +47,7 @@ registerCourse::~registerCourse()
 {
     delete ui;
 }
-
+int registerCourse::regCnt =0;
 void registerCourse::onCourseSelected(int row, int column)
 {
     QTableWidgetItem *idItem = ui->titleItem->item(row, 0);
@@ -58,6 +58,7 @@ void registerCourse::onCourseSelected(int row, int column)
 
 void registerCourse::on_registerBtn_clicked()
 {
+    adminPage *admin = new adminPage();
     if (selectedCourseId == -1) {
         QMessageBox::warning(this, "No Course Selected", "Please select a course to register.");
         return;
@@ -74,6 +75,9 @@ void registerCourse::on_registerBtn_clicked()
                                  "You have registered for:\n" + course.getTitle()
                                      + "\nCredit Hours: "
                                      + QString::number(course.getCreditHours()));
+        registerCourse::regCnt++;
+        admin->updateRegistrationsCnt(registerCourse::regCnt);
+
     } else {
         QMessageBox::warning(this, "Error", "Selected course not found.");
     }

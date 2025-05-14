@@ -6,6 +6,7 @@
 #include "signup.h"
 #include "ui_adminpage.h"
 #include "uploadcourse.h"
+#include"registercourse.h"
 adminPage::adminPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::adminPage)
@@ -14,6 +15,8 @@ adminPage::adminPage(QWidget *parent)
     ui->setupUi(this);
     updateCnt(uploadCourse::coursesCnt);
     updateStudCnt(signup::cnt);
+    updateRegistrationsCnt(registerCourse::regCnt);
+
 }
 
 adminPage::~adminPage()
@@ -44,6 +47,11 @@ void adminPage::updateStudCnt(int &c)
 {
     QString studCnt = QString::number(c);
     ui->studCnt->setText(studCnt);
+}
+void adminPage::updateRegistrationsCnt(int &c)
+{
+    QString regCnt = QString::number(c);
+    ui->regCnt->setText(regCnt);
 }
 void adminPage::on_pushButton_3_clicked()
 {
