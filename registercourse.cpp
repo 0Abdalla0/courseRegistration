@@ -7,6 +7,7 @@
 #include "ui_registercourse.h"
 #include "uploadcourse.h"
 #include <unordered_map>
+#include "checkprerequisites.h"
 registerCourse::registerCourse(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::registerCourse)
@@ -106,8 +107,9 @@ void registerCourse::on_registerBtn_clicked()
 
     const auto &courseTable = uploadCourse::getCourseTable();
     auto it = courseTable.find(selectedCourseId);
-
-    if (it != courseTable.end()) {
+    checkprerequisites checker;
+    bool prerequisitesCompleted = checker.checkCourseValidation(selectedCourseId);
+    if (it != courseTable.end() && prerequisitesCompleted ) {
         const Course &course = it->second;
 
         QMessageBox::information(this,
@@ -119,6 +121,8 @@ void registerCourse::on_registerBtn_clicked()
         admin->updateRegistrationsCnt(registerCourse::regCnt);
 
     } else {
+        if (prerequisitesCompleted == false) QMessageBox::warning(this, "Error", "You did not complete the prerequisites of this course.");
+        else
         QMessageBox::warning(this, "Error", "Selected course not found.");
     }
 }

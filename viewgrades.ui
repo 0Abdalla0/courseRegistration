@@ -19,14 +19,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>470</y>
-     <width>191</width>
+     <x>330</x>
+     <y>490</y>
+     <width>271</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 20pt &quot;Segoe UI&quot;;
+    <string notr="true">font: 18pt &quot;Segoe UI&quot;;
 color:white;</string>
    </property>
    <property name="text">
@@ -66,6 +66,23 @@ color:white;</string>
    </property>
    <property name="text">
     <string>BACK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>490</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 18pt &quot;Segoe UI&quot;;
+color:white;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>

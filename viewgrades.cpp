@@ -39,12 +39,15 @@ void viewGrades::on_comboBox_currentIndexChanged(int index)
         auto courseIt = studentCourses.find(selectedCourseName);
         if (courseIt != studentCourses.end()) {
             QString grade = courseIt->second->courseGrade;
+            QString semester = courseIt->second->semester;
             ui->label->setText("Grade: " + grade);
+            ui->label_2->setText("Semester: " + semester);
             return;
         }
     }
 
     ui->label->setText("Grade not found.");
+
 }
 
 viewGrades::~viewGrades()

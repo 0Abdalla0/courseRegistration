@@ -24,6 +24,7 @@ public:
     QLabel *label;
     QComboBox *comboBox;
     QPushButton *pushButton;
+    QLabel *label_2;
 
     void setupUi(QDialog *viewGrades)
     {
@@ -33,8 +34,8 @@ public:
         viewGrades->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/11.jpg);"));
         label = new QLabel(viewGrades);
         label->setObjectName("label");
-        label->setGeometry(QRect(590, 470, 191, 41));
-        label->setStyleSheet(QString::fromUtf8("font: 20pt \"Segoe UI\";\n"
+        label->setGeometry(QRect(330, 490, 271, 41));
+        label->setStyleSheet(QString::fromUtf8("font: 18pt \"Segoe UI\";\n"
 "color:white;"));
         comboBox = new QComboBox(viewGrades);
         comboBox->setObjectName("comboBox");
@@ -50,6 +51,11 @@ public:
         pushButton->setStyleSheet(QString::fromUtf8("BORDER-RADIUS:25%;\n"
 "font: 20pt \"Segoe UI\";\n"
 "color:white;"));
+        label_2 = new QLabel(viewGrades);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(780, 490, 261, 41));
+        label_2->setStyleSheet(QString::fromUtf8("font: 18pt \"Segoe UI\";\n"
+"color:white;"));
 
         retranslateUi(viewGrades);
 
@@ -61,6 +67,7 @@ public:
         viewGrades->setWindowTitle(QCoreApplication::translate("viewGrades", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("viewGrades", "TextLabel", nullptr));
         pushButton->setText(QCoreApplication::translate("viewGrades", "BACK", nullptr));
+        label_2->setText(QCoreApplication::translate("viewGrades", "TextLabel", nullptr));
     } // retranslateUi
 
 };
