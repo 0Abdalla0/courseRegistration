@@ -8,6 +8,10 @@
 #include "ui_managegrades.h"
 #include "uploadcourse.h"
 #include <signup.h>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QMimeData>
+#include <QFileDialog>
 using namespace std;
 manageGrades::manageGrades(QWidget *parent)
     : QDialog(parent)
@@ -129,4 +133,34 @@ void manageGrades::loadFromCsv(const QString &filename)
     }
 
     file.close();
+}
+
+void manageGrades::on_uploadGradesBtn_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, "Open Grades CSV", "", "CSV Files (*.csv)");
+    if (!fileName.isEmpty()) {
+        loadFromCsv(fileName);
+        QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUMBIITED");
+    }
+}
+
+void manageGrades::dragEnterEvent(QDragEnterEvent *event)
+{
+    if (event->mimeData()->hasUrls()) {
+        QList<QUrl> urls = event->mimeData()->urls();
+        if (!urls.isEmpty() && urls.first().toLocalFile().endsWith(".csv")) {
+            event->acceptProposedAction();
+        }
+    }
+}
+
+void manageGrades::dropEvent(QDropEvent *event)
+{
+    QList<QUrl> urls = event->mimeData()->urls();
+    if (!urls.isEmpty()) {
+        QString fileName = urls.first().toLocalFile();
+        if (fileName.endsWith(".csv")) {
+            loadFromCsv(fileName);
+        }
+    }
 }

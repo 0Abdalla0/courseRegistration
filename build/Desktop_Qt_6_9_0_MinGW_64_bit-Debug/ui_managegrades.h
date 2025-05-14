@@ -26,6 +26,7 @@ public:
     QComboBox *gradeCmb;
     QPushButton *backBtn;
     QComboBox *semesterCmb;
+    QPushButton *uploadGradesBtn;
 
     void setupUi(QDialog *manageGrades)
     {
@@ -35,7 +36,7 @@ public:
         manageGrades->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/6.jpg);"));
         addGradeBtn = new QPushButton(manageGrades);
         addGradeBtn->setObjectName("addGradeBtn");
-        addGradeBtn->setGeometry(QRect(640, 590, 151, 61));
+        addGradeBtn->setGeometry(QRect(620, 580, 151, 61));
         addGradeBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "font: 350 18pt \"Segoe UI\";\n"
 "color:black;\n"
@@ -86,6 +87,14 @@ public:
 "border:1px solid black;\n"
 "border-radius:15%;\n"
 "color:black;"));
+        uploadGradesBtn = new QPushButton(manageGrades);
+        uploadGradesBtn->setObjectName("uploadGradesBtn");
+        uploadGradesBtn->setGeometry(QRect(1150, 350, 171, 61));
+        uploadGradesBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"font: 350 18pt \"Segoe UI\";\n"
+"color:black;\n"
+"border:none;\n"
+"border-radius:15%;"));
 
         retranslateUi(manageGrades);
 
@@ -97,6 +106,7 @@ public:
         manageGrades->setWindowTitle(QCoreApplication::translate("manageGrades", "Dialog", nullptr));
         addGradeBtn->setText(QCoreApplication::translate("manageGrades", "ADD", nullptr));
         backBtn->setText(QCoreApplication::translate("manageGrades", "BACK", nullptr));
+        uploadGradesBtn->setText(QCoreApplication::translate("manageGrades", "Upload Grades", nullptr));
     } // retranslateUi
 
 };

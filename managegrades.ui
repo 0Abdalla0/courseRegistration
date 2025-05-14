@@ -19,8 +19,8 @@
   <widget class="QPushButton" name="addGradeBtn">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>590</y>
+     <x>620</x>
+     <y>580</y>
      <width>151</width>
      <height>61</height>
     </rect>
@@ -127,6 +127,26 @@ font: 18pt &quot;Segoe UI&quot;;
 border:1px solid black;
 border-radius:15%;
 color:black;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="uploadGradesBtn">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>350</y>
+     <width>171</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/imgs/images/white.jpg);
+font: 350 18pt &quot;Segoe UI&quot;;
+color:black;
+border:none;
+border-radius:15%;</string>
+   </property>
+   <property name="text">
+    <string>Upload Grades</string>
    </property>
   </widget>
  </widget>
