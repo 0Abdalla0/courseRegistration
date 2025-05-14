@@ -67,20 +67,52 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
 }
 bool checkprerequisites::checkCourseValidation(int id)
 {
-    map<int, unordered_map<QString, grade *>>::iterator gradesIt;
-    prerequisitesTable;
-    for (getPreit = prerequisitesTable.begin(); getPreit != prerequisitesTable.end(); ++getPreit) {
-        if (getPreit->first == id) {
-            vector<int> prereqList = getPreit->second;
-            vector<int>::iterator vecIt;
-            for (vecIt = prereqList.begin(); vecIt != prereqList.end(); ++vecIt) {
-                for (gradesIt = gradesTabel.begin(); gradesIt != gradesTabel.begin(); gradesIt++) {
-                    if ((*vecIt) == gradesIt->first) {
-                        return true;
+    auto getPreit = prerequisitesTable.find(id);
+    if (getPreit != prerequisitesTable.end()) {
+        const vector<int>& prereqList = getPreit->second;
+
+        for (int prereqId : prereqList) {
+            bool passed = false;
+
+            auto courseIt = getCourseInfo.find(prereqId);
+            if (courseIt == getCourseInfo.end()) {
+
+                return false;
+            }
+            QString courseTitle = courseIt->second.getTitle();
+
+            // Look for this course title in gradesTabel
+            // auto gradeIt = gradesTabel.find(prereqId);
+            // if (gradeIt != gradesTabel.end()) {
+            //     for (const auto& subjectPair : gradeIt->second) {
+            //         grade* g = subjectPair.second;
+            //         if (g && g->courseGrade != "F") {
+            //             passed = true;
+            //             break;
+            //         }
+            //     }
+            // }
+
+            // Alternative: if gradesTabel is by student ID and course name:
+            for (const auto& [studentId, courses] : gradesTabel) {
+                auto courseGradeIt = courses.find(courseTitle);
+                if (courseGradeIt != courses.end()) {
+                    grade* g = courseGradeIt->second;
+                    if (g && g->courseGrade != "F") {
+                        passed = true;
+                        break;
                     }
                 }
             }
+
+            if (!passed) {
+                return false;
+            }
         }
+
+        return true; // All prerequisites passed
     }
-    return false;
+
+    return true; // No prerequisites
 }
+
