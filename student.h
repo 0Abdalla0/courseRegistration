@@ -17,6 +17,7 @@ public:
     QString getId() const;
     QString getCgpa() const;
     QString getPassword() const;
+    void setCgpa(QString &cgpa);
     void viewGrades() const;
     void setGrades(const map<int, QString> &newGrades);
     const map<int, QString> &getGrades() const;

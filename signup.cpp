@@ -22,12 +22,11 @@ void signup::on_pushButton_2_clicked()
     adminPage *admin = new adminPage();
     QString name = ui->lineEdit_name->text();
     QString stdID = ui->lineEdit_id->text();
-    QString cgpa = ui->lineEdit_gpa->text();
+    QString cgpa = "0";
     QString password = ui->lineEdit_pass->text();
     QString confirmPassword = ui->lineEdit_confirmPass->text();
 
-    if (name.isEmpty() || stdID.isEmpty() || cgpa.isEmpty() || password.isEmpty()
-        || confirmPassword.isEmpty()) {
+    if (name.isEmpty() || stdID.isEmpty()  || password.isEmpty()|| confirmPassword.isEmpty()) {
         QMessageBox::warning(this, "Missing Info", "Please fill in all fields.");
         return;
     }
@@ -53,7 +52,6 @@ void signup::on_pushButton_2_clicked()
 
     ui->lineEdit_name->clear();
     ui->lineEdit_id->clear();
-    ui->lineEdit_gpa->clear();
     ui->lineEdit_pass->clear();
     ui->lineEdit_confirmPass->clear();
     this->hide();

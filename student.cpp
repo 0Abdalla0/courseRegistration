@@ -42,7 +42,9 @@ void student::setGrades(const std::map<int, QString> &newGrades)
 {
     grades = newGrades;
 }
-
+void student::setCgpa(QString &cgpa){
+    this->cgpa = cgpa;
+}
 void student::viewGrades() const
 {
     if (grades.empty()) {

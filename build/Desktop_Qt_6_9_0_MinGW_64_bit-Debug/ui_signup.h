@@ -24,7 +24,6 @@ public:
     QPushButton *pushButton_2;
     QLineEdit *lineEdit_name;
     QLineEdit *lineEdit_id;
-    QLineEdit *lineEdit_gpa;
     QLineEdit *lineEdit_pass;
     QLineEdit *lineEdit_confirmPass;
 
@@ -52,7 +51,7 @@ public:
 "font: 700 12pt \"Segoe UI\";"));
         lineEdit_name = new QLineEdit(signup);
         lineEdit_name->setObjectName("lineEdit_name");
-        lineEdit_name->setGeometry(QRect(450, 210, 581, 31));
+        lineEdit_name->setGeometry(QRect(450, 250, 581, 31));
         lineEdit_name->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "font: 18pt \"Segoe UI\";\n"
 "border:none;\n"
@@ -60,28 +59,21 @@ public:
 ""));
         lineEdit_id = new QLineEdit(signup);
         lineEdit_id->setObjectName("lineEdit_id");
-        lineEdit_id->setGeometry(QRect(450, 280, 581, 31));
+        lineEdit_id->setGeometry(QRect(440, 320, 581, 31));
         lineEdit_id->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
-"border:none;\n"
-"color: black;\n"
-""));
-        lineEdit_gpa = new QLineEdit(signup);
-        lineEdit_gpa->setObjectName("lineEdit_gpa");
-        lineEdit_gpa->setGeometry(QRect(450, 360, 581, 31));
-        lineEdit_gpa->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "color: black;\n"
 ""));
         lineEdit_pass = new QLineEdit(signup);
         lineEdit_pass->setObjectName("lineEdit_pass");
-        lineEdit_pass->setGeometry(QRect(450, 430, 581, 31));
+        lineEdit_pass->setGeometry(QRect(450, 390, 581, 31));
         lineEdit_pass->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "color: black;\n"
 ""));
         lineEdit_confirmPass = new QLineEdit(signup);
         lineEdit_confirmPass->setObjectName("lineEdit_confirmPass");
-        lineEdit_confirmPass->setGeometry(QRect(450, 500, 581, 31));
+        lineEdit_confirmPass->setGeometry(QRect(450, 470, 581, 31));
         lineEdit_confirmPass->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "color: black;\n"
