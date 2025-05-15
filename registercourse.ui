@@ -83,6 +83,10 @@ border-radius:25%;
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -94,7 +98,9 @@ border-radius:25%;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-radius:35%;</string>
+    <string notr="true">border-radius:35%;
+color:black;
+</string>
    </property>
    <property name="text">
     <string>Search for course:</string>

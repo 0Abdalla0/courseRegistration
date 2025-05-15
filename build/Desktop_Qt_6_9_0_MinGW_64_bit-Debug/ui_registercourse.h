@@ -64,10 +64,14 @@ public:
         searchText = new QLineEdit(registerCourse);
         searchText->setObjectName("searchText");
         searchText->setGeometry(QRect(50, 425, 221, 31));
+        searchText->setStyleSheet(QString::fromUtf8("color:black;\n"
+""));
         label = new QLabel(registerCourse);
         label->setObjectName("label");
         label->setGeometry(QRect(50, 379, 221, 31));
-        label->setStyleSheet(QString::fromUtf8("border-radius:35%;"));
+        label->setStyleSheet(QString::fromUtf8("border-radius:35%;\n"
+"color:black;\n"
+""));
         searchBtn = new QPushButton(registerCourse);
         searchBtn->setObjectName("searchBtn");
         searchBtn->setGeometry(QRect(100, 470, 111, 51));

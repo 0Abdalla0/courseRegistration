@@ -1,7 +1,17 @@
 #include "generatereport.h"
 #include <QDebug>
+#include <QDesktopServices>
+#include <QDir>
+#include <QFile>
 #include <QLabel>
+#include <QPageLayout>
+#include <QPageSize>
+#include <QStandardPaths>
+#include <QTextDocument>
+#include <QUrl>
 #include <QVBoxLayout>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPrinter>
 #include "grade.h"
 #include "loginwindow.h"
 #include "mainwindow.h"
@@ -10,16 +20,6 @@
 #include "ui_generatereport.h"
 #include <iostream>
 #include <unordered_map>
-#include <QtPrintSupport/QPrinter>
-#include <QtPrintSupport/QPrintDialog>
-#include <QPageSize>
-#include <QPageLayout>
-#include <QFile>
-#include <QStandardPaths>
-#include <QDir>
-#include <QDesktopServices>
-#include <QUrl>
-#include <QTextDocument>
 using namespace std;
 
 generateReport::generateReport(QWidget *parent)
@@ -97,15 +97,13 @@ void generateReport::on_pushButton_clicked()
 
 QString generateReport::reportHtml()
 {
-    QString html =
-        "<h2 align='center'>Student Grade Report</h2>"
-        "<p><b>Name:</b> " + std.getName() +
-        "    <b>ID:</b> " + std.getId() +
-        "    <b>CGPA:</b> " + std.getCgpa() +
-        "</p>"
-        "<table border='1' cellspacing='0' cellpadding='6'>"
-        "<tr><th>Course</th><th>Grade</th><th>Semester</th></tr>";
-
+    QString html = "<h2 align='center'>Student Grade Report</h2>"
+                   "<p><b>Name:</b> "
+                   + std.getName() + "    <b>ID:</b> " + std.getId() + "    <b>CGPA:</b> "
+                   + std.getCgpa()
+                   + "</p>"
+                     "<table border='1' cellspacing='0' cellpadding='6'>"
+                     "<tr><th>Course</th><th>Grade</th><th>Semester</th></tr>";
 
     double sum = 0;
     int count = 0;
@@ -114,18 +112,25 @@ QString generateReport::reportHtml()
         const grade *g = p.second;
         bool ok;
         double gr = g->courseGrade.toDouble(&ok);
-        if (ok) { sum += gr; ++count; }
+        if (ok) {
+            sum += gr;
+            ++count;
+        }
         html += "<tr>"
-                "<td>" + course + "</td>"
-                           "<td align='center'>" + g->courseGrade + "</td>"
-                                   "<td>" + g->semester + "</td>"
-                                "</tr>";
+                "<td>"
+                + course
+                + "</td>"
+                  "<td align='center'>"
+                + g->courseGrade
+                + "</td>"
+                  "<td>"
+                + g->semester
+                + "</td>"
+                  "</tr>";
     }
     html += "</table>";
     double overall = count ? (sum / count) : 0.0;
-    html += "<p><b>Overall GPA:</b> "
-            + QString::number(overall, 'f', 2)
-            + "</p>";
+    html += "<p><b>Overall GPA:</b> " + QString::number(overall, 'f', 2) + "</p>";
     return html;
 }
 
@@ -133,13 +138,11 @@ void generateReport::on_pushButton_2_clicked()
 {
     QString html = reportHtml();
 
-    QString tmpDir = QStandardPaths::writableLocation(
-        QStandardPaths::TempLocation);
+    QString tmpDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
     if (tmpDir.isEmpty())
-        tmpDir = QDir::homePath();   // fallback
+        tmpDir = QDir::homePath(); // fallback
 
-    QString filePath = tmpDir + QDir::separator() +
-                       "student_report.html";
+    QString filePath = tmpDir + QDir::separator() + "student_report.html";
 
     QFile file(filePath);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -152,4 +155,3 @@ void generateReport::on_pushButton_2_clicked()
 
     QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 }
-

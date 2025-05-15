@@ -23,7 +23,7 @@ private slots:
     void onCourseSelected(int row, int column);
     void on_registerBtn_clicked();
 
-    void on_pushButton_clicked();
+    void on_searchBtn_clicked();
 
 private:
     Ui::registerCourse *ui;

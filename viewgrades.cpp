@@ -47,7 +47,6 @@ void viewGrades::on_comboBox_currentIndexChanged(int index)
     }
 
     ui->label->setText("Grade not found.");
-
 }
 
 viewGrades::~viewGrades()
