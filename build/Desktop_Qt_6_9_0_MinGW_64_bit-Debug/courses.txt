@@ -2,6 +2,8 @@
 -----------------------------------------------------------------
 111,Ai,Abdalla,Abdalla@gmail.com,Data manipulation,3
 -----------------------------------------------------------------
+0,communication,dr el awady,awady@cis.edu.eg,comm,3
+-----------------------------------------------------------------
 104,Data Structures,Abdalla,Abdalla@gmail.com,Data manipulation,3
 -----------------------------------------------------------------
 103,Data mining,Ziad,Ziad@gmail.com,Data,3

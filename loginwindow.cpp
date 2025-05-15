@@ -38,6 +38,11 @@ void loginWindow::on_SignInBtn_clicked()
 
     bool userFound = false;
     bool isLoggedIn = false;
+    if (enteredID == "0" && enteredPassword == "admin") {
+        this->hide();
+        adminPage *admin = new adminPage();
+        admin->show();
+    }else{
     for (const student &s : MainWindow::getStudents()) {
         if (s.getId() == enteredID) {
             userFound = true;
@@ -54,16 +59,14 @@ void loginWindow::on_SignInBtn_clicked()
             break;
         }
     }
-    if (enteredID == "0" && enteredPassword == "admin") {
-        this->hide();
-        adminPage *admin = new adminPage();
-        admin->show();
-    } else if (!userFound) {
+
+    if (!userFound) {
         QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
     } else if (isLoggedIn) {
         this->close();
         studentPage *stdPage = new studentPage(this);
         stdPage->show();
+    }
     }
 }
 student loginWindow::getSignedIn()
