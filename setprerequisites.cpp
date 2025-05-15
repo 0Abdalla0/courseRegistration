@@ -16,7 +16,7 @@ setPrerequisites::setPrerequisites(QWidget *parent)
 {
     ui->setupUi(this);
     for (const auto &[id, course] : uploadCourse::getCourseTable()) {
-        ui->coursescmb->addItem(QString::number(id));
+        ui->coursescmb->addItem(course.getTitle());
     }
 }
 
@@ -38,25 +38,31 @@ void setPrerequisites::on_setBtn_clicked()
     QString preTitle = ui->prerequisites_input->text();
     bool isNumberPre;
     int preID = preTitle.toInt(&isNumberPre);
+    QString courseName = ui->coursescmb->currentText();
+    int courseID = -1;
+    for (const auto &[id, course] : uploadCourse::getCourseTable()) {
+        if(courseName == course.getTitle())
+        {
+            courseID = id;
+            break;
+        }
+    }
 
-    QString courseid = ui->coursescmb->currentText();
-    bool isNumberCourse;
-    int id = courseid.toInt(&isNumberCourse);
 
-    if (!isNumberPre || !isNumberCourse) {
+    if (!isNumberPre) {
         QMessageBox::warning(this,
                              "Invalid input",
                              "Course ID and prerequisite must be valid numbers.");
         return;
     }
 
-    if (id == preID) {
+    if (courseID == preID) {
         QMessageBox::warning(this, "Wrong input", "A course cannot be its own prerequisite.");
         return;
     }
 
     unordered_map<int, Course> courseTable = uploadCourse::getCourseTable();
-    if (courseTable.find(id) == courseTable.end()) {
+    if (courseTable.find(courseID) == courseTable.end()) {
         QMessageBox::warning(this, "Invalid Course", "Selected course does not exist.");
         return;
     }
@@ -70,16 +76,16 @@ void setPrerequisites::on_setBtn_clicked()
         return;
     }
 
-    if (std::find(setPrerequisites::getPrerequisitesTable()[id].begin(),
-                  setPrerequisites::getPrerequisitesTable()[id].end(),
+    if (std::find(setPrerequisites::getPrerequisitesTable()[courseID].begin(),
+                  setPrerequisites::getPrerequisitesTable()[courseID].end(),
                   preID)
-        != setPrerequisites::getPrerequisitesTable()[id].end()) {
+        != setPrerequisites::getPrerequisitesTable()[courseID].end()) {
         QMessageBox::information(this, "Duplicate", "This prerequisite is already added.");
         return;
     }
 
     // All checks passed
-    setPrerequisites::getPrerequisitesTable()[id].push_back(preID);
+    setPrerequisites::getPrerequisitesTable()[courseID].push_back(preID);
     QMessageBox::information(this, "Success", "Prerequisite successfully set.");
 }
 

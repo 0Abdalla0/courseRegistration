@@ -65,52 +65,42 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
         }
     }
 }
-bool checkprerequisites::checkCourseValidation(int id)
+bool checkprerequisites::checkCourseValidation(int courseId, int studentId)
 {
-    auto getPreit = prerequisitesTable.find(id);
-    if (getPreit != prerequisitesTable.end()) {
-        const vector<int> &prereqList = getPreit->second;
-
-        for (int prereqId : prereqList) {
-            bool passed = false;
-
-            auto courseIt = getCourseInfo.find(prereqId);
-            if (courseIt == getCourseInfo.end()) {
-                return false;
-            }
-            QString courseTitle = courseIt->second.getTitle();
-
-            // Look for this course title in gradesTabel
-            // auto gradeIt = gradesTabel.find(prereqId);
-            // if (gradeIt != gradesTabel.end()) {
-            //     for (const auto& subjectPair : gradeIt->second) {
-            //         grade* g = subjectPair.second;
-            //         if (g && g->courseGrade != "F") {
-            //             passed = true;
-            //             break;
-            //         }
-            //     }
-            // }
-
-            // Alternative: if gradesTabel is by student ID and course name:
-            for (const auto &[studentId, courses] : gradesTabel) {
-                auto courseGradeIt = courses.find(courseTitle);
-                if (courseGradeIt != courses.end()) {
-                    grade *g = courseGradeIt->second;
-                    if (g && g->courseGrade != "F") {
-                        passed = true;
-                        break;
-                    }
-                }
-            }
-
-            if (!passed) {
-                return false;
-            }
-        }
-
-        return true; // All prerequisites passed
+    auto getPreit = prerequisitesTable.find(courseId);
+    if (getPreit == prerequisitesTable.end()) {
+        return true; // No prerequisites
     }
 
-    return true; // No prerequisites
+    const vector<int> &prereqList = getPreit->second;
+
+    for (int prereqId : prereqList) {
+        // Check if course info exists
+        auto courseIt = getCourseInfo.find(prereqId);
+        if (courseIt == getCourseInfo.end()) {
+            return false; // Invalid prerequisite course
+        }
+
+        QString courseTitle = courseIt->second.getTitle();
+
+        // Look up the student's grade record
+        auto studentIt = gradesTabel.find(studentId);
+        if (studentIt == gradesTabel.end()) {
+            return false; // No grades found for student
+        }
+
+        const auto &courses = studentIt->second;
+        auto courseGradeIt = courses.find(courseTitle);
+        if (courseGradeIt == courses.end() || !courseGradeIt->second) {
+            return false; // No grade found for the prerequisite course
+        }
+
+        grade *g = courseGradeIt->second;
+        if (g->courseGrade == "F") {
+            return false; // Student failed the prerequisite
+        }
+    }
+
+    return true; // All prerequisites passed
 }
+

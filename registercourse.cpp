@@ -8,6 +8,8 @@
 #include "ui_registercourse.h"
 #include "uploadcourse.h"
 #include <unordered_map>
+#include"loginwindow.h"
+
 registerCourse::registerCourse(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::registerCourse)
@@ -15,7 +17,6 @@ registerCourse::registerCourse(QWidget *parent)
     ui->setupUi(this);
 
     unordered_map<int, Course> &courseTable = uploadCourse::getCourseTable();
-
     ui->titleItem->setColumnCount(3);
     ui->titleItem->setHorizontalHeaderLabels(QStringList() << "ID" << "Title" << "Credit Hours");
     ui->titleItem->setRowCount(static_cast<int>(courseTable.size()));
@@ -29,7 +30,8 @@ registerCourse::registerCourse(QWidget *parent)
 
     int row = 0;
     for (const auto &[id, course] : courseTable) {
-        ui->titleItem->setItem(row, 0, new QTableWidgetItem(QString::number(course.getId())));
+        ui->titleItem->setItem(row, 0, new QTableWidgetItem(QString::number(course.getId
+                                                                            ())));
         ui->titleItem->setItem(row, 1, new QTableWidgetItem(course.getTitle()));
         ui->titleItem->setItem(row,
                                2,
@@ -72,6 +74,7 @@ registerCourse::registerCourse(QWidget *parent)
             }
         }
     }
+
     ui->titleItem->resizeColumnsToContents();
     ui->titleItem->verticalHeader()->setStretchLastSection(true);
     ui->titleItem->horizontalHeader()->setStretchLastSection(false);
@@ -103,8 +106,10 @@ void registerCourse::on_registerBtn_clicked()
 
     const auto &courseTable = uploadCourse::getCourseTable();
     auto it = courseTable.find(selectedCourseId);
-    checkprerequisites checker;
-    bool prerequisitesCompleted = checker.checkCourseValidation(selectedCourseId);
+    checkprerequisites *checker = new checkprerequisites();
+    stud = loginWindow::getSignedIn();
+    int studentId = stud.getId().toInt();
+    bool prerequisitesCompleted = checker->checkCourseValidation(selectedCourseId,studentId);
     if (it != courseTable.end() && prerequisitesCompleted) {
         const Course &course = it->second;
 
@@ -140,29 +145,36 @@ void registerCourse::on_searchBtn_clicked()
     unordered_map<int, Course> &courseTable = uploadCourse::getCourseTable();
     int courseId;
     Course courseToBeDisplayed;
+    unordered_map<int, Course> coursesToBeDisplayed;
     unordered_map<int, Course> searchCourse;
     unordered_map<int, Course>::iterator it = courseTable.begin();
+
     while (it != courseTable.end()) {
-        if (it->second.getTitle() == courseName) {
+        const QString &title = it->second.getTitle();
+        if (title.contains(courseName, Qt::CaseInsensitive)) {
             found = true;
-            courseId = it->first;
-            courseToBeDisplayed = it->second;
-            break;
+            coursesToBeDisplayed.insert(*it);
         }
         it++;
     }
+
     if (!found) {
         QMessageBox::warning(this, "No Course Selected", "course not found");
     } else {
         ui->titleItem->clearContents();
-        ui->titleItem->setRowCount(1);
+        ui->titleItem->setRowCount(coursesToBeDisplayed.size());
 
-        ui->titleItem->setItem(0, 0, new QTableWidgetItem(QString::number(courseId)));
-        ui->titleItem->setItem(0, 1, new QTableWidgetItem(courseToBeDisplayed.getTitle()));
-        ui->titleItem->setItem(0,
-                               2,
-                               new QTableWidgetItem(
-                                   QString::number(courseToBeDisplayed.getCreditHours())));
-        ui->titleItem->setRowHeight(0, 30);
+        unordered_map<int, Course>::iterator it2 = coursesToBeDisplayed.begin();
+
+        int row = 0;
+        while(it2 != coursesToBeDisplayed.end()){
+            ui->titleItem->setItem(row, 0, new QTableWidgetItem(QString::number(it2->first)));
+            ui->titleItem->setItem(row, 1, new QTableWidgetItem(it2->second.getTitle()));
+            ui->titleItem->setItem(row, 2, new QTableWidgetItem(QString::number(it2->second.getCreditHours())));
+            ui->titleItem->setRowHeight(row, 10);
+            it2++;
+            row++;
+        }
+
     }
 }

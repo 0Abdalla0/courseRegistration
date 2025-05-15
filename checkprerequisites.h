@@ -21,7 +21,7 @@ public:
     map<int, vector<int>> prerequisitesTable;
     map<int, vector<int>>::iterator getPreit;
     unordered_map<int, Course> getCourseInfo;
-    bool checkCourseValidation(int id);
+    bool checkCourseValidation(int courseId, int studentId);
     map<int, unordered_map<QString, grade *>> gradesTabel;
 private slots:
     void on_backBTN_clicked();

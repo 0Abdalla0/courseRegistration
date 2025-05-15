@@ -1697,6 +1697,21 @@ debug/moc_registercourse.cpp: ../../registercourse.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QString \
 		../../course.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QStringList \
+		../../student.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/QFile \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfile.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfiledevice.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/QJsonObject \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonobject.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonvalue.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcborvalue.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcborcommon.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qdatetime.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcalendar.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/quuid.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
 		debug/moc_predefs.h \
 		D:/QTTT/6.9.0/mingw_64/bin/moc.exe
 	D:\QTTT\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include D:/Qt/projects/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/QTTT/6.9.0/mingw_64/mkspecs/win32-g++ -ID:/Qt/projects/courseRegistration -ID:/QTTT/6.9.0/mingw_64/include -ID:/QTTT/6.9.0/mingw_64/include/QtWidgets -ID:/QTTT/6.9.0/mingw_64/include/QtGui -ID:/QTTT/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\registercourse.h -o debug\moc_registercourse.cpp
@@ -3069,17 +3084,6 @@ debug/adminpage.o: ../../adminpage.cpp ../../adminpage.h \
 		../../registercourse.h \
 		../../setprerequisites.h \
 		ui_adminpage.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLabel \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpicture.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\adminpage.o ..\..\adminpage.cpp
 
@@ -3313,34 +3317,7 @@ debug/checkprerequisites.o: ../../checkprerequisites.cpp ../../checkprerequisite
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
 		ui_checkprerequisites.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		ui_setprerequisites.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpen.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextoption.h \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\checkprerequisites.o ..\..\checkprerequisites.cpp
 
@@ -3547,25 +3524,6 @@ debug/course.o: ../../course.cpp ../../course.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/qlocale.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		ui_uploadcourse.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpen.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QSpinBox \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\course.o ..\..\course.cpp
 
@@ -3833,17 +3791,7 @@ debug/generatereport.o: ../../generatereport.cpp ../../generatereport.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtGui/QDragEnterEvent \
 		D:/QTTT/6.9.0/mingw_64/include/QtGui/QDropEvent \
 		../../studentpage.h \
-		ui_generatereport.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QScrollArea \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qscrollarea.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QWidget
+		ui_generatereport.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\generatereport.o ..\..\generatereport.cpp
 
 debug/grade.o: ../../grade.cpp ../../grade.h \
@@ -4163,21 +4111,7 @@ debug/loginwindow.o: ../../loginwindow.cpp ../../loginwindow.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QStringList \
 		../../signup.h \
 		../../studentpage.h \
-		ui_loginwindow.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpen.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h
+		ui_loginwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\loginwindow.o ..\..\loginwindow.cpp
 
 debug/main.o: ../../main.cpp D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
@@ -4661,28 +4595,8 @@ debug/managegrades.o: ../../managegrades.cpp ../../managegrades.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QSet \
 		../../setprerequisites.h \
 		ui_mainwindow.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QWidget \
 		../../uploadcourse.h \
-		ui_managegrades.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h
+		ui_managegrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\managegrades.o ..\..\managegrades.cpp
 
 debug/registercourse.o: ../../registercourse.cpp ../../registercourse.h \
@@ -4887,6 +4801,21 @@ debug/registercourse.o: ../../registercourse.cpp ../../registercourse.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QString \
 		../../course.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QStringList \
+		../../student.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/QFile \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfile.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfiledevice.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/QJsonObject \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonobject.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonvalue.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcborvalue.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcborcommon.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qdatetime.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcalendar.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/quuid.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
+		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtGui/QFont \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QMessageBox \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -4903,7 +4832,6 @@ debug/registercourse.o: ../../registercourse.cpp ../../registercourse.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qslider.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
@@ -4914,41 +4842,9 @@ debug/registercourse.o: ../../registercourse.cpp ../../registercourse.h \
 		../../checkprerequisites.h \
 		../../grade.h \
 		../../studentpage.h \
-		../../student.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QFile \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfile.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qfiledevice.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QJsonObject \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonobject.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonvalue.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcborvalue.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcborcommon.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qdatetime.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qcalendar.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/quuid.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
 		ui_registercourse.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QHeaderView \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qheaderview.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLabel \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpicture.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpen.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QTableWidget \
-		../../uploadcourse.h
+		../../uploadcourse.h \
+		../../loginwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\registercourse.o ..\..\registercourse.cpp
 
 debug/setprerequisites.o: ../../setprerequisites.cpp ../../setprerequisites.h \
@@ -5162,34 +5058,6 @@ debug/setprerequisites.o: ../../setprerequisites.cpp ../../setprerequisites.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QTextStream \
 		../../adminPage.h \
 		ui_setprerequisites.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpen.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\setprerequisites.o ..\..\setprerequisites.cpp
 
@@ -5420,21 +5288,7 @@ debug/signup.o: ../../signup.cpp ../../signup.h \
 		../../course.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QString \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QStringList \
-		ui_signup.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpen.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h
+		ui_signup.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\signup.o ..\..\signup.cpp
 
 debug/student.o: ../../student.cpp ../../student.h \
@@ -5881,12 +5735,6 @@ debug/studentpage.o: ../../studentpage.cpp ../../studentpage.h \
 		../../signup.h \
 		../../registercourse.h \
 		ui_studentpage.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../viewgrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\studentpage.o ..\..\studentpage.cpp
 
@@ -6099,26 +5947,7 @@ debug/uploadcourse.o: ../../uploadcourse.cpp ../../uploadcourse.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../adminpage.h \
-		ui_uploadcourse.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpen.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QSpinBox \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qregularexpression.h
+		ui_uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\uploadcourse.o ..\..\uploadcourse.cpp
 
 debug/viewgrades.o: ../../viewgrades.cpp ../../viewgrades.h \
@@ -6345,31 +6174,7 @@ debug/viewgrades.o: ../../viewgrades.cpp ../../viewgrades.h \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QString \
 		D:/QTTT/6.9.0/mingw_64/include/QtCore/QStringList \
 		../../studentpage.h \
-		ui_viewgrades.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/QVariant \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QLabel \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qpicture.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/QTTT/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h
+		ui_viewgrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\viewgrades.o ..\..\viewgrades.cpp
 
 debug/qrc_img.o: debug/qrc_img.cpp 
