@@ -14,11 +14,16 @@ class generateReport : public QDialog
 public:
     explicit generateReport(QWidget *parent = nullptr);
     map<int, unordered_map<QString, grade *>> std1;
+    unordered_map<QString, grade *> innerUnMap;
     student std;
     ~generateReport();
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    QString reportHtml();
 
 private:
     Ui::generateReport *ui;

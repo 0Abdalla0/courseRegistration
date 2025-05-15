@@ -1,8 +1,10 @@
 Student ID,Course Name,Grade,Semester,GPA
 7,intro to cs,A+,First,4
-10,intro to cs,B+,Second,3
-10,sp,A+,First,3
+10,intro to cs,A+,First,4
+10,SWE,A+,First,4
+10,sp,A+,First,4
 10,electronics,C,third,3
 10,oop,B+,Second,3
 10,Adballa,F,Second,3
+10,Ai,A+,First,4
 123,Data Structures,B-,First,2

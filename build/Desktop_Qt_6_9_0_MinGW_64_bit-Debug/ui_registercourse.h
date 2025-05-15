@@ -13,6 +13,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
 
@@ -24,6 +26,9 @@ public:
     QPushButton *backBTN;
     QTableWidget *titleItem;
     QPushButton *registerBtn;
+    QLineEdit *searchText;
+    QLabel *label;
+    QPushButton *searchBtn;
 
     void setupUi(QDialog *registerCourse)
     {
@@ -45,18 +50,31 @@ public:
         titleItem->setObjectName("titleItem");
         titleItem->setGeometry(QRect(380, 230, 601, 491));
         titleItem->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
-"font: 14pt \"Segoe UI\";\n"
-"\n"
-"  "));
+"background-color: #ffffff;\n"
+"font: 14pt \"Segoe UI\";"));
         registerBtn = new QPushButton(registerCourse);
         registerBtn->setObjectName("registerBtn");
-        registerBtn->setGeometry(QRect(1070, 400, 151, 121));
+        registerBtn->setGeometry(QRect(1070, 400, 181, 61));
         registerBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "color:blue;\n"
-"font: 22pt \"Segoe UI\";\n"
+"font: 16pt \"Segoe UI\";\n"
 "border-radius:25%;\n"
 "\n"
 ""));
+        searchText = new QLineEdit(registerCourse);
+        searchText->setObjectName("searchText");
+        searchText->setGeometry(QRect(50, 425, 221, 31));
+        label = new QLabel(registerCourse);
+        label->setObjectName("label");
+        label->setGeometry(QRect(50, 379, 221, 31));
+        label->setStyleSheet(QString::fromUtf8("border-radius:35%;"));
+        searchBtn = new QPushButton(registerCourse);
+        searchBtn->setObjectName("searchBtn");
+        searchBtn->setGeometry(QRect(100, 470, 111, 51));
+        searchBtn->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
+"color:blue;\n"
+"font: 12pt \"Segoe UI\";\n"
+"border-radius:25%;"));
 
         retranslateUi(registerCourse);
 
@@ -68,6 +86,8 @@ public:
         registerCourse->setWindowTitle(QCoreApplication::translate("registerCourse", "Dialog", nullptr));
         backBTN->setText(QCoreApplication::translate("registerCourse", "BACK", nullptr));
         registerBtn->setText(QCoreApplication::translate("registerCourse", "REGISTER", nullptr));
+        label->setText(QCoreApplication::translate("registerCourse", "Search for course:", nullptr));
+        searchBtn->setText(QCoreApplication::translate("registerCourse", "Search", nullptr));
     } // retranslateUi
 
 };

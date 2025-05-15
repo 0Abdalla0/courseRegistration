@@ -10,6 +10,16 @@
 #include "ui_generatereport.h"
 #include <iostream>
 #include <unordered_map>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QPageSize>
+#include <QPageLayout>
+#include <QFile>
+#include <QStandardPaths>
+#include <QDir>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QTextDocument>
 using namespace std;
 
 generateReport::generateReport(QWidget *parent)
@@ -31,7 +41,7 @@ generateReport::generateReport(QWidget *parent)
     ui->label_3->setText(stdIdStr);
     auto grades = std1;
     auto it = grades.begin();
-    unordered_map<QString, grade *> innerUnMap;
+    // unordered_map<QString, grade *> innerUnMap;
 
     qDebug() << "first -----> (1) " << it->second.begin()->first << "\n";
     qDebug() << "first -----> (2) " << it->second.begin()->second->semester << "\n";
@@ -84,3 +94,62 @@ void generateReport::on_pushButton_clicked()
     studentPage *stdPage = new studentPage;
     stdPage->show();
 }
+
+QString generateReport::reportHtml()
+{
+    QString html =
+        "<h2 align='center'>Student Grade Report</h2>"
+        "<p><b>Name:</b> " + std.getName() +
+        "    <b>ID:</b> " + std.getId() +
+        "    <b>CGPA:</b> " + std.getCgpa() +
+        "</p>"
+        "<table border='1' cellspacing='0' cellpadding='6'>"
+        "<tr><th>Course</th><th>Grade</th><th>Semester</th></tr>";
+
+
+    double sum = 0;
+    int count = 0;
+    for (auto &p : innerUnMap) {
+        const QString &course = p.first;
+        const grade *g = p.second;
+        bool ok;
+        double gr = g->courseGrade.toDouble(&ok);
+        if (ok) { sum += gr; ++count; }
+        html += "<tr>"
+                "<td>" + course + "</td>"
+                           "<td align='center'>" + g->courseGrade + "</td>"
+                                   "<td>" + g->semester + "</td>"
+                                "</tr>";
+    }
+    html += "</table>";
+    double overall = count ? (sum / count) : 0.0;
+    html += "<p><b>Overall GPA:</b> "
+            + QString::number(overall, 'f', 2)
+            + "</p>";
+    return html;
+}
+
+void generateReport::on_pushButton_2_clicked()
+{
+    QString html = reportHtml();
+
+    QString tmpDir = QStandardPaths::writableLocation(
+        QStandardPaths::TempLocation);
+    if (tmpDir.isEmpty())
+        tmpDir = QDir::homePath();   // fallback
+
+    QString filePath = tmpDir + QDir::separator() +
+                       "student_report.html";
+
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qWarning() << "Could not write report to" << filePath;
+        return;
+    }
+    QTextStream out(&file);
+    out << html;
+    file.close();
+
+    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+}
+

@@ -40,12 +40,18 @@ template <> constexpr inline auto generateReport::qt_create_metaobjectdata<qt_me
     QtMocHelpers::StringRefStorage qt_stringData {
         "generateReport",
         "on_pushButton_clicked",
-        ""
+        "",
+        "on_pushButton_2_clicked",
+        "reportHtml"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'on_pushButton_clicked'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_pushButton_2_clicked'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'reportHtml'
+        QtMocHelpers::SlotData<QString()>(4, 2, QMC::AccessPrivate, QMetaType::QString),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -70,10 +76,12 @@ void generateReport::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
+        case 1: _t->on_pushButton_2_clicked(); break;
+        case 2: { QString _r = _t->reportHtml();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *generateReport::metaObject() const
@@ -95,14 +103,14 @@ int generateReport::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 3;
     }
     return _id;
 }

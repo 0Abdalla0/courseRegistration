@@ -14,7 +14,7 @@ registerCourse::registerCourse(QWidget *parent)
 {
     ui->setupUi(this);
 
-    unordered_map<int, Course> &courseTable = uploadCourse::getCourseTable();
+    unordered_map<int,Course> &courseTable = uploadCourse::getCourseTable();
 
     ui->titleItem->setColumnCount(3);
     ui->titleItem->setHorizontalHeaderLabels(QStringList() << "ID" << "Title" << "Credit Hours");
@@ -134,3 +134,39 @@ void registerCourse::on_backBTN_clicked()
     studentPage *stud = new studentPage();
     stud->show();
 }
+
+void registerCourse::on_pushButton_clicked()
+{
+    QString courseName = ui->searchText->text();
+    bool found = false;
+    unordered_map<int,Course> &courseTable = uploadCourse::getCourseTable();
+    int courseId;
+    Course courseToBeDisplayed;
+    unordered_map<int, Course> searchCourse;
+    unordered_map<int, Course>::iterator it = courseTable.begin();
+    while(it != courseTable.end()){
+        if(it->second.getTitle() == courseName)
+        {
+            found = true;
+            courseId = it->first;
+            courseToBeDisplayed = it->second;
+            break;
+        }
+        it++;
+    }
+    if(!found){
+        QMessageBox::warning(this,"No Course Selected", "course not found");
+    }else{
+        ui->titleItem->clearContents();
+        ui->titleItem->setRowCount(1);
+
+        ui->titleItem->setItem(0, 0, new QTableWidgetItem(QString::number(courseId)));
+        ui->titleItem->setItem(0, 1, new QTableWidgetItem(courseToBeDisplayed.getTitle()));
+        ui->titleItem->setItem(0, 2, new QTableWidgetItem(QString::number(courseToBeDisplayed.getCreditHours())));
+        ui->titleItem->setRowHeight(0, 30);
+    }
+
+
+
+}
+

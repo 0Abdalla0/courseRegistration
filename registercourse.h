@@ -23,6 +23,8 @@ private slots:
     void onCourseSelected(int row, int column);
     void on_registerBtn_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::registerCourse *ui;
     int selectedCourseId = -1; // Track which course was selected

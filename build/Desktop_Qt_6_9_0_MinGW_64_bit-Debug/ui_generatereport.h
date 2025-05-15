@@ -35,6 +35,7 @@ public:
     QWidget *scrollAreaWidgetContents_3;
     QWidget *widgetSemster;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *generateReport)
     {
@@ -118,6 +119,13 @@ public:
 "background-image: url(:/imgs/images/blue.jpg);\n"
 "font: 20pt \"Segoe UI\";\n"
 "color:white;"));
+        pushButton_2 = new QPushButton(generateReport);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(1070, 20, 151, 61));
+        pushButton_2->setStyleSheet(QString::fromUtf8("BORDER-RADIUS:25%;\n"
+"background-image: url(:/imgs/images/blue.jpg);\n"
+"font: 20pt \"Segoe UI\";\n"
+"color:white;"));
 
         retranslateUi(generateReport);
 
@@ -131,6 +139,7 @@ public:
         label_2->setText(QCoreApplication::translate("generateReport", "0.0", nullptr));
         label_3->setText(QCoreApplication::translate("generateReport", "-1", nullptr));
         pushButton->setText(QCoreApplication::translate("generateReport", "BACK", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("generateReport", "Print", nullptr));
     } // retranslateUi
 
 };

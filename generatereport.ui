@@ -228,6 +228,25 @@ color:white;</string>
     <string>BACK</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>20</y>
+     <width>151</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">BORDER-RADIUS:25%;
+background-image: url(:/imgs/images/blue.jpg);
+font: 20pt &quot;Segoe UI&quot;;
+color:white;</string>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
