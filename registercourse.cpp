@@ -82,6 +82,7 @@ registerCourse::registerCourse(QWidget *parent)
 
     connect(ui->titleItem, &QTableWidget::cellClicked, this, &registerCourse::onCourseSelected);
 }
+unordered_map<int, Course> registerCourse::registered;
 
 registerCourse::~registerCourse()
 {
@@ -103,14 +104,21 @@ void registerCourse::on_registerBtn_clicked()
         QMessageBox::warning(this, "No Course Selected", "Please select a course to register.");
         return;
     }
-
+    bool alreadyRegistered  = false;
     const auto &courseTable = uploadCourse::getCourseTable();
     auto it = courseTable.find(selectedCourseId);
     checkprerequisites *checker = new checkprerequisites();
     stud = loginWindow::getSignedIn();
     int studentId = stud.getId().toInt();
     bool prerequisitesCompleted = checker->checkCourseValidation(selectedCourseId,studentId);
-    if (it != courseTable.end() && prerequisitesCompleted) {
+    for (const auto [studId , courseIt] : registered ) {
+        if(studId == studentId &&  courseIt.getId() == selectedCourseId ){
+            QMessageBox::warning(this, "Error" ,"The course you are trying to register you already registered before" );
+            alreadyRegistered = true;
+            break;
+        }
+    }
+    if (it != courseTable.end() && prerequisitesCompleted && !alreadyRegistered) {
         const Course &course = it->second;
 
         QMessageBox::information(this,
@@ -120,8 +128,10 @@ void registerCourse::on_registerBtn_clicked()
                                      + QString::number(course.getCreditHours()));
         registerCourse::regCnt++;
         admin->updateRegistrationsCnt(registerCourse::regCnt);
+        registered[studentId] = course;
 
-    } else {
+    }
+        else {
         if (prerequisitesCompleted == false)
             QMessageBox::warning(this,
                                  "Error",

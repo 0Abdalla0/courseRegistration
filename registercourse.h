@@ -5,6 +5,7 @@
 #include <QString>
 #include "course.h"
 #include"student.h"
+#include <unordered_map>
 namespace Ui {
 class registerCourse;
 }
@@ -17,6 +18,7 @@ public:
     explicit registerCourse(QWidget *parent = nullptr);
     ~registerCourse();
     static int regCnt;
+    static unordered_map<int,Course> registered ;
     student stud;
 
 private slots:
@@ -24,10 +26,9 @@ private slots:
     void onCourseSelected(int row, int column);
     void on_registerBtn_clicked();
     void on_searchBtn_clicked();
-    // unordered_map<int,registe
 private:
     Ui::registerCourse *ui;
-    int selectedCourseId = -1; // Track which course was selected
+    int selectedCourseId = -1;
 };
 
 #endif // REGISTERCOURSE_H
