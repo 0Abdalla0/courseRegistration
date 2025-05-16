@@ -26,7 +26,7 @@ void signup::on_pushButton_2_clicked()
     QString password = ui->lineEdit_pass->text();
     QString confirmPassword = ui->lineEdit_confirmPass->text();
 
-    if (name.isEmpty() || stdID.isEmpty()  || password.isEmpty()|| confirmPassword.isEmpty()) {
+    if (name.isEmpty() || stdID.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
         QMessageBox::warning(this, "Missing Info", "Please fill in all fields.");
         return;
     }

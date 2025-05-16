@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/imgs/images/checkPrerequitis.jpg);</string>
+   <string notr="true">background-image: url(:/imgs/images/10.jpg);</string>
   </property>
   <widget class="QComboBox" name="courseID_Cmb">
    <property name="geometry">

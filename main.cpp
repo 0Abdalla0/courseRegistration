@@ -1,10 +1,10 @@
 #include <QApplication>
 #include "mainwindow.h"
 #include "managegrades.h"
+#include "registercourse.h"
 #include "setprerequisites.h"
 #include "uploadcourse.h"
 #include <iostream>
-#include "registercourse.h"
 using namespace std;
 int main(int argc, char *argv[])
 {

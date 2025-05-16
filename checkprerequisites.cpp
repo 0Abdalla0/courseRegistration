@@ -103,4 +103,3 @@ bool checkprerequisites::checkCourseValidation(int courseId, int studentId)
 
     return true; // All prerequisites passed
 }
-

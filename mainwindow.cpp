@@ -9,11 +9,11 @@
 #include <QSet>
 #include "adminpage.h"
 #include "managegrades.h"
+#include "registercourse.h"
 #include "setprerequisites.h"
 #include "ui_mainwindow.h"
 #include "uploadcourse.h"
 #include <student.h>
-#include "registercourse.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -26,7 +26,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     uploadCourse courses;
     setPrerequisites prerequisite;
     manageGrades grades;
-    registerCourse reg ;
+    registerCourse reg;
     grades.saveToCsv("students'grades.csv");
     prerequisite.savePrerequisitesToFile("prerequisites");
     saveStudentsToFile();
@@ -41,7 +41,7 @@ MainWindow::~MainWindow()
     uploadCourse courses;
     setPrerequisites prerequisite;
     manageGrades grades;
-    registerCourse reg ;
+    registerCourse reg;
 
     grades.saveToCsv("students'grades.csv");
     prerequisite.savePrerequisitesToFile("prerequisites.txt");

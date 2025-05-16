@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QString>
 #include "course.h"
-#include"student.h"
+#include "student.h"
 #include <unordered_map>
 namespace Ui {
 class registerCourse;
@@ -18,7 +18,7 @@ public:
     explicit registerCourse(QWidget *parent = nullptr);
     ~registerCourse();
     static int regCnt;
-    static unordered_map<int,Course> registered ;
+    static unordered_map<int, Course> registered;
     student stud;
     void loadFromFile(const QString &filename);
     void saveToFile(const QString &filename);

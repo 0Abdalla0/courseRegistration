@@ -29,7 +29,7 @@ public:
         if (checkprerequisites->objectName().isEmpty())
             checkprerequisites->setObjectName("checkprerequisites");
         checkprerequisites->resize(1363, 672);
-        checkprerequisites->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/checkPrerequitis.jpg);"));
+        checkprerequisites->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/10.jpg);"));
         courseID_Cmb = new QComboBox(checkprerequisites);
         courseID_Cmb->setObjectName("courseID_Cmb");
         courseID_Cmb->setGeometry(QRect(390, 280, 591, 51));

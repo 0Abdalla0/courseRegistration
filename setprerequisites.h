@@ -17,9 +17,13 @@ public:
     static map<int, vector<int>> &getPrerequisitesTable();
     void savePrerequisitesToFile(const QString &filename);
     void loadPrerequisitesFromFile(const QString &filename);
+    void onCourseChanged(int index);
+
 private slots:
     void on_backBTN_clicked();
     void on_setBtn_clicked();
+
+    void on_removeBtn_clicked();
 
 private:
     Ui::setPrerequisites *ui;

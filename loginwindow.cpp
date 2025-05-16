@@ -42,31 +42,33 @@ void loginWindow::on_SignInBtn_clicked()
         this->hide();
         adminPage *admin = new adminPage();
         admin->show();
-    }else{
-    for (const student &s : MainWindow::getStudents()) {
-        if (s.getId() == enteredID) {
-            userFound = true;
-            if (s.getPassword() == enteredPassword) {
-                QMessageBox::information(this,
-                                         "Login Success",
-                                         "Welcome back, " + s.getName() + "!");
-                this->accept();
-                signedIn = s;
-                isLoggedIn = true;
-            } else {
-                QMessageBox::warning(this, "Login Failed", "Incorrect password. Please try again.");
+    } else {
+        for (const student &s : MainWindow::getStudents()) {
+            if (s.getId() == enteredID) {
+                userFound = true;
+                if (s.getPassword() == enteredPassword) {
+                    QMessageBox::information(this,
+                                             "Login Success",
+                                             "Welcome back, " + s.getName() + "!");
+                    this->accept();
+                    signedIn = s;
+                    isLoggedIn = true;
+                } else {
+                    QMessageBox::warning(this,
+                                         "Login Failed",
+                                         "Incorrect password. Please try again.");
+                }
+                break;
             }
-            break;
         }
-    }
 
-    if (!userFound) {
-        QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
-    } else if (isLoggedIn) {
-        this->close();
-        studentPage *stdPage = new studentPage(this);
-        stdPage->show();
-    }
+        if (!userFound) {
+            QMessageBox::warning(this, "Login Failed", "No user found with the provided ID.");
+        } else if (isLoggedIn) {
+            this->close();
+            studentPage *stdPage = new studentPage(this);
+            stdPage->show();
+        }
     }
 }
 student loginWindow::getSignedIn()
