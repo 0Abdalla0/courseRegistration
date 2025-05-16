@@ -65,6 +65,7 @@ void checkprerequisites::on_courseID_Cmb_currentIndexChanged(int index)
         }
     }
 }
+
 bool checkprerequisites::checkCourseValidation(int courseId, int studentId)
 {
     auto getPreit = prerequisitesTable.find(courseId);

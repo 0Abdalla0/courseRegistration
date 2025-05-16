@@ -212,33 +212,55 @@ void registerCourse ::saveToFile(const QString &filename)
 
     file.close();
 }
-void registerCourse ::loadFromFile(const QString &filename)
+
+
+void registerCourse::loadFromFile(const QString &filename)
 {
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "Could not open file for reading.";
+        qDebug() << "Could not open file for reading:" << filename;
         return;
     }
 
     QTextStream in(&file);
+    int lineNo = 0;
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
-        QStringList parts = line.split(",");
+        lineNo++;
+        if (line.isEmpty()) continue;             // skip blank lines
+        QStringList parts = line.split(',');
 
-        if (parts.size() == 6) {
-            int studId = parts[0].toInt();
-            int courseId = parts[1].toInt();
-            QString name = parts[2];
-            QString instName = parts[3];
-            QString instEmail = parts[4];
-            QString syllabus = parts[5];
-            int credit = parts[6].toInt();
-
-            Course course(courseId, name, instName, instEmail, syllabus, credit);
-            registerCourse::registered[studId] = course;
-            registerCourse::regCnt++;
+        // Expecting: studentId,courseId,name,instName,instEmail,syllabus,credit
+        if (parts.size() != 7) {
+            qWarning() << "Bad line" << lineNo << "in" << filename
+                       << ": expected 7 fields but got" << parts.size();
+            continue;
         }
+
+        bool ok1=false, ok2=false;
+        int studId   = parts[0].toInt(&ok1);
+        int courseId = parts[1].toInt(&ok2);
+        if (!ok1 || !ok2) {
+            qWarning() << "Invalid IDs on line" << lineNo << ":" << line;
+            continue;
+        }
+
+        QString name       = parts[2];
+        QString instName   = parts[3];
+        QString instEmail  = parts[4];
+        QString syllabus   = parts[5];
+        bool ok3=false;
+        int credit         = parts[6].toInt(&ok3);
+        if (!ok3) {
+            qWarning() << "Invalid credit on line" << lineNo << ":" << line;
+            continue;
+        }
+
+        Course course(courseId, name, instName, instEmail, syllabus, credit);
+        registered[studId] = course;
+        ++regCnt;
     }
 
     file.close();
+    qDebug() << "Loaded" << regCnt << "registrations from" << filename;
 }
