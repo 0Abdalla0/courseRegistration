@@ -4596,6 +4596,7 @@ release/managegrades.o: ../../managegrades.cpp ../../managegrades.h \
 		../../setprerequisites.h \
 		ui_mainwindow.h \
 		../../uploadcourse.h \
+		../../registercourse.h \
 		ui_managegrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\managegrades.o ..\..\managegrades.cpp
 

@@ -4596,6 +4596,7 @@ debug/managegrades.o: ../../managegrades.cpp ../../managegrades.h \
 		../../setprerequisites.h \
 		ui_mainwindow.h \
 		../../uploadcourse.h \
+		../../registercourse.h \
 		ui_managegrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\managegrades.o ..\..\managegrades.cpp
 

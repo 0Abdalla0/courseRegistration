@@ -99,6 +99,7 @@ void registerCourse::onCourseSelected(int row, int column)
 
 void registerCourse::on_registerBtn_clicked()
 {
+    qDebug()<<registered.size();
     adminPage *admin = new adminPage();
     if (selectedCourseId == -1) {
         QMessageBox::warning(this, "No Course Selected", "Please select a course to register.");
@@ -111,6 +112,7 @@ void registerCourse::on_registerBtn_clicked()
     stud = loginWindow::getSignedIn();
     int studentId = stud.getId().toInt();
     bool prerequisitesCompleted = checker->checkCourseValidation(selectedCourseId,studentId);
+
     for (const auto [studId , courseIt] : registered ) {
         if(studId == studentId &&  courseIt.getId() == selectedCourseId ){
             QMessageBox::warning(this, "Error" ,"The course you are trying to register you already registered before" );
@@ -187,4 +189,51 @@ void registerCourse::on_searchBtn_clicked()
         }
 
     }
+}
+
+void registerCourse  :: saveToFile(const QString &filename) {
+    QFile file(filename);
+if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+    qDebug() << "Could not open file for writing.";
+    return;
+}
+
+QTextStream out(&file);
+for (const auto &[studId, course] : registerCourse::registered ) {
+    out << studId << ","<<course.getId() <<","<< course.getTitle() << "," << course.getInstructorName() << ","
+        << course.getInstructorEmail() << "," << course.getSyllabus() << ","
+        << course.getCreditHours()
+        << "\n-----------------------------------------------------------------\n";
+}
+
+file.close();
+}
+void registerCourse  :: loadFromFile(const QString &filename){
+QFile file(filename);
+if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    qDebug() << "Could not open file for reading.";
+    return;
+}
+
+QTextStream in(&file);
+while (!in.atEnd()) {
+    QString line = in.readLine().trimmed();
+    QStringList parts = line.split(",");
+
+    if (parts.size() == 6) {
+        int studId = parts[0].toInt();
+        int courseId = parts[1].toInt();
+        QString name = parts[2];
+        QString instName = parts[3];
+        QString instEmail = parts[4];
+        QString syllabus = parts[5];
+        int credit = parts[6].toInt();
+
+        Course course(courseId, name, instName, instEmail, syllabus, credit);
+        registerCourse::registered[studId] = course;
+        registerCourse::regCnt++;
+    }
+}
+
+file.close();
 }

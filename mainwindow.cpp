@@ -13,6 +13,7 @@
 #include "ui_mainwindow.h"
 #include "uploadcourse.h"
 #include <student.h>
+#include "registercourse.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -25,10 +26,12 @@ void MainWindow::closeEvent(QCloseEvent *event)
     uploadCourse courses;
     setPrerequisites prerequisite;
     manageGrades grades;
+    registerCourse reg ;
     grades.saveToCsv("students'grades.csv");
     prerequisite.savePrerequisitesToFile("prerequisites");
     saveStudentsToFile();
     courses.saveCoursesToFile("courses.txt");
+    reg.saveToFile("registered.txt");
 
     QMainWindow::closeEvent(event);
 }
@@ -38,10 +41,13 @@ MainWindow::~MainWindow()
     uploadCourse courses;
     setPrerequisites prerequisite;
     manageGrades grades;
+    registerCourse reg ;
+
     grades.saveToCsv("students'grades.csv");
     prerequisite.savePrerequisitesToFile("prerequisites.txt");
     saveStudentsToFile();
     courses.saveCoursesToFile("courses.txt");
+    reg.saveToFile("registered.txt");
     delete ui;
 }
 
