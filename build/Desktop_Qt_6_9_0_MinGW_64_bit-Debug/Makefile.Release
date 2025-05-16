@@ -412,7 +412,7 @@ release/moc_adminpage.cpp: ../../adminpage.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\adminpage.h -o release\moc_adminpage.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\adminpage.h -o release\moc_adminpage.cpp
 
 release/moc_checkprerequisites.cpp: ../../checkprerequisites.h \
 		../../course.h \
@@ -619,7 +619,7 @@ release/moc_checkprerequisites.cpp: ../../checkprerequisites.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\checkprerequisites.h -o release\moc_checkprerequisites.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\checkprerequisites.h -o release\moc_checkprerequisites.cpp
 
 release/moc_generatereport.cpp: ../../generatereport.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -841,7 +841,7 @@ release/moc_generatereport.cpp: ../../generatereport.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\generatereport.h -o release\moc_generatereport.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\generatereport.h -o release\moc_generatereport.cpp
 
 release/moc_loginwindow.cpp: ../../loginwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -1057,9 +1057,12 @@ release/moc_loginwindow.cpp: ../../loginwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\loginwindow.h -o release\moc_loginwindow.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\loginwindow.h -o release\moc_loginwindow.cpp
 
 release/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -1282,10 +1285,11 @@ release/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
 		../../signup.h \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
 
 release/moc_managegrades.cpp: ../../managegrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -1493,7 +1497,7 @@ release/moc_managegrades.cpp: ../../managegrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\managegrades.h -o release\moc_managegrades.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\managegrades.h -o release\moc_managegrades.cpp
 
 release/moc_registercourse.cpp: ../../registercourse.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -1712,9 +1716,10 @@ release/moc_registercourse.cpp: ../../registercourse.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\registercourse.h -o release\moc_registercourse.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\registercourse.h -o release\moc_registercourse.cpp
 
 release/moc_setprerequisites.cpp: ../../setprerequisites.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -1920,7 +1925,7 @@ release/moc_setprerequisites.cpp: ../../setprerequisites.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\setprerequisites.h -o release\moc_setprerequisites.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\setprerequisites.h -o release\moc_setprerequisites.cpp
 
 release/moc_signup.cpp: ../../signup.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -2136,10 +2141,13 @@ release/moc_signup.cpp: ../../signup.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		../../loginwindow.h \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\signup.h -o release\moc_signup.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\signup.h -o release\moc_signup.cpp
 
 release/moc_studentpage.cpp: ../../studentpage.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -2355,9 +2363,12 @@ release/moc_studentpage.cpp: ../../studentpage.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\studentpage.h -o release\moc_studentpage.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\studentpage.h -o release\moc_studentpage.cpp
 
 release/moc_uploadcourse.cpp: ../../uploadcourse.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -2563,7 +2574,7 @@ release/moc_uploadcourse.cpp: ../../uploadcourse.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\uploadcourse.h -o release\moc_uploadcourse.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\uploadcourse.h -o release\moc_uploadcourse.cpp
 
 release/moc_viewgrades.cpp: ../../viewgrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
@@ -2780,9 +2791,12 @@ release/moc_viewgrades.cpp: ../../viewgrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		release/moc_predefs.h \
 		C:/Qt/6.9.0/mingw_64/bin/moc.exe
-	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/Dell/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -IC:/Users/Dell/Documents/courseRegistration -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\viewgrades.h -o release\moc_viewgrades.cpp
+	C:\Qt\6.9.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/youssef ahmed/Documents/courseRegistration/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/youssef ahmed/Documents/courseRegistration" -IC:/Qt/6.9.0/mingw_64/include -IC:/Qt/6.9.0/mingw_64/include/QtWidgets -IC:/Qt/6.9.0/mingw_64/include/QtGui -IC:/Qt/6.9.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\viewgrades.h -o release\moc_viewgrades.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -3076,25 +3090,14 @@ release/adminpage.o: ../../adminpage.cpp ../../adminpage.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
 		../../signup.h \
 		../../managegrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QDragEnterEvent \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QDropEvent \
-		../../grade.h \
 		../../registercourse.h \
 		../../setprerequisites.h \
 		ui_adminpage.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLabel \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpicture.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\adminpage.o ..\..\adminpage.cpp
 
@@ -3328,34 +3331,7 @@ release/checkprerequisites.o: ../../checkprerequisites.cpp ../../checkprerequisi
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
 		ui_checkprerequisites.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		ui_setprerequisites.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\checkprerequisites.o ..\..\checkprerequisites.cpp
 
@@ -3562,25 +3538,6 @@ release/course.o: ../../course.cpp ../../course.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		ui_uploadcourse.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QSpinBox \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\course.o ..\..\course.cpp
 
@@ -3849,16 +3806,7 @@ release/generatereport.o: ../../generatereport.cpp ../../generatereport.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QDropEvent \
 		../../studentpage.h \
 		ui_generatereport.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QScrollArea \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qscrollarea.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget
+		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\generatereport.o ..\..\generatereport.cpp
 
 release/grade.o: ../../grade.cpp ../../grade.h \
@@ -4165,6 +4113,9 @@ release/loginwindow.o: ../../loginwindow.cpp ../../loginwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
@@ -4174,25 +4125,9 @@ release/loginwindow.o: ../../loginwindow.cpp ../../loginwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		../../course.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		../../signup.h \
 		../../studentpage.h \
-		ui_loginwindow.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h
+		ui_loginwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\loginwindow.o ..\..\loginwindow.cpp
 
 release/main.o: ../../main.cpp C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
@@ -4418,11 +4353,11 @@ release/main.o: ../../main.cpp C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplicati
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
 		../../signup.h \
 		../../managegrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QDragEnterEvent \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QDropEvent \
-		../../grade.h \
 		../../registercourse.h \
 		../../setprerequisites.h \
 		../../uploadcourse.h
@@ -4678,28 +4613,8 @@ release/managegrades.o: ../../managegrades.cpp ../../managegrades.h \
 		../../registercourse.h \
 		../../setprerequisites.h \
 		ui_mainwindow.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget \
 		../../uploadcourse.h \
-		ui_managegrades.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h
+		ui_managegrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\managegrades.o ..\..\managegrades.cpp
 
 release/registercourse.o: ../../registercourse.cpp ../../registercourse.h \
@@ -4919,6 +4834,7 @@ release/registercourse.o: ../../registercourse.cpp ../../registercourse.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QFont \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -4943,29 +4859,9 @@ release/registercourse.o: ../../registercourse.cpp ../../registercourse.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
 		../../adminpage.h \
 		../../checkprerequisites.h \
-		../../grade.h \
 		../../loginwindow.h \
 		../../studentpage.h \
 		ui_registercourse.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QHeaderView \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qheaderview.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLabel \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpicture.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QTableWidget \
 		../../uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\registercourse.o ..\..\registercourse.cpp
 
@@ -5172,44 +5068,16 @@ release/setprerequisites.o: ../../setprerequisites.cpp ../../setprerequisites.h 
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		ui_setprerequisites.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../adminPage.h \
 		../../uploadcourse.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QDebug \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QFile \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qfiledevice.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QTextStream \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QDebug
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QTextStream
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\setprerequisites.o ..\..\setprerequisites.cpp
 
 release/signup.o: ../../signup.cpp ../../signup.h \
@@ -5426,6 +5294,9 @@ release/signup.o: ../../signup.cpp ../../signup.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		../../loginwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -5437,23 +5308,7 @@ release/signup.o: ../../signup.cpp ../../signup.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		../../course.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
-		ui_signup.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h
+		ui_signup.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\signup.o ..\..\signup.cpp
 
 release/student.o: ../../student.cpp ../../student.h \
@@ -5600,6 +5455,9 @@ release/student.o: ../../student.cpp ../../student.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qendian.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		../../loginwindow.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDialog \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qdialog.h \
@@ -5669,7 +5527,12 @@ release/student.o: ../../student.cpp ../../student.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qexception.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qpromise.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/qinputmethod.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qguiapplication_platform.h
+		C:/Qt/6.9.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../course.h \
+		../../managegrades.h \
+		C:/Qt/6.9.0/mingw_64/include/QtGui/QDragEnterEvent \
+		C:/Qt/6.9.0/mingw_64/include/QtGui/QDropEvent \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\student.o ..\..\student.cpp
 
 release/studentpage.o: ../../studentpage.cpp ../../studentpage.h \
@@ -5886,11 +5749,11 @@ release/studentpage.o: ../../studentpage.cpp ../../studentpage.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
-		../../checkprerequisites.h \
-		../../course.h \
+		../../grade.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
-		../../grade.h \
+		../../checkprerequisites.h \
+		../../course.h \
 		../../generatereport.h \
 		../../loginwindow.h \
 		../../mainwindow.h \
@@ -5900,12 +5763,6 @@ release/studentpage.o: ../../studentpage.cpp ../../studentpage.h \
 		../../signup.h \
 		../../registercourse.h \
 		ui_studentpage.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../viewgrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\studentpage.o ..\..\studentpage.cpp
 
@@ -6118,26 +5975,7 @@ release/uploadcourse.o: ../../uploadcourse.cpp ../../uploadcourse.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../adminpage.h \
-		ui_uploadcourse.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLineEdit \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QSpinBox \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/qregularexpression.h
+		ui_uploadcourse.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\uploadcourse.o ..\..\uploadcourse.cpp
 
 release/viewgrades.o: ../../viewgrades.cpp ../../viewgrades.h \
@@ -6355,40 +6193,16 @@ release/viewgrades.o: ../../viewgrades.cpp ../../viewgrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+		../../grade.h \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QDebug \
 		../../loginWindow.h \
 		../../managegrades.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QDragEnterEvent \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/QDropEvent \
-		../../grade.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QStringList \
 		../../studentpage.h \
-		ui_viewgrades.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QComboBox \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qcombobox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstyle.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabbar.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.9.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLabel \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qpicture.h \
-		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h
+		ui_viewgrades.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\viewgrades.o ..\..\viewgrades.cpp
 
 release/qrc_img.o: release/qrc_img.cpp 

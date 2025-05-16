@@ -3,10 +3,14 @@
 #include <QFile>
 #include <QJsonObject>
 #include <map>
+#include<unordered_map>
+#include"grade.h"
+
 using namespace std;
 class student
 {
 public:
+
     student(const QString &name,
             const QString &id,
             const QString &cgpa,
@@ -17,10 +21,12 @@ public:
     QString getId() const;
     QString getCgpa() const;
     QString getPassword() const;
-    void setCgpa(QString &cgpa);
+    void setCgpa(const QString &cgpa);
     void viewGrades() const;
     void setGrades(const map<int, QString> &newGrades);
+
     const map<int, QString> &getGrades() const;
+
 
 private:
     QString name;

@@ -5,15 +5,15 @@
 #include "course.h"
 #include "uploadcourse.h"
 
+#include <QDebug>
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
-#include <QDebug>
 
+#include <algorithm>
+#include <stack>
 #include <unordered_map>
 #include <vector>
-#include <stack>
-#include <algorithm>
 
 using namespace std;
 
@@ -29,8 +29,10 @@ setPrerequisites::setPrerequisites(QWidget *parent)
     }
 
     // Connect course combo change signal to update prerequisites combo
-    connect(ui->coursescmb, QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this, &setPrerequisites::onCourseChanged);
+    connect(ui->coursescmb,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            &setPrerequisites::onCourseChanged);
 
     // Trigger initial population
     onCourseChanged(0);
@@ -93,14 +95,13 @@ void setPrerequisites::on_setBtn_clicked()
     onCourseChanged(0);
 }
 
-
 void setPrerequisites::on_removeBtn_clicked()
 {
     QString selectedCourseName = ui->coursescmb->currentText();
     QString selectedPreTitle = ui->preCmb->currentText();
 
     // Remove marker if present (e.g., " ✓")
-    selectedPreTitle = selectedPreTitle.remove(" ✓");  // Or whatever marker you used
+    selectedPreTitle = selectedPreTitle.remove(" ✓"); // Or whatever marker you used
 
     int selectedCourseID = -1;
     int selectedPreID = -1;
@@ -129,12 +130,11 @@ void setPrerequisites::on_removeBtn_clicked()
     if (it != preList.end()) {
         preList.erase(it);
         QMessageBox::information(this, "Removed", "Prerequisite removed.");
-        onCourseChanged(0);  // Refresh the preCmb display with updated markers
+        onCourseChanged(0); // Refresh the preCmb display with updated markers
     } else {
         QMessageBox::information(this, "Not Found", "Selected prerequisite not found.");
     }
 }
-
 
 void setPrerequisites::onCourseChanged(int)
 {
@@ -167,7 +167,7 @@ void setPrerequisites::onCourseChanged(int)
 
         // If this course is already a prerequisite, append a marker
         if (std::find(currentPrereqs.begin(), currentPrereqs.end(), id) != currentPrereqs.end()) {
-            displayTitle += " ✓";  // or " (Already prerequisite)"
+            displayTitle += " ✓"; // or " (Already prerequisite)"
         }
 
         ui->preCmb->addItem(displayTitle);
@@ -209,7 +209,6 @@ void setPrerequisites::savePrerequisitesToFile(const QString &filename)
     file.close();
 }
 
-
 void setPrerequisites::loadPrerequisitesFromFile(const QString &filename)
 {
     QFile file(filename);
@@ -235,13 +234,15 @@ void setPrerequisites::loadPrerequisitesFromFile(const QString &filename)
         QStringList parts = line.split(",");
         if (parts.size() >= 2) {
             QString courseTitle = parts[0];
-            if (!titleToId.contains(courseTitle)) continue;
+            if (!titleToId.contains(courseTitle))
+                continue;
 
             int courseId = titleToId[courseTitle];
 
             for (int i = 1; i < parts.size(); ++i) {
                 QString preTitle = parts[i];
-                if (!titleToId.contains(preTitle)) continue;
+                if (!titleToId.contains(preTitle))
+                    continue;
 
                 int preId = titleToId[preTitle];
                 getPrerequisitesTable()[courseId].push_back(preId);

@@ -50,7 +50,7 @@ void manageGrades::on_backBtn_clicked()
 
 void manageGrades::on_addGradeBtn_clicked()
 {
-    map<QString, int> gradeConverter = {{"A+", 4},
+    map<QString, double> gradeConverter = {{"A+", 4},
                                         {"A", 4},
                                         {"A-", 3.5},
                                         {"B+", 3},
@@ -71,6 +71,7 @@ void manageGrades::on_addGradeBtn_clicked()
     manageGrades::getGrades()[studentId.toInt()][courseName] = Grade;
 
     QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUMBIITED");
+
 }
 
 map<int, unordered_map<QString, grade *>> &manageGrades::getGrades()
@@ -78,7 +79,11 @@ map<int, unordered_map<QString, grade *>> &manageGrades::getGrades()
     static map<int, unordered_map<QString, grade *>> grades;
     return grades;
 }
-
+ map<QString, int> &manageGrades::getGradesConverter()
+{
+    static map<QString, int> gradeConverter;
+    return gradeConverter;
+}
 // Save all grades to CSV
 void manageGrades::saveToCsv(const QString &filename)
 {
@@ -101,7 +106,7 @@ void manageGrades::saveToCsv(const QString &filename)
 
     file.close();
 }
-// Load all grades from CSV
+
 void manageGrades::loadFromCsv(const QString &filename)
 {
     QFile file(filename);

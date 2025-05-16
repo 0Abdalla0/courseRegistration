@@ -21,6 +21,7 @@ public:
     static map<int, unordered_map<QString, grade *>> &getGrades();
     static void saveToCsv(const QString &filename);
     static void loadFromCsv(const QString &filename);
+    static map<QString, int> &getGradesConverter();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event) override;

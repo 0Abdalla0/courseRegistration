@@ -17,7 +17,7 @@ loginWindow::~loginWindow()
 {
     delete ui;
 }
-student loginWindow::signedIn;
+
 
 void loginWindow::on_DontHaveBtn_clicked()
 {
@@ -51,7 +51,7 @@ void loginWindow::on_SignInBtn_clicked()
                                              "Login Success",
                                              "Welcome back, " + s.getName() + "!");
                     this->accept();
-                    signedIn = s;
+                    loginWindow::getSignedIn() = s;
                     isLoggedIn = true;
                 } else {
                     QMessageBox::warning(this,
@@ -71,7 +71,7 @@ void loginWindow::on_SignInBtn_clicked()
         }
     }
 }
-student loginWindow::getSignedIn()
-{
-    return signedIn;
+student& loginWindow::getSignedIn() {
+    static student signedInStudent;
+    return signedInStudent;
 }

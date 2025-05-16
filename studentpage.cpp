@@ -5,6 +5,7 @@
 #include "registercourse.h"
 #include "ui_studentpage.h"
 #include "viewgrades.h"
+#include "student.h"
 studentPage::studentPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::studentPage)
@@ -36,6 +37,8 @@ void studentPage::on_pushButton_4_clicked()
     this->hide();
     generateReport *genReport = new generateReport(this);
     genReport->show();
+    generateReport genrep;
+    genrep.calculate_CGPA();
 }
 
 void studentPage::on_pushButton_5_clicked()

@@ -1,5 +1,9 @@
 #include "student.h"
 #include "loginwindow.h"
+#include "course.h"
+#include"managegrades.h"
+#include"grade.h"
+#include<QDebug>
 using namespace std;
 student::student(const QString &name,
                  const QString &id,
@@ -11,7 +15,10 @@ student::student(const QString &name,
     , cgpa(cgpa)
     , password(password)
     , grades(grades)
-{}
+{
+
+
+}
 
 student::student() {}
 
@@ -42,10 +49,11 @@ void student::setGrades(const std::map<int, QString> &newGrades)
 {
     grades = newGrades;
 }
-void student::setCgpa(QString &cgpa)
+void student::setCgpa(const QString &cgpa)
 {
     this->cgpa = cgpa;
 }
+
 void student::viewGrades() const
 {
     if (grades.empty()) {
