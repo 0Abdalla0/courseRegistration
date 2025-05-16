@@ -37,20 +37,6 @@ border-radius:15%;
     <string>BACK</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="prerequisites_input">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>330</y>
-     <width>601</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 15%;
-color:black;</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="setBtn">
    <property name="geometry">
     <rect>

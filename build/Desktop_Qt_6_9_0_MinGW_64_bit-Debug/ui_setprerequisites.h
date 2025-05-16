@@ -13,7 +13,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -22,7 +21,6 @@ class Ui_setPrerequisites
 {
 public:
     QPushButton *backBTN;
-    QLineEdit *prerequisites_input;
     QPushButton *setBtn;
     QComboBox *coursescmb;
     QPushButton *removeBtn;
@@ -43,11 +41,6 @@ public:
 "font: 18pt \"Segoe UI\";\n"
 "border-radius:15%;\n"
 ""));
-        prerequisites_input = new QLineEdit(setPrerequisites);
-        prerequisites_input->setObjectName("prerequisites_input");
-        prerequisites_input->setGeometry(QRect(60, 330, 601, 51));
-        prerequisites_input->setStyleSheet(QString::fromUtf8("border-radius: 15%;\n"
-"color:black;"));
         setBtn = new QPushButton(setPrerequisites);
         setBtn->setObjectName("setBtn");
         setBtn->setGeometry(QRect(800, 500, 81, 41));

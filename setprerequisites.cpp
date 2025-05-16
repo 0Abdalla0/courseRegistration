@@ -51,58 +51,63 @@ void setPrerequisites::on_backBTN_clicked()
 
 void setPrerequisites::on_setBtn_clicked()
 {
-    QString preTitle = ui->prerequisites_input->text();
-    bool isNumberPre;
-    int preID = preTitle.toInt(&isNumberPre);
     QString courseName = ui->coursescmb->currentText();
-    int courseID = -1;
+    QString prereqName = ui->preCmb->currentText();
 
-    for (const auto &[id, course] : uploadCourse::getCourseTable()) {
-        if (courseName == course.getTitle()) {
-            courseID = id;
-            break;
-        }
-    }
-
-    if (!isNumberPre) {
-        QMessageBox::warning(this, "Invalid input", "Course ID and prerequisite must be valid numbers.");
-        return;
-    }
-
-    if (courseID == preID) {
+    if (courseName == prereqName) {
         QMessageBox::warning(this, "Wrong input", "A course cannot be its own prerequisite.");
         return;
     }
 
-    unordered_map<int, Course> courseTable = uploadCourse::getCourseTable();
-    if (courseTable.find(courseID) == courseTable.end()) {
-        QMessageBox::warning(this, "Invalid Course", "Selected course does not exist.");
+    int courseID = -1;
+    int prereqID = -1;
+
+    const auto &courseTable = uploadCourse::getCourseTable();
+
+    for (const auto &[id, course] : courseTable) {
+        if (course.getTitle() == courseName) {
+            courseID = id;
+        }
+        if (course.getTitle() == prereqName) {
+            prereqID = id;
+        }
+    }
+
+    if (courseID == -1 || prereqID == -1) {
+        QMessageBox::warning(this, "Invalid Course", "Failed to resolve course or prerequisite.");
         return;
     }
 
-    if (std::find(setPrerequisites::getPrerequisitesTable()[courseID].begin(),
-                  setPrerequisites::getPrerequisitesTable()[courseID].end(),
-                  preID)
-        != setPrerequisites::getPrerequisitesTable()[courseID].end()) {
-        QMessageBox::information(this, "Duplicate", "This prerequisite is already added.");
-        return;
+    // Check if this prerequisite name is already in the list by comparing course names
+    const auto &prereqList = getPrerequisitesTable()[courseID];
+    for (int id : prereqList) {
+        if (courseTable.at(id).getTitle() == prereqName) {
+            QMessageBox::information(this, "Duplicate", "This prerequisite is already added.");
+            return;
+        }
     }
 
     // All checks passed
-    setPrerequisites::getPrerequisitesTable()[courseID].push_back(preID);
+    getPrerequisitesTable()[courseID].push_back(prereqID);
     QMessageBox::information(this, "Success", "Prerequisite successfully set.");
+    onCourseChanged(0);
 }
+
 
 void setPrerequisites::on_removeBtn_clicked()
 {
     QString selectedCourseName = ui->coursescmb->currentText();
     QString selectedPreTitle = ui->preCmb->currentText();
 
+    // Remove marker if present (e.g., " ✓")
+    selectedPreTitle = selectedPreTitle.remove(" ✓");  // Or whatever marker you used
+
     int selectedCourseID = -1;
     int selectedPreID = -1;
 
     const auto &courseTable = uploadCourse::getCourseTable();
 
+    // Get course IDs
     for (const auto &[id, course] : courseTable) {
         if (course.getTitle() == selectedCourseName) {
             selectedCourseID = id;
@@ -117,15 +122,19 @@ void setPrerequisites::on_removeBtn_clicked()
         return;
     }
 
+    // Find and remove prerequisite
     auto &preList = getPrerequisitesTable()[selectedCourseID];
     auto it = std::find(preList.begin(), preList.end(), selectedPreID);
+
     if (it != preList.end()) {
         preList.erase(it);
         QMessageBox::information(this, "Removed", "Prerequisite removed.");
+        onCourseChanged(0);  // Refresh the preCmb display with updated markers
     } else {
         QMessageBox::information(this, "Not Found", "Selected prerequisite not found.");
     }
 }
+
 
 void setPrerequisites::onCourseChanged(int)
 {
@@ -135,6 +144,7 @@ void setPrerequisites::onCourseChanged(int)
     const auto &courseTable = uploadCourse::getCourseTable();
     ui->preCmb->clear();
 
+    // Get ID of the selected course
     for (const auto &[id, course] : courseTable) {
         if (course.getTitle() == selectedCourseName) {
             selectedCourseID = id;
@@ -142,10 +152,25 @@ void setPrerequisites::onCourseChanged(int)
         }
     }
 
+    // Get the current prerequisite list
+    const auto &prereqTable = getPrerequisitesTable();
+    const auto &currentPrereqs = prereqTable.find(selectedCourseID) != prereqTable.end()
+                                     ? prereqTable.at(selectedCourseID)
+                                     : vector<int>();
+
+    // Add all other courses to the preCmb
     for (const auto &[id, course] : courseTable) {
-        if (id != selectedCourseID) {
-            ui->preCmb->addItem(course.getTitle());
+        if (id == selectedCourseID)
+            continue;
+
+        QString displayTitle = course.getTitle();
+
+        // If this course is already a prerequisite, append a marker
+        if (std::find(currentPrereqs.begin(), currentPrereqs.end(), id) != currentPrereqs.end()) {
+            displayTitle += " ✓";  // or " (Already prerequisite)"
         }
+
+        ui->preCmb->addItem(displayTitle);
     }
 }
 
@@ -164,19 +189,26 @@ void setPrerequisites::savePrerequisitesToFile(const QString &filename)
     }
 
     QTextStream out(&file);
+    const auto &courseTable = uploadCourse::getCourseTable();
 
-    for (const auto &[courseId, preList] : setPrerequisites::getPrerequisitesTable()) {
+    for (const auto &[courseId, preList] : getPrerequisitesTable()) {
         if (preList.empty())
             continue;
-        out << courseId;
-        for (unsigned long long i = 0; i < preList.size(); ++i) {
-            out << "," << preList[i];
+
+        QString courseTitle = courseTable.at(courseId).getTitle();
+        out << courseTitle;
+
+        for (int preId : preList) {
+            QString preTitle = courseTable.at(preId).getTitle();
+            out << "," << preTitle;
         }
-        out << "\n-----------------------------------------------------------------\n";
+
+        out << "\n------------------------------------------------------\n";
     }
 
     file.close();
 }
+
 
 void setPrerequisites::loadPrerequisitesFromFile(const QString &filename)
 {
@@ -187,20 +219,35 @@ void setPrerequisites::loadPrerequisitesFromFile(const QString &filename)
     }
 
     QTextStream in(&file);
+    const auto &courseTable = uploadCourse::getCourseTable();
+
+    // Build title-to-ID lookup map
+    QMap<QString, int> titleToId;
+    for (const auto &[id, course] : courseTable) {
+        titleToId[course.getTitle()] = id;
+    }
+
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
         if (line.startsWith("-") || line.isEmpty())
             continue;
 
         QStringList parts = line.split(",");
-
         if (parts.size() >= 2) {
-            int courseId = parts[0].toInt();
+            QString courseTitle = parts[0];
+            if (!titleToId.contains(courseTitle)) continue;
+
+            int courseId = titleToId[courseTitle];
+
             for (int i = 1; i < parts.size(); ++i) {
-                int preId = parts[i].toInt();
+                QString preTitle = parts[i];
+                if (!titleToId.contains(preTitle)) continue;
+
+                int preId = titleToId[preTitle];
                 getPrerequisitesTable()[courseId].push_back(preId);
             }
         }
     }
+
     file.close();
 }
