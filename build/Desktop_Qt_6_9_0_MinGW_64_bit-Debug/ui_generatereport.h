@@ -42,7 +42,7 @@ public:
         if (generateReport->objectName().isEmpty())
             generateReport->setObjectName("generateReport");
         generateReport->resize(1325, 702);
-        generateReport->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/10.jpg);"));
+        generateReport->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/gen.jpg);"));
         label = new QLabel(generateReport);
         label->setObjectName("label");
         label->setGeometry(QRect(220, 120, 171, 41));

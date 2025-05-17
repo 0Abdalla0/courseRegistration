@@ -79,7 +79,7 @@ color: black;
   <widget class="QLineEdit" name="lineEdit_id">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>450</x>
      <y>320</y>
      <width>581</width>
      <height>31</height>
@@ -89,6 +89,7 @@ color: black;
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
 border:none;
 color: black;
+font: 18pt &quot;Segoe UI&quot;;
 </string>
    </property>
   </widget>
@@ -105,6 +106,7 @@ color: black;
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
 border:none;
 color: black;
+font: 18pt &quot;Segoe UI&quot;;
 </string>
    </property>
   </widget>
@@ -121,6 +123,7 @@ color: black;
     <string notr="true">background-image: url(:/imgs/images/white.jpg);
 border:none;
 color: black;
+font: 18pt &quot;Segoe UI&quot;;
 </string>
    </property>
   </widget>

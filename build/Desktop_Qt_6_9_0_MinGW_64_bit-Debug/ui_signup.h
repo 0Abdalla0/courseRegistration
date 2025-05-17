@@ -59,10 +59,11 @@ public:
 ""));
         lineEdit_id = new QLineEdit(signup);
         lineEdit_id->setObjectName("lineEdit_id");
-        lineEdit_id->setGeometry(QRect(440, 320, 581, 31));
+        lineEdit_id->setGeometry(QRect(450, 320, 581, 31));
         lineEdit_id->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "color: black;\n"
+"font: 18pt \"Segoe UI\";\n"
 ""));
         lineEdit_pass = new QLineEdit(signup);
         lineEdit_pass->setObjectName("lineEdit_pass");
@@ -70,6 +71,7 @@ public:
         lineEdit_pass->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "color: black;\n"
+"font: 18pt \"Segoe UI\";\n"
 ""));
         lineEdit_confirmPass = new QLineEdit(signup);
         lineEdit_confirmPass->setObjectName("lineEdit_confirmPass");
@@ -77,6 +79,7 @@ public:
         lineEdit_confirmPass->setStyleSheet(QString::fromUtf8("background-image: url(:/imgs/images/white.jpg);\n"
 "border:none;\n"
 "color: black;\n"
+"font: 18pt \"Segoe UI\";\n"
 ""));
 
         retranslateUi(signup);

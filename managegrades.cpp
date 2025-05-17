@@ -69,11 +69,19 @@ void manageGrades::on_addGradeBtn_clicked()
     double gpa = gradeConverter[gradeValue];
 
     int studentId = studentIdStr.toInt();
-    grade *Grade = new grade(gradeValue, semester, gpa);
 
-    getGrades()[studentId][courseName] = Grade;
+    auto &grades = getGrades();
+    if (grades[studentId].find(courseName) != grades[studentId].end()) {
+        QMessageBox::warning(this, "Error", "A grade has already been assigned for this course.");
+        return;
+    }
+
+    grade *Grade = new grade(gradeValue, semester, gpa);
+    grades[studentId][courseName] = Grade;
 
     QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUBMITTED");
+
+    onStudentChanged(ui->studIdCmb->currentIndex());
 }
 
 map<int, unordered_map<QString, grade *>> &manageGrades::getGrades()
