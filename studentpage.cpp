@@ -3,9 +3,9 @@
 #include "generatereport.h"
 #include "mainwindow.h"
 #include "registercourse.h"
+#include "student.h"
 #include "ui_studentpage.h"
 #include "viewgrades.h"
-#include "student.h"
 studentPage::studentPage(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::studentPage)

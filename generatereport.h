@@ -3,7 +3,7 @@
 #include <QDialog>
 #include "grade.h"
 #include "loginwindow.h"
-#include"student.h"
+#include "student.h"
 namespace Ui {
 class generateReport;
 }
@@ -21,8 +21,8 @@ public:
     map<int, unordered_map<QString, grade *>> grades;
     void calculate_CGPA();
     int stdID;
-    static student& signedInStudent;
-    map<QString, int>gradesConverter;
+    static student &signedInStudent;
+    map<QString, int> gradesConverter;
     ~generateReport();
 
 private slots:

@@ -23,6 +23,7 @@ public:
     static void loadFromCsv(const QString &filename);
     static map<QString, int> &getGradesConverter();
     void onStudentChanged(int index);
+
 protected:
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;

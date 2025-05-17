@@ -27,7 +27,10 @@ setPrerequisites::setPrerequisites(QWidget *parent)
         ui->coursescmb->addItem(course.getTitle());
     }
 
-    connect(ui->coursescmb,QOverload<int>::of(&QComboBox::currentIndexChanged),this,&setPrerequisites::onCourseChanged);
+    connect(ui->coursescmb,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            &setPrerequisites::onCourseChanged);
 
     onCourseChanged(0);
 }

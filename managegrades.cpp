@@ -1,18 +1,18 @@
 #include "managegrades.h"
-#include "ui_managegrades.h"
+#include <QDebug>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QMimeData>
 #include <QTextStream>
-#include <QDebug>
 #include "adminpage.h"
 #include "grade.h"
 #include "mainwindow.cpp"
-#include "student.h"
-#include "uploadcourse.h"
 #include "registercourse.h"
+#include "student.h"
+#include "ui_managegrades.h"
+#include "uploadcourse.h"
 
 using namespace std;
 
@@ -32,12 +32,16 @@ manageGrades::manageGrades(QWidget *parent)
         ui->gradeCmb->addItem(grade);
     }
 
-    vector<QString> semesters = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"};
+    vector<QString> semesters
+        = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"};
     for (const QString &sem : semesters) {
         ui->semesterCmb->addItem(sem);
     }
 
-    connect(ui->studIdCmb, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &manageGrades::onStudentChanged);
+    connect(ui->studIdCmb,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            &manageGrades::onStudentChanged);
 
     onStudentChanged(0);
 }
@@ -55,12 +59,18 @@ void manageGrades::on_backBtn_clicked()
 
 void manageGrades::on_addGradeBtn_clicked()
 {
-    map<QString, double> gradeConverter = {
-        {"A+", 4}, {"A", 4}, {"A-", 3.5},
-        {"B+", 3}, {"B", 2.5}, {"B-", 2},
-        {"C+", 1.5}, {"C", 1.5}, {"C-", 1},
-        {"D+", 1}, {"D", 1}, {"F", 0.5}
-    };
+    map<QString, double> gradeConverter = {{"A+", 4},
+                                           {"A", 4},
+                                           {"A-", 3.5},
+                                           {"B+", 3},
+                                           {"B", 2.5},
+                                           {"B-", 2},
+                                           {"C+", 1.5},
+                                           {"C", 1.5},
+                                           {"C-", 1},
+                                           {"D+", 1},
+                                           {"D", 1},
+                                           {"F", 0.5}};
 
     QString studentIdStr = ui->studIdCmb->currentText();
     QString courseName = ui->courseNameCmb->currentText().remove(" ✓");
@@ -196,7 +206,7 @@ void manageGrades::onStudentChanged(int)
     int studentId = selectedStudentID.toInt();
 
     unordered_map<int, vector<Course>> &registered = registerCourse::registered;
-    map<int, unordered_map<QString, grade*>>& grades = getGrades();
+    map<int, unordered_map<QString, grade *>> &grades = getGrades();
 
     auto regIt = registered.find(studentId);
     if (regIt == registered.end()) {
@@ -204,8 +214,8 @@ void manageGrades::onStudentChanged(int)
         return;
     }
 
-    vector<Course>& courses = regIt->second;
-    for (const Course& course : courses) {
+    vector<Course> &courses = regIt->second;
+    for (const Course &course : courses) {
         QString displayTitle = course.getTitle();
 
         auto gradeIt = grades.find(studentId);
@@ -220,14 +230,14 @@ void manageGrades::onStudentChanged(int)
     }
     auto gradeIt = grades.find(studentId);
     if (gradeIt != grades.end()) {
-        const unordered_map<QString, grade*>& gradeMap = gradeIt->second;
+        const unordered_map<QString, grade *> &gradeMap = gradeIt->second;
 
         // Iterate through graded courses
-        for (const auto& [courseTitle, gradePtr] : gradeMap) {
+        for (const auto &[courseTitle, gradePtr] : gradeMap) {
             // Skip if already added (i.e., it's in registered courses)
             bool isAlreadyAdded = false;
             if (regIt != registered.end()) {
-                for (const Course& course : regIt->second) {
+                for (const Course &course : regIt->second) {
                     if (course.getTitle() == courseTitle) {
                         isAlreadyAdded = true;
                         break;
@@ -241,4 +251,3 @@ void manageGrades::onStudentChanged(int)
         }
     }
 }
-

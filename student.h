@@ -2,15 +2,14 @@
 #define STUDENT_H
 #include <QFile>
 #include <QJsonObject>
+#include "grade.h"
 #include <map>
-#include<unordered_map>
-#include"grade.h"
+#include <unordered_map>
 
 using namespace std;
 class student
 {
 public:
-
     student(const QString &name,
             const QString &id,
             const QString &cgpa,
@@ -26,7 +25,6 @@ public:
     void setGrades(const map<int, QString> &newGrades);
 
     const map<int, QString> &getGrades() const;
-
 
 private:
     QString name;

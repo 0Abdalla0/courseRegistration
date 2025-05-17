@@ -18,7 +18,6 @@ loginWindow::~loginWindow()
     delete ui;
 }
 
-
 void loginWindow::on_DontHaveBtn_clicked()
 {
     this->hide();
@@ -71,7 +70,8 @@ void loginWindow::on_SignInBtn_clicked()
         }
     }
 }
-student& loginWindow::getSignedIn() {
+student &loginWindow::getSignedIn()
+{
     static student signedInStudent;
     return signedInStudent;
 }

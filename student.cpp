@@ -1,9 +1,9 @@
 #include "student.h"
-#include "loginwindow.h"
+#include <QDebug>
 #include "course.h"
-#include"managegrades.h"
-#include"grade.h"
-#include<QDebug>
+#include "grade.h"
+#include "loginwindow.h"
+#include "managegrades.h"
 using namespace std;
 student::student(const QString &name,
                  const QString &id,
@@ -15,10 +15,7 @@ student::student(const QString &name,
     , cgpa(cgpa)
     , password(password)
     , grades(grades)
-{
-
-
-}
+{}
 
 student::student() {}
 

@@ -1,9 +1,9 @@
 #include "generatereport.h"
-#include "ui_generatereport.h"
 #include "loginwindow.h"
 #include "managegrades.h"
-#include "uploadcourse.h"
 #include "studentpage.h"
+#include "ui_generatereport.h"
+#include "uploadcourse.h"
 
 #include <QDebug>
 #include <QDesktopServices>
@@ -18,9 +18,10 @@
 #include <QtPrintSupport/QPrinter>
 
 generateReport::generateReport(QWidget *parent)
-    : QDialog(parent),
-    ui(new Ui::generateReport),
-    std(loginWindow::getSignedIn()), // Initialize reference
+    : QDialog(parent)
+    , ui(new Ui::generateReport)
+    , std(loginWindow::getSignedIn())
+    , // Initialize reference
     stdID(0)
 {
     ui->setupUi(this);
@@ -58,7 +59,8 @@ generateReport::generateReport(QWidget *parent)
         innerUnMap = it->second;
 
         for (const auto &[courseName, gradeObj] : innerUnMap) {
-            if (!gradeObj) continue;
+            if (!gradeObj)
+                continue;
 
             // Add course name
             QLabel *labelCourseName = new QLabel(courseName, this);
@@ -110,7 +112,8 @@ void generateReport::calculate_CGPA()
     }
 
     for (const auto &[courseName, gradeObj] : studentGrades) {
-        if (!gradeObj) continue;
+        if (!gradeObj)
+            continue;
 
         auto it = titleToCredits.find(courseName);
         if (it == titleToCredits.end()) {
@@ -146,28 +149,29 @@ QString generateReport::reportHtml()
     // Refresh CGPA before report generation
     calculate_CGPA();
 
-    QString html =
-        "<html>"
-        "<head><style>"
-        "body { font-family: Arial; margin: 20px; }"
-        "h2 { color: #2c3e50; }"
-        "table { border-collapse: collapse; width: 100%; margin-top: 20px; }"
-        "th { background-color: #3498db; color: white; text-align: left; }"
-        "td, th { border: 1px solid #ddd; padding: 8px; }"
-        "tr:nth-child(even) { background-color: #f2f2f2; }"
-        "</style></head>"
-        "<body>"
-        "<h2 align='center'>Student Grade Report</h2>"
-        "<p><b>Name:</b> " + std.getName() +
-        " &nbsp;&nbsp; <b>ID:</b> " + std.getId() +
-        " &nbsp;&nbsp; <b>CGPA:</b> " + std.getCgpa() + "</p>"
-                                                        "<table>"
-                                                        "<tr><th>Course</th><th>Grade</th><th>Semester</th></tr>";
+    QString html = "<html>"
+                   "<head><style>"
+                   "body { font-family: Arial; margin: 20px; }"
+                   "h2 { color: #2c3e50; }"
+                   "table { border-collapse: collapse; width: 100%; margin-top: 20px; }"
+                   "th { background-color: #3498db; color: white; text-align: left; }"
+                   "td, th { border: 1px solid #ddd; padding: 8px; }"
+                   "tr:nth-child(even) { background-color: #f2f2f2; }"
+                   "</style></head>"
+                   "<body>"
+                   "<h2 align='center'>Student Grade Report</h2>"
+                   "<p><b>Name:</b> "
+                   + std.getName() + " &nbsp;&nbsp; <b>ID:</b> " + std.getId()
+                   + " &nbsp;&nbsp; <b>CGPA:</b> " + std.getCgpa()
+                   + "</p>"
+                     "<table>"
+                     "<tr><th>Course</th><th>Grade</th><th>Semester</th></tr>";
 
     double sum = 0;
     int count = 0;
     for (const auto &[course, gradeObj] : innerUnMap) {
-        if (!gradeObj) continue;
+        if (!gradeObj)
+            continue;
 
         bool ok;
         double gr = gradeObj->courseGrade.toDouble(&ok);
@@ -177,10 +181,16 @@ QString generateReport::reportHtml()
         }
 
         html += "<tr>"
-                "<td>" + course + "</td>"
-                           "<td align='center'>" + gradeObj->courseGrade + "</td>"
-                                          "<td>" + gradeObj->semester + "</td>"
-                                       "</tr>";
+                "<td>"
+                + course
+                + "</td>"
+                  "<td align='center'>"
+                + gradeObj->courseGrade
+                + "</td>"
+                  "<td>"
+                + gradeObj->semester
+                + "</td>"
+                  "</tr>";
     }
 
     html += "</table>";

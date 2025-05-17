@@ -39,27 +39,27 @@ registerCourse::registerCourse(QWidget *parent)
         row++;
     }
 
-    ui->titleItem->setStyleSheet("QTableWidget {"
-                                 "   background-color: white;"
-                                 "   color: black;"
-                                 "   gridline-color: #e0e0e0;"
-                                 "border:none"
-                                 "}"
-                                 "QTableWidget QTableCornerButton::section {"
-                                 "   background: #f5f5f5;"
-                                 "   border: 1px solid #e0e0e0;"
-                                 "}"
-                                 "QHeaderView::section {"
-                                 "   background-color: #f5f5f5;"
-                                 "   color: black;"
-                                 "   padding: 5px;"
-                                 "   border: none;"
-                                 "   min-width: 100px;"
-                                 "   border-bottom: 2px solid #e0e0e0;"
-                                 "}"
-                                 "QTableWidget::item {"
-                                 "   border-bottom: 1px solid #f0f0f0;"
-                                 "}");
+    // ui->titleItem->setStyleSheet("QTableWidget {"
+    //                              "   background-color: white;"
+    //                              "   color: black;"
+    //                              "   gridline-color: #e0e0e0;"
+    //                              "border:none"
+    //                              "}"
+    //                              "QTableWidget QTableCornerButton::section {"
+    //                              "   background: #f5f5f5;"
+    //                              "   border: 1px solid #e0e0e0;"
+    //                              "}"
+    //                              "QHeaderView::section {"
+    //                              "   background-color: #f5f5f5;"
+    //                              "   color: black;"
+    //                              "   padding: 5px;"
+    //                              "   border: none;"
+    //                              "   min-width: 100px;"
+    //                              "   border-bottom: 2px solid #e0e0e0;"
+    //                              "}"
+    //                              "QTableWidget::item {"
+    //                              "   border-bottom: 1px solid #f0f0f0;"
+    //                              "}");
 
     for (int col = 0; col < 4; ++col) {
         ui->titleItem->horizontalHeader()->setSectionResizeMode(col, QHeaderView::Stretch);
@@ -142,7 +142,7 @@ void registerCourse::on_registerBtn_clicked()
             QMessageBox::warning(this,
                                  "Error",
                                  "You did not complete the prerequisites of this course.");
-        else if(!alreadyRegistered)
+        else if (!alreadyRegistered)
             QMessageBox::warning(this, "Error", "Selected course not found.");
     }
 }
@@ -217,7 +217,6 @@ void registerCourse ::saveToFile(const QString &filename)
     file.close();
 }
 
-
 void registerCourse::loadFromFile(const QString &filename)
 {
     QFile file(filename);
@@ -231,29 +230,30 @@ void registerCourse::loadFromFile(const QString &filename)
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
         lineNo++;
-        if (line.isEmpty()) continue;
+        if (line.isEmpty())
+            continue;
         QStringList parts = line.split(',');
 
         if (parts.size() != 7) {
-            qWarning() << "Bad line" << lineNo << "in" << filename
-                       << ": expected 7 fields but got" << parts.size();
+            qWarning() << "Bad line" << lineNo << "in" << filename << ": expected 7 fields but got"
+                       << parts.size();
             continue;
         }
 
-        bool ok1=false, ok2=false;
-        int studId   = parts[0].toInt(&ok1);
+        bool ok1 = false, ok2 = false;
+        int studId = parts[0].toInt(&ok1);
         int courseId = parts[1].toInt(&ok2);
         if (!ok1 || !ok2) {
             qWarning() << "Invalid IDs on line" << lineNo << ":" << line;
             continue;
         }
 
-        QString name       = parts[2];
-        QString instName   = parts[3];
-        QString instEmail  = parts[4];
-        QString syllabus   = parts[5];
-        bool ok3=false;
-        int credit         = parts[6].toInt(&ok3);
+        QString name = parts[2];
+        QString instName = parts[3];
+        QString instEmail = parts[4];
+        QString syllabus = parts[5];
+        bool ok3 = false;
+        int credit = parts[6].toInt(&ok3);
         if (!ok3) {
             qWarning() << "Invalid credit on line" << lineNo << ":" << line;
             continue;
