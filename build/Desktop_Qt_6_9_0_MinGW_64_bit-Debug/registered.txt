@@ -36,3 +36,7 @@
 -----------------------------------------------------------------
 1000,109,Software Engineering,Dr. Ahmed Saleh,saleh@se.edu,Agile methodologies and software testing,3
 -----------------------------------------------------------------
+1000,116,Big Data Analytics,Dr. Mohamed Ali,mohamedali@bigdata.edu,Hadoop and Spark frameworks,3
+-----------------------------------------------------------------
+1000,115,Data Mining,Ziad,Ziad@dm.edu,Data preprocessing and pattern recognition,3
+-----------------------------------------------------------------

@@ -16,8 +16,6 @@ Data Mining,Introduction to Computer Science
 ------------------------------------------------------
 Big Data Analytics,Introduction to Computer Science
 ------------------------------------------------------
-Internet of Things (IoT),Introduction to Computer Science,Computer Networks
-------------------------------------------------------
 Blockchain Technology,Introduction to Computer Science
 ------------------------------------------------------
 Quantum Computing,Introduction to Computer Science,Operating Systems
