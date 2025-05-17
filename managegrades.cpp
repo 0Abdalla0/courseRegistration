@@ -218,5 +218,27 @@ void manageGrades::onStudentChanged(int)
 
         ui->courseNameCmb->addItem(displayTitle);
     }
+    auto gradeIt = grades.find(studentId);
+    if (gradeIt != grades.end()) {
+        const unordered_map<QString, grade*>& gradeMap = gradeIt->second;
+
+        // Iterate through graded courses
+        for (const auto& [courseTitle, gradePtr] : gradeMap) {
+            // Skip if already added (i.e., it's in registered courses)
+            bool isAlreadyAdded = false;
+            if (regIt != registered.end()) {
+                for (const Course& course : regIt->second) {
+                    if (course.getTitle() == courseTitle) {
+                        isAlreadyAdded = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!isAlreadyAdded) {
+                ui->courseNameCmb->addItem(courseTitle); // Add unregistered graded courses
+            }
+        }
+    }
 }
 

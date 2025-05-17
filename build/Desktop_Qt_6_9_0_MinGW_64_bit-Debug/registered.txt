@@ -6,6 +6,8 @@
 -----------------------------------------------------------------
 1009,118,Blockchain Technology,Dr. Ahmed Saleh,saleh@blockchain.edu,Blockchain architecture and smart contracts,3
 -----------------------------------------------------------------
+1021,101,Introduction to Computer Science,Ahmed Amr,AhmedAmr@gmail.com,Computer fundamentals and programming basics,3
+-----------------------------------------------------------------
 1008,115,Data Mining,Ziad,Ziad@dm.edu,Data preprocessing and pattern recognition,3
 -----------------------------------------------------------------
 1008,116,Big Data Analytics,Dr. Mohamed Ali,mohamedali@bigdata.edu,Hadoop and Spark frameworks,3
