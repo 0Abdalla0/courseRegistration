@@ -1,2 +1,36 @@
-4,104,Data Structures,Abdalla,Abdalla@gmail.com,Data manipulation,3
+1010,119,Quantum Computing,Dr. Mohamed Kamal,kamal@quantum.edu,Quantum gates and quantum algorithms,3
+-----------------------------------------------------------------
+1010,120,Ethical Hacking,Dr. Ahmed Elshamy,elshamy@ethicalhacking.edu,Penetration testing and cybersecurity ethics,3
+-----------------------------------------------------------------
+1009,117,Internet of Things (IoT),Hassan Hassan,hassan.hassan@iot.edu,Sensor networks and IoT applications,3
+-----------------------------------------------------------------
+1009,118,Blockchain Technology,Dr. Ahmed Saleh,saleh@blockchain.edu,Blockchain architecture and smart contracts,3
+-----------------------------------------------------------------
+1008,115,Data Mining,Ziad,Ziad@dm.edu,Data preprocessing and pattern recognition,3
+-----------------------------------------------------------------
+1008,116,Big Data Analytics,Dr. Mohamed Ali,mohamedali@bigdata.edu,Hadoop and Spark frameworks,3
+-----------------------------------------------------------------
+1007,113,Security and Cryptography,Dr. Ahmed Elshamy,elshamy@security.edu,Cryptography and network security,3
+-----------------------------------------------------------------
+1007,114,Machine Learning,Dr. Ai,Ai@ml.edu,Supervised and unsupervised learning,3
+-----------------------------------------------------------------
+1006,111,Mobile App Development,Dr. Ziad Ali,ziaiali@mobile.edu,Android and iOS app development,3
+-----------------------------------------------------------------
+1006,112,Cloud Computing,Dr. Mohamed Elsayed,elsayed@cloud.edu,Amazon Web Services and Google Cloud,3
+-----------------------------------------------------------------
+1005,108,Artificial Intelligence,Ai,Ai@gmail.com,Search algorithms and machine learning basics,3
+-----------------------------------------------------------------
+1005,109,Software Engineering,Dr. Ahmed Saleh,saleh@se.edu,Agile methodologies and software testing,3
+-----------------------------------------------------------------
+1004,106,Operating Systems,Abdalla Abdalla,abdalla.abdalla@os.edu,Process management and memory management,3
+-----------------------------------------------------------------
+1004,107,Computer Networks,Dr. Mohamed Kamal,kamal@networks.edu,Network protocols and data communication,3
+-----------------------------------------------------------------
+1001,101,Introduction to Computer Science,Ahmed Amr,AhmedAmr@gmail.com,Computer fundamentals and programming basics,3
+-----------------------------------------------------------------
+1000,101,Introduction to Computer Science,Ahmed Amr,AhmedAmr@gmail.com,Computer fundamentals and programming basics,3
+-----------------------------------------------------------------
+1000,106,Operating Systems,Abdalla Abdalla,abdalla.abdalla@os.edu,Process management and memory management,3
+-----------------------------------------------------------------
+1000,109,Software Engineering,Dr. Ahmed Saleh,saleh@se.edu,Agile methodologies and software testing,3
 -----------------------------------------------------------------

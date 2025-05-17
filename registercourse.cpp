@@ -81,7 +81,7 @@ registerCourse::registerCourse(QWidget *parent)
 
     connect(ui->titleItem, &QTableWidget::cellClicked, this, &registerCourse::onCourseSelected);
 }
-unordered_map<int, Course> registerCourse::registered;
+unordered_map<int, vector<Course>> registerCourse::registered;
 
 registerCourse::~registerCourse()
 {
@@ -112,16 +112,20 @@ void registerCourse::on_registerBtn_clicked()
     int studentId = stud.getId().toInt();
     bool prerequisitesCompleted = checker->checkCourseValidation(selectedCourseId, studentId);
 
-    for (const auto [studId, courseIt] : registered) {
-        if (studId == studentId && courseIt.getId() == selectedCourseId) {
-            QMessageBox::warning(
-                this,
-                "Error",
-                "The course you are trying to register you already registered before");
-            alreadyRegistered = true;
-            break;
+    unordered_map<int, vector<Course>>::iterator regIt = registerCourse::registered.begin();
+    if (regIt != registered.end()) {
+        for (const Course &c : regIt->second) {
+            if (c.getId() == selectedCourseId) {
+                QMessageBox::warning(
+                    this,
+                    "Error",
+                    "The course you are trying to register for has already been registered.");
+                alreadyRegistered = true;
+                break;
+            }
         }
     }
+
     if (it != courseTable.end() && prerequisitesCompleted && !alreadyRegistered) {
         const Course &course = it->second;
 
@@ -132,14 +136,13 @@ void registerCourse::on_registerBtn_clicked()
                                      + QString::number(course.getCreditHours()));
         registerCourse::regCnt++;
         admin->updateRegistrationsCnt(registerCourse::regCnt);
-        registered[studentId] = course;
-
+        registered[studentId].push_back(course);
     } else {
         if (prerequisitesCompleted == false)
             QMessageBox::warning(this,
                                  "Error",
                                  "You did not complete the prerequisites of this course.");
-        else
+        else if(!alreadyRegistered)
             QMessageBox::warning(this, "Error", "Selected course not found.");
     }
 }
@@ -159,7 +162,6 @@ void registerCourse::on_searchBtn_clicked()
     int courseId;
     Course courseToBeDisplayed;
     unordered_map<int, Course> coursesToBeDisplayed;
-    unordered_map<int, Course> searchCourse;
     unordered_map<int, Course>::iterator it = courseTable.begin();
 
     while (it != courseTable.end()) {
@@ -203,11 +205,13 @@ void registerCourse ::saveToFile(const QString &filename)
     }
 
     QTextStream out(&file);
-    for (const auto &[studId, course] : registerCourse::registered) {
-        out << studId << "," << course.getId() << "," << course.getTitle() << ","
-            << course.getInstructorName() << "," << course.getInstructorEmail() << ","
-            << course.getSyllabus() << "," << course.getCreditHours()
-            << "\n-----------------------------------------------------------------\n";
+    for (const auto &[studId, courses] : registerCourse::registered) {
+        for (const Course &course : courses) {
+            out << studId << "," << course.getId() << "," << course.getTitle() << ","
+                << course.getInstructorName() << "," << course.getInstructorEmail() << ","
+                << course.getSyllabus() << "," << course.getCreditHours()
+                << "\n-----------------------------------------------------------------\n";
+        }
     }
 
     file.close();
@@ -227,10 +231,9 @@ void registerCourse::loadFromFile(const QString &filename)
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
         lineNo++;
-        if (line.isEmpty()) continue;             // skip blank lines
+        if (line.isEmpty()) continue;
         QStringList parts = line.split(',');
 
-        // Expecting: studentId,courseId,name,instName,instEmail,syllabus,credit
         if (parts.size() != 7) {
             qWarning() << "Bad line" << lineNo << "in" << filename
                        << ": expected 7 fields but got" << parts.size();
@@ -257,7 +260,7 @@ void registerCourse::loadFromFile(const QString &filename)
         }
 
         Course course(courseId, name, instName, instEmail, syllabus, credit);
-        registered[studId] = course;
+        registered[studId].push_back(course);
         ++regCnt;
     }
 

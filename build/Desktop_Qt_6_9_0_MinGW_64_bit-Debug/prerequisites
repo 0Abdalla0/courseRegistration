@@ -1,4 +1,26 @@
-communication,Data Structures
+Operating Systems,Introduction to Computer Science
 ------------------------------------------------------
-intro to cs,Data mining,Ai
+Computer Networks,Introduction to Computer Science
+------------------------------------------------------
+Artificial Intelligence,Introduction to Computer Science
+------------------------------------------------------
+Mobile App Development,Introduction to Computer Science,Computer Networks
+------------------------------------------------------
+Cloud Computing,Introduction to Computer Science,Operating Systems
+------------------------------------------------------
+Security and Cryptography,Introduction to Computer Science,Artificial Intelligence
+------------------------------------------------------
+Machine Learning,Introduction to Computer Science,Software Engineering
+------------------------------------------------------
+Data Mining,Introduction to Computer Science
+------------------------------------------------------
+Big Data Analytics,Introduction to Computer Science
+------------------------------------------------------
+Internet of Things (IoT),Introduction to Computer Science,Computer Networks
+------------------------------------------------------
+Blockchain Technology,Introduction to Computer Science
+------------------------------------------------------
+Quantum Computing,Introduction to Computer Science,Operating Systems
+------------------------------------------------------
+Ethical Hacking,Introduction to Computer Science,Security and Cryptography
 ------------------------------------------------------

@@ -1,13 +1,28 @@
 Student ID,Course Name,Grade,Semester,GPA
-7,intro to cs,A+,First,4
-10,intro to cs,A+,First,4
-10,SWE,A+,First,4
-10,sp,A+,First,4
-10,electronics,C,third,3
-10,oop,B+,Second,3
-10,Adballa,F,Second,3
-10,Ai,A+,First,4
-80,sp,C+,First,1.5
-80,Ai,A+,First,4
-80,communication,A+,First,4
-123,Data Structures,B-,First,2
+1000,Introduction to Computer Science,A+,First,4
+1000,Data Structures,B,Second,3
+1001,Introduction to Computer Science,A,Third,4
+1001,Database Systems,A-,First,3.7
+1002,Introduction to Computer Science,B+,First,3.3
+1002,Object-Oriented Programming,A,Third,4
+1003,Introduction to Computer Science,A-,Second,3.7
+1003,Algorithms,A,Third,4
+1004,Introduction to Computer Science,A,First,4
+1004,Data Structures,A+,Second,4
+1005,Introduction to Computer Science,B,Third,3
+1005,Database Systems,A-,First,3.7
+1006,Introduction to Computer Science,A+,First,4
+1006,Object-Oriented Programming,A,Third,4
+1007,Introduction to Computer Science,A,Second,4
+1007,Data Structures,A-,First,3.7
+1007,Security and Cryptography,A+,First,4
+1008,Introduction to Computer Science,B+,Third,3.3
+1008,Object-Oriented Programming,A,First,4
+1009,Introduction to Computer Science,A-,First,3.7
+1009,Algorithms,A,Third,4
+1010,Introduction to Computer Science,A,Second,4
+1010,Data Structures,A+,First,4
+1011,Introduction to Computer Science,B,First,3
+1011,Database Systems,A-,Third,3.7
+1012,Introduction to Computer Science,A+,Third,4
+1012,Object-Oriented Programming,A,First,4

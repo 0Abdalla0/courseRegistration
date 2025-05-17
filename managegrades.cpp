@@ -1,41 +1,46 @@
 #include "managegrades.h"
+#include "ui_managegrades.h"
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QMimeData>
-#include <QString>
+#include <QTextStream>
+#include <QDebug>
 #include "adminpage.h"
 #include "grade.h"
 #include "mainwindow.cpp"
 #include "student.h"
-#include "ui_managegrades.h"
 #include "uploadcourse.h"
-#include <signup.h>
+#include "registercourse.h"
+
 using namespace std;
+
 manageGrades::manageGrades(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::manageGrades)
 {
     ui->setupUi(this);
-    uploadCourse uc;
-    for (auto &student : MainWindow::getStudents()) {
+    setAcceptDrops(true);
+
+    for (const auto &student : MainWindow::getStudents()) {
         ui->studIdCmb->addItem(student.getId());
     }
-    for (const auto &[id, course] : uc.getCourseTable()) {
-        ui->courseNameCmb->addItem(course.getTitle());
-    }
-    vector<QString> grades = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"};
-    for (unsigned long long var = 0; var < grades.size(); ++var) {
-        ui->gradeCmb->addItem(grades[var]);
-    }
-    vector<QString> semesters
-        = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"};
-    for (unsigned long long var = 0; var < semesters.size(); ++var) {
-        ui->semesterCmb->addItem(semesters[var]);
-    }
-}
 
+    vector<QString> grades = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"};
+    for (const QString &grade : grades) {
+        ui->gradeCmb->addItem(grade);
+    }
+
+    vector<QString> semesters = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"};
+    for (const QString &sem : semesters) {
+        ui->semesterCmb->addItem(sem);
+    }
+
+    connect(ui->studIdCmb, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &manageGrades::onStudentChanged);
+
+    onStudentChanged(0);
+}
 manageGrades::~manageGrades()
 {
     delete ui;
@@ -50,28 +55,25 @@ void manageGrades::on_backBtn_clicked()
 
 void manageGrades::on_addGradeBtn_clicked()
 {
-    map<QString, double> gradeConverter = {{"A+", 4},
-                                        {"A", 4},
-                                        {"A-", 3.5},
-                                        {"B+", 3},
-                                        {"B", 2.5},
-                                        {"B-", 2},
-                                        {"C+", 1.5},
-                                        {"C", 1.5},
-                                        {"C-", 1},
-                                        {"D+", 1},
-                                        {"D", 1},
-                                        {"F", 0.5}};
-    QString studentId = ui->studIdCmb->currentText();
-    QString courseName = ui->courseNameCmb->currentText();
+    map<QString, double> gradeConverter = {
+        {"A+", 4}, {"A", 4}, {"A-", 3.5},
+        {"B+", 3}, {"B", 2.5}, {"B-", 2},
+        {"C+", 1.5}, {"C", 1.5}, {"C-", 1},
+        {"D+", 1}, {"D", 1}, {"F", 0.5}
+    };
+
+    QString studentIdStr = ui->studIdCmb->currentText();
+    QString courseName = ui->courseNameCmb->currentText().remove(" ✓");
     QString gradeValue = ui->gradeCmb->currentText();
     QString semester = ui->semesterCmb->currentText();
     double gpa = gradeConverter[gradeValue];
+
+    int studentId = studentIdStr.toInt();
     grade *Grade = new grade(gradeValue, semester, gpa);
-    manageGrades::getGrades()[studentId.toInt()][courseName] = Grade;
 
-    QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUMBIITED");
+    getGrades()[studentId][courseName] = Grade;
 
+    QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUBMITTED");
 }
 
 map<int, unordered_map<QString, grade *>> &manageGrades::getGrades()
@@ -79,12 +81,13 @@ map<int, unordered_map<QString, grade *>> &manageGrades::getGrades()
     static map<int, unordered_map<QString, grade *>> grades;
     return grades;
 }
- map<QString, int> &manageGrades::getGradesConverter()
+
+map<QString, int> &manageGrades::getGradesConverter()
 {
     static map<QString, int> gradeConverter;
     return gradeConverter;
 }
-// Save all grades to CSV
+
 void manageGrades::saveToCsv(const QString &filename)
 {
     QFile file(filename);
@@ -96,7 +99,7 @@ void manageGrades::saveToCsv(const QString &filename)
     QTextStream out(&file);
     out << "Student ID,Course Name,Grade,Semester,GPA\n";
 
-    const auto &grades = manageGrades::getGrades();
+    map<int, unordered_map<QString, grade *>> &grades = getGrades();
     for (const auto &[stuId, courses] : grades) {
         for (const auto &[courseName, grade] : courses) {
             out << stuId << "," << courseName << "," << grade->courseGrade << "," << grade->semester
@@ -116,7 +119,7 @@ void manageGrades::loadFromCsv(const QString &filename)
     }
 
     QTextStream in(&file);
-    QString header = in.readLine();
+    QString header = in.readLine(); // Skip header
 
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
@@ -133,8 +136,9 @@ void manageGrades::loadFromCsv(const QString &filename)
         QString gradeValue = parts[2];
         QString semester = parts[3];
         double gpa = parts[4].toDouble();
+
         grade *Grade = new grade(gradeValue, semester, gpa);
-        manageGrades::getGrades()[stuId][courseName] = Grade;
+        getGrades()[stuId][courseName] = Grade;
     }
 
     file.close();
@@ -148,7 +152,8 @@ void manageGrades::on_uploadGradesBtn_clicked()
                                                     "CSV Files (*.csv)");
     if (!fileName.isEmpty()) {
         loadFromCsv(fileName);
-        QMessageBox::information(this, "Success", "GRADE HAS BEEN SUCCESSFULLY SUMBIITED");
+        QMessageBox::information(this, "Success", "Grades uploaded successfully.");
+        onStudentChanged(ui->studIdCmb->currentIndex()); // Refresh course list
     }
 }
 
@@ -169,6 +174,41 @@ void manageGrades::dropEvent(QDropEvent *event)
         QString fileName = urls.first().toLocalFile();
         if (fileName.endsWith(".csv")) {
             loadFromCsv(fileName);
+            QMessageBox::information(this, "Success", "Grades loaded from file.");
+            onStudentChanged(ui->studIdCmb->currentIndex());
         }
     }
 }
+
+void manageGrades::onStudentChanged(int)
+{
+    ui->courseNameCmb->clear();
+
+    QString selectedStudentID = ui->studIdCmb->currentText();
+    int studentId = selectedStudentID.toInt();
+
+    unordered_map<int, vector<Course>> &registered = registerCourse::registered;
+    map<int, unordered_map<QString, grade*>>& grades = getGrades();
+
+    auto regIt = registered.find(studentId);
+    if (regIt == registered.end()) {
+        ui->courseNameCmb->addItem("NO REGISTRATIONS AVAILABLE!!!");
+        return;
+    }
+
+    vector<Course>& courses = regIt->second;
+    for (const Course& course : courses) {
+        QString displayTitle = course.getTitle();
+
+        auto gradeIt = grades.find(studentId);
+        if (gradeIt != grades.end()) {
+            auto innerIt = gradeIt->second.find(displayTitle);
+            if (innerIt != gradeIt->second.end()) {
+                displayTitle += " ✓";
+            }
+        }
+
+        ui->courseNameCmb->addItem(displayTitle);
+    }
+}
+
